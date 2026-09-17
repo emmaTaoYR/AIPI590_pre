@@ -2359,6 +2359,69 @@
     .privacy-choices strong { color: var(--ink); font-weight: 650; }
 
     .continuation .mint { color: var(--brand-ink); }
+    /* Slides 17–21: Siqi section, using the same global raspberry system. */
+
+.sq {color:var(--ink);background:var(--continuation-bg);display:flex;flex-direction:column;gap:2.5%;container-type:inline-size;}
+.sq .eyebrow {color:var(--brand-ink);margin:0;font-size:1.2cqw;}
+.sq h2 {font-size:4.4cqw;max-width:95%;line-height:1.08;}
+.sq-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw;margin-top:1cqw;}
+.sq-card {box-shadow:var(--shadow-sm);background:var(--surface);border:1px solid var(--line);border-radius:1.5cqw;padding:2cqw;}
+.sq-card strong {display:block;color:var(--brand-ink);font-size:6cqw;letter-spacing:-.06em;line-height:1.1;margin-bottom:1cqw;}
+.sq p,.sq li {font-size:1.65cqw;line-height:1.42;}
+.sq h3 {font-size:2cqw;margin-bottom:1cqw;letter-spacing:-.025em;}
+.sq small {display:block;font-size:1.12cqw;color:var(--muted);margin-top:1cqw;line-height:1.4;}
+.sq-band {background:var(--brand-soft);border-radius:1.2cqw;padding:1.4cqw 1.8cqw;font-size:1.6cqw;line-height:1.4;}
+.sq-foot {margin-top:auto;color:var(--muted);font-size:clamp(10px,1.04cqw,17px);line-height:1.45;}
+.sq a {color:inherit;text-underline-offset:.2em;}
+.sq-two {display:grid;grid-template-columns:1fr 1fr;gap:1.6cqw;}
+.sq ul {padding-left:1.6cqw;margin:.6cqw 0 0;}.sq li+li {margin-top:.7cqw;}
+.sq-kicker {font-size:1.15cqw;color:var(--brand-ink);font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:1cqw;}
+.sq-flow {display:flex;align-items:center;justify-content:space-between;padding:1.5cqw 2cqw;background:var(--brand-soft);border-radius:1cqw;font-size:1.7cqw;font-weight:700;}
+.sq-question {justify-content:center;}.sq-question h2 {font-size:5.7cqw;max-width:94%;}.sq-question .sq-band {background:var(--brand-soft);}
+.sq-question .sq-foot {margin-top:2cqw;color:var(--muted);}
+
+.sq {gap:2.3%;}
+.sq h2 {font-size:4.7cqw;}
+.sq .sq-card p,.sq li {font-size:1.65cqw;}
+.sq-band {font-weight:500;}
+.sq-card {transition:opacity .46s var(--ease),transform .55s var(--ease),filter .4s var(--ease);}
+.sq-card strong {font-variant-numeric:tabular-nums;}
+.sq-evidence .sq-card {border-top: .38cqw solid var(--brand);}
+.sq-evidence .sq-card:nth-child(2) {border-color:var(--line);border-top-color:var(--brand);}
+.sq-evidence .sq-card:nth-child(3) {border-color:var(--line);border-top-color:var(--brand);}
+.sq-sub {color:var(--muted);font-size:1.6cqw!important;}
+.sq-large {font-size:2.4cqw!important;line-height:1.25!important;letter-spacing:-.035em;}
+.sq-compare {display:grid;grid-template-columns:1fr auto 1fr;gap:1.7cqw;align-items:center;}
+.sq-compare .sq-card {padding:1.7cqw 2cqw;}
+.sq-vs {color:var(--muted);font-size:1.5cqw;font-weight:700;}
+.sq-treatment {background:var(--brand-soft);border-color:var(--brand-border);}
+.sq-result {display:flex;align-items:center;justify-content:space-between;gap:2cqw;}
+.sq-result strong {font-size:2.5cqw;color:var(--brand-ink);line-height:1.2;}
+.sq-road .sq-card {min-height:21cqw;position:relative;display:flex;flex-direction:column;}
+.sq-road .sq-card ul {margin-bottom:1.7cqw;}
+.sq-road .sq-gate {margin-top:auto;}
+.sq-road .sq-card:after {content:'→';position:absolute;right:-1.5cqw;top:45%;color:var(--brand-ink);font-size:2.5cqw;z-index:3;}
+.sq-road .sq-card:last-child:after {display:none;}
+.sq-road .sq-card h3 {font-size:2.4cqw;}
+.sq-gate {margin-top:1.7cqw;padding-top:1cqw;border-top:1px solid var(--line);font-size:1.25cqw;color:var(--brand-ink);font-weight:700;}
+.sq-pair-layout {display:grid;grid-template-columns:1.13fr 1fr;gap:2cqw;}
+.sq-pair-list {display:grid;grid-template-columns:1fr 1fr;gap:1.1cqw;}
+.sq-pair-list .sq-card {padding:1.35cqw;}
+.sq-pair-list h3 {font-size:1.65cqw;}
+.sq-pair-list p {font-size:1.4cqw!important;}
+.sq-example {border:1px solid var(--brand-border);box-shadow:var(--shadow-sm);background:var(--surface);color:var(--ink);padding:2cqw;border-radius:1.5cqw;}
+.sq-example h3 {font-size:2cqw;}
+.sq-example p {font-size:1.5cqw;}
+.sq-status {background:var(--warning-soft);display:inline-block;border:1px solid var(--warning-border);color:var(--warning-ink);padding:.5cqw .8cqw;border-radius:3cqw;font-size:1.05cqw;margin:1cqw 0;}
+.sq-example small {color:var(--muted);}
+.sq-fake-button {display:block;background:var(--cta-bg);color:var(--cta-ink);padding:.8cqw;border-radius:.6cqw;font-size:1.3cqw;text-align:center;font-weight:750;margin-top:1.2cqw;}
+.sq-question h2 {font-size:5.5cqw;}
+.sq-question .sq-band {font-size:2cqw;color:var(--brand-ink);}
+
+
+.sq .accent, .sq .mint {color:var(--brand-ink);}
+.sq a {color:var(--brand-ink);}
+.deck:has(.sq.active) .notes {white-space:pre-line;max-height:60%;}
   </style>
 </head>
 <body>
@@ -2366,7 +2429,7 @@
     <div class="deck" id="deck">
 
       <section class="slide hook active" data-title="Interactive hook" data-notes="Ask for a show of hands after each question. Let the two cards come out one at a time, then pause on the problem statement.">
-        <span class="slide-number">01 / 16</span>
+        <span class="slide-number">01 / 21</span>
         <div class="eyebrow">Quick question</div>
         <div class="hook-content">
           <div class="card-stage" aria-label="Two audience questions">
@@ -2388,7 +2451,7 @@
       </section>
 
       <section class="slide product-reveal" data-title="Product reveal" data-notes="This is the formal start of the pitch. Introduce the product name and the team, then move into the concrete return example.">
-        <span class="slide-number">02 / 16</span>
+        <span class="slide-number">02 / 21</span>
         <div class="product-inner">
           <div class="product-mark fragment">R</div>
           <h1 class="fragment">ReturnPilot</h1>
@@ -2401,7 +2464,7 @@
       </section>
 
       <section class="slide pain-a" data-title="Target user and one return" data-notes="Introduce the target user, then zoom into one Amazon return. Let the small decisions accumulate visually. Pause after ‘And that’s just ONE item.’">
-        <span class="slide-number">03 / 16</span>
+        <span class="slide-number">03 / 21</span>
         <div class="pain-intro">
           <p class="pain-target">Our target users are <span>frequent shoppers</span> who buy across <span>multiple retailers</span>.</p>
           <div class="retailer-strip" aria-label="Retailers">
@@ -2445,7 +2508,7 @@
       </section>
 
       <section class="slide pain-b" data-title="Multiple retailers and money lost" data-notes="Expand from one retailer to several. Show how fragmented workflows lead to postponement. Let the small refund values accumulate into $95 lost, then finish on the calm core pain statement.">
-        <span class="slide-number">04 / 16</span>
+        <span class="slide-number">04 / 21</span>
         <h2 class="continuation-title"><span>ONE</span> item was already annoying. Now imagine four retailers.</h2>
 
         <div class="retailer-board" aria-label="Four retailers with different return workflows">
@@ -2523,7 +2586,7 @@
       </section>
 
       <section class="slide solution-detect" data-title="Detect purchases" data-notes="Show that purchases are detected automatically from confirmation emails and receipts. The user does not manually enter every item.">
-        <span class="slide-number">05 / 16</span>
+        <span class="slide-number">05 / 21</span>
         <div class="product-copy-area"><div class="eyebrow">1. Detect purchases</div><h2>Your purchases are <em>already here</em></h2><p class="subhead">We automatically find your orders from emails and receipts.</p></div>
         <div class="detect-visual"><div class="scan-node">↗</div>
           <article class="source-card"><div class="source-top"><span>Amazon</span><small>Email</small></div><p>Order confirmed<br><span>Wireless Headphones · $129</span></p></article>
@@ -2535,7 +2598,7 @@
       </section>
 
       <section class="slide solution-select" data-title="Select return items" data-notes="The user simply selects what they want to return. Emphasize how small the user action is.">
-        <span class="slide-number">06 / 16</span>
+        <span class="slide-number">06 / 21</span>
         <div class="product-copy-area"><div class="eyebrow">2. Select items</div><h2>Choose what you want <em>to return</em></h2><p class="subhead">Select the items you don’t want. We’ll figure out the rest.</p></div>
         <div class="select-visual"><div class="product-grid">
           <article class="product-card selected"><span class="select-box">✓</span><span class="product-thumb"></span><div class="product-copy"><b>Banana Republic</b><span>Jacket</span></div><div class="product-meta"><strong>$79</strong><small>Return by Sep 18</small></div></article>
@@ -2546,13 +2609,13 @@
       </section>
 
       <section class="slide solution-plan" data-title="Build return plan" data-notes="Behind the scenes, we compare deadlines, methods, and compatible drop-offs. Keep this fast — the complexity is handled for the user.">
-        <span class="slide-number">07 / 16</span>
+        <span class="slide-number">07 / 21</span>
         <div class="product-copy-area"><div class="eyebrow">3. AI planning</div><h2>We’re building <em>your return plan</em></h2><div class="planning-list"><div>Checking deadlines…</div><div>Comparing return methods…</div><div>Grouping compatible drop-offs…</div><div>Optimizing time + refund…</div></div></div>
         <div class="plan-visual"><div class="planning-card"><div class="eyebrow">Working quietly in the background</div><h3>Handling the decisions for you</h3><p>Finding the simplest, fastest way to get your money back…</p><div class="planning-progress"></div><p style="color:var(--success);font-weight:800">Return plan ready ✓</p></div></div>
       </section>
 
       <section class="slide market" data-title="Why now" data-notes="These numbers show the frequency and scale of online shopping and returns. They do not size the abandoned-refund segment. That segment remains our validation question.">
-        <span class="slide-number">08 / 16</span>
+        <span class="slide-number">08 / 21</span>
         <header class="market-header">
           <div>
             <div class="eyebrow">Why now</div>
@@ -2581,7 +2644,7 @@
       </section>
 
       <section class="slide competition" data-title="Competitive landscape" data-notes="The market is not empty. Each competitor proves a piece of demand. Our opportunity is the decision and action layer across retailers.">
-        <span class="slide-number">09 / 16</span>
+        <span class="slide-number">09 / 21</span>
         <header class="competition-header">
           <div>
             <div class="eyebrow">Competitive landscape</div>
@@ -2618,7 +2681,7 @@
       </section>
 
       <section class="slide handoff" data-title="Handoff" data-notes="Hand off to the next speaker: what makes this product meaningfully different and why AI is fundamental to the advantage.">
-        <span class="slide-number">10 / 16</span>
+        <span class="slide-number">10 / 21</span>
         <div class="handoff-inner">
           <div class="eyebrow">The next question</div>
           <h2><span class="handoff-context">The market proves the need.</span> <span class="handoff-question">What creates<br>our edge?</span></h2>
@@ -2631,7 +2694,7 @@
       </section>
 
       <section class="slide continuation" data-title="Why us: put the plan into action" data-notes="Continue the exact Banana Republic, Temu and Target example from slide 7. The user has selected items and received a proposed plan. First click: the user initiates the Banana Republic and Temu returns in the retailer flows. Second click: read the actual return instructions and confirm both are compatible with the same UPS location. Third click: the shared UPS stop is ready. These methods are illustrative, not universal retailer policies. Target can wait for a later store visit. Keep the narration focused on the next action; policy and integration details are unnecessary for the idea pitch.">
-        <span class="slide-number">11 / 16</span>
+        <span class="slide-number">11 / 21</span>
         <header class="continuation-header">
           <div>
             <div class="eyebrow">Why us · Put the plan into action</div>
@@ -2685,7 +2748,7 @@
       </section>
 
       <section class="slide continuation" data-title="Why us: through to the refund" data-notes="Continue the same two confirmed UPS returns from slide 11. The wallet is visible at the start, with each item's return material together. The grid icons are schematic QR/label illustrations. Reveal drop-off, retailer receipt and finally a $107 refund-issued confirmation, one click at a time. This represents the later lifecycle, not instant processing or guaranteed refund timing. $107 equals the Banana Republic jacket ($79) plus the Temu top ($28); the $42 Target return is still pending for a later visit. The MVP closes at refund issued by the retailer, without claiming the bank has received it. End on the value: the assistant stays with the return through completion.">
-        <span class="slide-number">12 / 16</span>
+        <span class="slide-number">12 / 21</span>
         <header class="continuation-header">
           <div>
             <div class="eyebrow">Why us · Through to the refund</div>
@@ -2721,7 +2784,7 @@
       </section>
 
       <section class="slide continuation ai-story" data-title="Why AI: understand the information" data-notes="Spec sections 6, 11 and 32. This is the first of three AI slides: understand, help personalize planning, and show confidence. Use the same purchases so the audience does not need another example. Reveal the different input formats, AI, and the shared item list. AI extracts purchase details, interprets policies and exceptions, and recognizes return or refund updates. That context supports planning. Standard rules and optimization enforce deadlines and valid grouping. A shared reader reduces the need for a separate parser per retailer. The displayed records and dates are illustrative and match slide 7. Transition to how preferences and learned habits shape the plan.">
-        <span class="slide-number">13 / 16</span>
+        <span class="slide-number">13 / 21</span>
         <header class="continuation-header">
           <div>
             <div class="eyebrow">Why AI · Understand the information</div>
@@ -2755,7 +2818,7 @@
       </section>
 
       <section class="slide continuation personal-planning" data-title="Why AI: planning and learning your habits" data-notes="Spec sections 7, 15 and 22, plus the requested AI-assisted planning story. Continue the Banana Republic and Temu example. The user's explicit goal is fewer trips. First click: show lightweight habits the system could learn over time, a UPS location near home and weekend returns. These are editable suggestions, never mandatory. Second click: AI helps connect this context with the return information to personalize the proposed plan; optimization confirms a compatible UPS stop and checks constraints. Third click: the earlier Thursday deadline overrides the weekend habit. This is the same illustrative Thursday deadline used in slide 7, not a current-date calculation. Fourth click: reinforce user control and the division of work. This is a proposed product capability, with habit learning developed over time. The user still chooses Keep, Return or Not sure.">
-        <span class="slide-number">14 / 16</span>
+        <span class="slide-number">14 / 21</span>
         <header class="continuation-header">
           <div>
             <div class="eyebrow">Why AI · Planning + learning</div>
@@ -2793,7 +2856,7 @@
       </section>
 
       <section class="slide continuation confidence-story" data-title="Why AI: confidence and visible sources" data-notes="Spec sections 8, 11 and 28. Deadlines and eligibility carry a confidence level tied to the available evidence. Reveal High, Medium and Low one at a time, then the takeaway. High: an explicit return-by date in an order email. Medium: a deadline estimated from the current official policy and order information. Low: missing item details leave eligibility unclear, so ask the user to confirm or check the retailer. These are illustrative evidence scenarios, not claims about the retailers in the earlier workflow. Confidence labels are qualitative, not measured accuracy percentages or guarantees. Order-specific evidence takes priority over generic policies, and deterministic validation supports the interpretation. End on a clear product benefit: the user can see the source and knows when a confirmation is needed.">
-        <span class="slide-number">15 / 16</span>
+        <span class="slide-number">15 / 21</span>
         <header class="continuation-header">
           <div>
             <div class="eyebrow">Why AI · Confidence + transparency</div>
@@ -2833,7 +2896,7 @@
       </section>
 
       <section class="slide continuation data-privacy" data-title="Data sources and privacy by choice" data-notes="Spec sections 9, 10, 11, 16 and 24. This slide shows the proposed approach, not implemented security guarantees. First click: users can connect Gmail, forward selected shopping emails, or provide screenshots and receipt photos. Inbox connection is optional. Official retailer policies and official drop-off data, supplemented by maps, complete the information. Order-specific evidence takes priority; maps alone cannot establish return eligibility. Second click: emphasize data minimization, only order, policy, return-method and refund information, with ZIP code or a preferred area by default. The shield is a visual for the privacy principle, not a claim of verified security. Third click: planned processing happens on-device where practical and uses cloud AI for complex parsing and reasoning; the exact architecture remains to be determined. Fourth click: calendar and precise location remain optional, and the MVP requires neither bank access nor continuous background GPS. Precise location is used only when requested for nearby search. Do not claim a connected Gmail account technically grants access only to shopping emails.">
-        <span class="slide-number">16 / 16</span>
+        <span class="slide-number">16 / 21</span>
         <header class="privacy-heading">
           <div class="eyebrow">Data + privacy</div>
           <h2>Your data. <span>Your choice.</span></h2>
@@ -2888,6 +2951,33 @@
         </div>
       </section>
 
+<section class="slide sq" data-title="Market evidence" data-notes="[~35 seconds | Reveal the three data cards, then the target segment.]
+The intent is there. The follow-through is not. In a LendingTree survey, 44 percent had missed a return window, and 58 percent had kept an unwanted item because returning it felt inconvenient. NRF also found 7.7 online returns in a year among surveyed returners aged 18 to 30. So we start with frequent shoppers managing multiple retailers. The question is whether ReturnPilot helps them finish, and whether they will pay.
+
+中文：这些是有退货经历人群的调查；不是每年订单失败率，也不是所有年轻人的均值。次级用户：家庭购物管理者、偶尔购买高价商品的人。年轻 returners 可作为首批招募来源，但付费意愿未验证。
+Sizing 备用：129.2M households × 10% qualifying × $36/year ≈ $465M; × 30% coverage ≈ $140M。沿用前文的情景模型，不是验证后的市场规模。假设不能用 44% 直接替换。"><span class="slide-number">17 / 21</span><div class="eyebrow">Who goes first?</div><h2>The intent is there.<br><span class="accent">The follow-through isn’t.</span></h2><div class="sq-grid sq-evidence"><div class="sq-card fragment"><strong>44%</strong><p>Had missed a return window.</p><small>For an item they intended to return.</small></div><div class="sq-card fragment"><strong>58%</strong><p>Had kept an unwanted item.</p><small>Returning it felt too inconvenient.</small></div><div class="sq-card fragment"><strong>7.7</strong><p>Online returns in one year.</p><small>Surveyed returners aged 18–30.</small></div></div><div class="sq-band fragment"><b>Start here:</b> Frequent shoppers. Multiple retailers. Delayed returns.<br><span class="sq-sub">Still to prove: Will they pay? Will they finish more returns?</span></div><footer class="sq-foot"><a href="https://www.livenowfox.com/news/shoppers-returning-used-items" target="_blank" rel="noopener">LendingTree via LiveNOW FOX (Mar. 26, 2025)</a>: Feb. 2025, n=1,715 U.S. shoppers with return experience (self-reported). 44% and 58% describe past experience, not annual order failure rates.<br><a href="https://nrf.com/media-center/press-releases/consumers-expected-to-return-nearly-850-billion-in-merchandise-in-2025" target="_blank" rel="noopener">NRF / Happy Returns (2025)</a>: n=2,006 past-year online returners. 7.7 is the age 18–30 subgroup average, not all young adults.</footer></section>
+
+<section class="slide sq" data-title="Success metrics" data-notes="[~40 seconds | Reveal the journey, comparison, then the outcome.]
+A click starts a return. It does not finish one. We need to track the handoff and confirm the refund. To test our value, we would compare reminders alone with the same reminders plus ReturnPilot&#x27;s action workflow. The primary question is simple: do more intended, eligible returns finish on time? We would also track refunds, effort, deadline errors and support costs. We should not count every refund as money we saved. The difference between groups is what matters.
+
+中文：按用户随机分组，保持相同的已核实截止日和提醒频率；两组仅行动流程不同。事先定义各商家的完成要求、观察期和缺失数据处理，同一用户多笔订单在分析时需考虑。业务指标另看重复使用和付费转化。课堂对应 p.37：连接技术表现与用户、业务价值。"><span class="slide-number">18 / 21</span><div class="eyebrow">What would count as success?</div><h2>A click starts a return.<br><span class="accent">It doesn’t finish one.</span></h2><div class="sq-flow fragment"><span>Start the return</span><span>→</span><span>Meet the deadline</span><span>→</span><span>Confirm the refund</span></div><div class="sq-compare fragment"><div class="sq-card"><div class="sq-kicker">Control</div><h3>Reminders only</h3><p>Verified deadlines.<br>Scheduled reminders.</p></div><span class="sq-vs">vs.</span><div class="sq-card sq-treatment"><div class="sq-kicker">ReturnPilot</div><h3>Reminders + action</h3><p>The same reminders.<br>A prepared action workflow.</p></div></div><div class="sq-band sq-result fragment"><strong>Do more returns<br>finish on time?</strong><p>Primary: on-time completion rate.<br>Also: refunds, effort, errors and cost.</p></div><footer class="sq-foot">Proposed pilot, randomized by user. Completion rate = intended, eligible returns completed on time ÷ intended, eligible returns.<br>Use retailer-specific requirements. Track repeat use and paid conversion; no measured uplift is claimed.</footer></section>
+
+<section class="slide sq" data-title="Product roadmap" data-notes="[~40 seconds | Reveal Crawl → Walk → Run, then the closing line.]
+We start with one reliable workflow. By the October 15 midpoint, our proposed MVP covers two or three retailers: extract the order, verify the policy and prepare the action page. The user confirms submission. By the November 19 final, we aim to test completion and track handoff and refunds. Then we expand based on what we learn. If getting to a drop-off point is the real barrier, pickup partnerships may matter more than another reminder.
+
+中文：课程 p.5 已核实两次展示日期，但这些具体功能承诺是团队 proposed scope。Crawl–Walk–Run 来自 pp.88–94，是借用阶段思路，不是照搬课件的多年时间尺度。与 Dongping 对齐：前稿展示目标体验，本学期 MVP 保留用户确认。"><span class="slide-number">19 / 21</span><div class="eyebrow">How do we get there?</div><h2>One reliable workflow.<br><span class="accent">Then more retailers.</span></h2><div class="sq-grid sq-road"><div class="sq-card fragment"><div class="sq-kicker">Crawl · Oct 15</div><h3>Prepare it.</h3><ul><li>2–3 retailers</li><li>Extract orders; verify policies</li><li>Prepare an action page;<br>user confirms submission</li></ul><div class="sq-gate">Gate: a usable end-to-end MVP</div></div><div class="sq-card fragment"><div class="sq-kicker">Walk · Nov 19</div><h3>Test it.</h3><ul><li>Track handoff and refunds</li><li>Compare completion rates</li><li>Test pricing and support costs</li></ul><div class="sq-gate">Gate: evidence of user value</div></div><div class="sq-card fragment"><div class="sq-kicker">Run · After validation</div><h3>Expand it.</h3><ul><li>Authorized integrations</li><li>Broader retailer coverage</li><li>Pickup partners, if handoff is the barrier</li></ul><div class="sq-gate">Gate: evidence guides expansion</div></div></div><div class="sq-band fragment"><b>Build what gets the package moving.</b> Let pilot results set the next priority.</div><footer class="sq-foot">Proposed scope; course milestones: Oct 15 midpoint and Nov 19 final (Week 3, p. 5).<br>Crawl–Walk–Run adapted from Week 3, pp. 88–94; semester timing is our project plan, not the framework’s original timescale.</footer></section>
+
+<section class="slide sq" data-title="Google PAIR evaluation" data-notes="[~40 seconds | Reveal the framework, show one failure case, then the tradeoff.]
+PAIR makes us ask what happens when the AI is wrong. We need to understand the user&#x27;s context, show confidence levels, enable control and plan for failure. Here is one example: the delivery date is missing. We should flag the deadline as unverified, ask the user to correct the date, and keep a path to the merchant. Our opportunity is helping users recover money. Our biggest risk is that even a good plan leaves the package at home.
+
+中文：已核实 Week 3 pp.41–45 的四项名称。状态标签展示不确定性，不虚构模型置信百分比。示例界面只说明设计思路。PAIR 评价必须点出机会与风险，而不是只介绍框架。"><span class="slide-number">20 / 21</span><div class="eyebrow">Pressure-test the idea · Google PAIR</div><h2>Helpful AI needs<br><span class="accent">a way to be wrong.</span></h2><div class="sq-pair-layout"><div class="sq-pair-list fragment"><div class="sq-card"><h3>Understand User Context</h3><p>Where are they stuck: the policy or the drop-off?</p></div><div class="sq-card"><h3>Show Confidence Levels</h3><p>Show evidence and uncertainty.</p></div><div class="sq-card"><h3>Enable User Control</h3><p>Let users edit and approve.</p></div><div class="sq-card"><h3>Plan for Failure</h3><p>Keep a merchant fallback.</p></div></div><div class="sq-example fragment"><div class="sq-kicker">Illustrative product state</div><h3>When was it delivered?</h3><div class="sq-status">Missing information · deadline unverified</div><p>We need the delivery date before we can verify your return deadline.</p><div class="sq-fake-button">Add delivery date</div><small>Or open the merchant’s return page →</small></div></div><div class="sq-band fragment"><b>Opportunity:</b> Help users recover money.<br><b>Biggest risk:</b> The plan is ready. The package stays home.</div><footer class="sq-foot">Framework: Week 3 lecture, Google PAIR, pp. 41–45. Product application and risk assessment are our analysis.<br><a href="https://pair.withgoogle.com/guidebook/" target="_blank" rel="noopener">Google People + AI Guidebook</a> · Example UI is illustrative, not a working return submission.</footer></section>
+
+<section class="slide sq sq-question" data-title="Open questions" data-notes="[~15 seconds, then pause | Reveal the package problem, then the main question.]
+The return is ready. But the package never leaves the house. Have we solved enough of the problem? Thinking about your own experience, what would actually get you to finish that return?
+
+中文：问完停下来。没人回应时：Think about the last item you wanted to return but kept. What stopped you?
+备用问题（不需要全念）：Would you pay per return or subscribe? Which actions would you trust AI to complete for you?"><span class="slide-number">21 / 21</span><div class="eyebrow">One question for you</div><h2>The return is ready.<br><span class="fragment">The package <span class="mint">never<br>leaves the house.</span></span></h2><div class="sq-band fragment">Have we solved enough of the problem?</div><p class="sq-sub fragment">What would actually get you to finish that return?</p><footer class="sq-foot">Think about the last item you wanted to return, but kept.</footer></section>
+
       <div class="chrome" aria-hidden="false">
         <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
         <div class="controls">
@@ -2919,7 +3009,7 @@
           detect.className = 'slide demo-detect';
           detect.dataset.title = 'Detect purchases';
           detect.dataset.notes = 'Purchases are detected automatically from confirmation emails and uploaded receipts. The user does not manually enter everything.';
-          detect.innerHTML = '<span class="slide-number">05 / 16</span><div class="demo-copy"><div class="eyebrow">1. Detect purchases</div><h2>Your purchases are <em>already here</em></h2><p class="subhead">We automatically find your orders from emails and receipts.</p></div><div class="demo-detect-cluster"><svg class="demo-detect-lines" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M18 20 50 50"/><path d="M82 20 50 50"/><path d="M18 80 50 50"/><path d="M82 80 50 50"/></svg><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Amazon</b><span>Order confirmed</span><small>Wireless Headphones &middot; $129</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Banana Republic</b><span>Order confirmed</span><small>Jacket &middot; $79</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Temu</b><span>Order confirmed</span><small>Top &middot; $28</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + receiptIcon + '</span><div class="demo-source-meta"><b>Target Receipt</b><span>Receipt captured</span><small>Skincare Set &middot; $42</small></div></article><div class="demo-scan-node">' + receiptIcon + '</div><div class="demo-scan-status">Scanning purchases...<small>Extracting order details, return info, and deadlines</small></div></div>';
+          detect.innerHTML = '<span class="slide-number">05 / 21</span><div class="demo-copy"><div class="eyebrow">1. Detect purchases</div><h2>Your purchases are <em>already here</em></h2><p class="subhead">We automatically find your orders from emails and receipts.</p></div><div class="demo-detect-cluster"><svg class="demo-detect-lines" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M18 20 50 50"/><path d="M82 20 50 50"/><path d="M18 80 50 50"/><path d="M82 80 50 50"/></svg><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Amazon</b><span>Order confirmed</span><small>Wireless Headphones &middot; $129</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Banana Republic</b><span>Order confirmed</span><small>Jacket &middot; $79</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Temu</b><span>Order confirmed</span><small>Top &middot; $28</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + receiptIcon + '</span><div class="demo-source-meta"><b>Target Receipt</b><span>Receipt captured</span><small>Skincare Set &middot; $42</small></div></article><div class="demo-scan-node">' + receiptIcon + '</div><div class="demo-scan-status">Scanning purchases...<small>Extracting order details, return info, and deadlines</small></div></div>';
         }
         const select = document.querySelector('.solution-select');
         if (select) {
@@ -2927,18 +3017,22 @@
           select.dataset.title = 'Select return items';
           select.dataset.notes = 'The user simply chooses what they want to return. That is the main user action.';
           const card = (selected, art, store, item, price, date) => '<article class="demo-product-card' + (selected ? ' selected' : '') + '"><span class="demo-check">' + checkIcon + '</span><span class="demo-product-art">' + art + '</span><div class="demo-product-info"><b>' + store + '</b><span>' + item + '</span></div><div class="demo-product-value"><strong>' + price + '</strong><small>' + date + '</small></div></article>';
-          select.innerHTML = '<span class="slide-number">06 / 16</span><div class="demo-copy"><div class="eyebrow">2. Select items</div><h2>Choose what you want <em>to return</em></h2><p class="subhead">Select the items you don\'t want. We\'ll figure out the rest.</p></div><div class="demo-select-grid">' + card(true, jacketIcon, 'Banana Republic', 'Jacket', '$79', 'Sep 18') + card(true, shirtIcon, 'Temu', 'Top', '$28', 'Sep 20') + card(true, bottleIcon, 'Target', 'Skincare Set', '$42', 'Sep 28') + card(false, headphonesIcon, 'Amazon', 'Wireless Headphones', '$129', 'Eligible') + '</div><div class="demo-select-action"><div class="demo-cta">Plan my returns &rarr;</div><div class="demo-selected-count">3 items selected</div></div>';
+          select.innerHTML = '<span class="slide-number">06 / 21</span><div class="demo-copy"><div class="eyebrow">2. Select items</div><h2>Choose what you want <em>to return</em></h2><p class="subhead">Select the items you don\'t want. We\'ll figure out the rest.</p></div><div class="demo-select-grid">' + card(true, jacketIcon, 'Banana Republic', 'Jacket', '$79', 'Sep 18') + card(true, shirtIcon, 'Temu', 'Top', '$28', 'Sep 20') + card(true, bottleIcon, 'Target', 'Skincare Set', '$42', 'Sep 28') + card(false, headphonesIcon, 'Amazon', 'Wireless Headphones', '$129', 'Eligible') + '</div><div class="demo-select-action"><div class="demo-cta">Plan my returns &rarr;</div><div class="demo-selected-count">3 items selected</div></div>';
         }
         const plan = document.querySelector('.solution-plan');
         if (plan) {
           plan.className = 'slide demo-plan';
           plan.dataset.title = 'Build and reveal the return plan';
           plan.dataset.notes = 'We handle the complexity behind the scenes — deadlines, methods, and drop-offs — and turn it into one actionable plan. The output tells the user exactly when to go, where to go, what to return, and how much money is protected.';
-          plan.innerHTML = '<span class="slide-number">07 / 16</span><div class="demo-plan-intro"><div class="eyebrow">3. Build your plan</div><h2>From selected items to <em>one clear plan</em></h2><p class="subhead">We compare deadlines, methods, and drop-offs for you.</p></div><div class="demo-processing"><div class="demo-processing-card"><h3>Building your return plan</h3><div class="demo-process-steps"><span>Checking deadlines...</span><span>Comparing return methods...</span><span>Grouping compatible drop-offs...</span><span>Optimizing time + refund...</span></div><div class="demo-process-progress"></div></div></div><div class="demo-final"><div class="demo-ready-header"><div><h3>Return plan ready ' + checkIcon + '</h3><p>One optimized route. Only the actions that matter.</p></div><button class="demo-why-button" type="button">See why this plan &darr;</button></div><div class="demo-plan-card"><div class="demo-timeline"><div class="demo-step"><span class="demo-step-number">1</span><div class="demo-step-date">Thu &middot; Sep 18<strong>4:30 PM</strong></div><div class="demo-step-content"><b>' + pinIcon + ' UPS Store</b><p>' + clockIcon + ' 18 min &middot; 2 returns</p><div class="demo-plan-items"><span class="demo-plan-item">' + jacketIcon + ' Jacket &middot; $79</span><span class="demo-plan-item">' + shirtIcon + ' Top &middot; $28</span></div><div class="demo-plan-tags"><span>Same drop-off</span><span>Earlier deadline</span></div></div></div><div class="demo-step secondary"><span class="demo-step-number">2</span><div class="demo-step-date">Mon &middot; Sep 22<strong>Any time</strong></div><div class="demo-step-content"><b>' + pinIcon + ' Target</b><p>' + bottleIcon + ' Skincare Set &middot; $42</p><p>Can wait until your next Target trip</p></div></div></div><aside class="demo-summary"><div class="demo-refund">$149</div><div class="demo-refund-label">Refund protected</div><div class="demo-trip-change"><span class="old">2 trips</span><span class="arrow">&rarr;</span><span class="new">1 trip</span></div><div class="demo-summary-metrics"><div><b>FRI</b><span>Do this by</span></div><div><b>18 MIN</b><span>Total time</span></div><div><b>1 STOP</b><span>UPS</span></div></div><div class="demo-confirmations"><span>' + checkIcon + ' Return deadlines added to calendar</span><span>' + checkIcon + ' Reminder created automatically</span></div></aside><aside class="demo-reason fragment"><div class="demo-reason-title">WHY THIS PLAN</div><div class="demo-reason-item"><b>Banana Republic + Temu</b><span>Same UPS drop-off</span></div><div class="demo-reason-item"><b>Banana Republic</b><span>Earlier deadline</span></div><div class="demo-reason-item"><b>Target</b><span>Later deadline - can wait</span></div><div class="demo-reason-item"><b>Grouping these returns</b><span>Saves one extra trip</span></div><div class="demo-reason-tags"><span>Earlier deadline</span><span>Same drop-off</span><span>Free return</span><span>Higher refund value</span></div></aside></div></div>';
+          plan.innerHTML = '<span class="slide-number">07 / 21</span><div class="demo-plan-intro"><div class="eyebrow">3. Build your plan</div><h2>From selected items to <em>one clear plan</em></h2><p class="subhead">We compare deadlines, methods, and drop-offs for you.</p></div><div class="demo-processing"><div class="demo-processing-card"><h3>Building your return plan</h3><div class="demo-process-steps"><span>Checking deadlines...</span><span>Comparing return methods...</span><span>Grouping compatible drop-offs...</span><span>Optimizing time + refund...</span></div><div class="demo-process-progress"></div></div></div><div class="demo-final"><div class="demo-ready-header"><div><h3>Return plan ready ' + checkIcon + '</h3><p>One optimized route. Only the actions that matter.</p></div><button class="demo-why-button" type="button">See why this plan &darr;</button></div><div class="demo-plan-card"><div class="demo-timeline"><div class="demo-step"><span class="demo-step-number">1</span><div class="demo-step-date">Thu &middot; Sep 18<strong>4:30 PM</strong></div><div class="demo-step-content"><b>' + pinIcon + ' UPS Store</b><p>' + clockIcon + ' 18 min &middot; 2 returns</p><div class="demo-plan-items"><span class="demo-plan-item">' + jacketIcon + ' Jacket &middot; $79</span><span class="demo-plan-item">' + shirtIcon + ' Top &middot; $28</span></div><div class="demo-plan-tags"><span>Same drop-off</span><span>Earlier deadline</span></div></div></div><div class="demo-step secondary"><span class="demo-step-number">2</span><div class="demo-step-date">Mon &middot; Sep 22<strong>Any time</strong></div><div class="demo-step-content"><b>' + pinIcon + ' Target</b><p>' + bottleIcon + ' Skincare Set &middot; $42</p><p>Can wait until your next Target trip</p></div></div></div><aside class="demo-summary"><div class="demo-refund">$149</div><div class="demo-refund-label">Refund protected</div><div class="demo-trip-change"><span class="old">2 trips</span><span class="arrow">&rarr;</span><span class="new">1 trip</span></div><div class="demo-summary-metrics"><div><b>FRI</b><span>Do this by</span></div><div><b>18 MIN</b><span>Total time</span></div><div><b>1 STOP</b><span>UPS</span></div></div><div class="demo-confirmations"><span>' + checkIcon + ' Return deadlines added to calendar</span><span>' + checkIcon + ' Reminder created automatically</span></div></aside><aside class="demo-reason fragment"><div class="demo-reason-title">WHY THIS PLAN</div><div class="demo-reason-item"><b>Banana Republic + Temu</b><span>Same UPS drop-off</span></div><div class="demo-reason-item"><b>Banana Republic</b><span>Earlier deadline</span></div><div class="demo-reason-item"><b>Target</b><span>Later deadline - can wait</span></div><div class="demo-reason-item"><b>Grouping these returns</b><span>Saves one extra trip</span></div><div class="demo-reason-tags"><span>Earlier deadline</span><span>Same drop-off</span><span>Free return</span><span>Higher refund value</span></div></aside></div></div>';
         }
       };
       refineProductDemo();
       const slides = [...document.querySelectorAll('.slide')];
+      slides.forEach((slide, i) => {
+        const label = slide.querySelector('.slide-number');
+        if (label) label.textContent = `${String(i + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+      });
       const progressBar = document.getElementById('progressBar');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
@@ -3012,6 +3106,7 @@
       }
 
       document.addEventListener('keydown', event => {
+        if (event.target.closest('.sq a')) return;
         if (['ArrowRight', 'ArrowDown', 'PageDown', 'Enter', ' '].includes(event.key)) {
           event.preventDefault();
           forward();
