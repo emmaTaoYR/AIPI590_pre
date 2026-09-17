@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ReturnPilot · Q&amp;A</title>
+  <style>
+    :root {
+      --bg: #FBFAF8;
+      --surface: #FFFFFF;
+      --surface-soft: #F7F4F6;
+      --ink: #18191D;
+      --muted: #70747D;
+      --line: rgba(24, 25, 29, .08);
+      --brand: #D94F7D;
+      --brand-active: #C74271;
+      --brand-soft: #F9E9F0;
+      --brand-ink: #A62C56;
+      --brand-border: rgba(217, 79, 125, .20);
+      --brand-glow: rgba(217, 79, 125, .07);
+      --success: #2F9A72;
+      --success-soft: #E6F4EE;
+      --success-ink: #257455;
+      --warning-soft: #F9F0DC;
+      --warning-ink: #856018;
+      --risk-soft: #F8E9E6;
+      --risk-ink: #A6433A;
+      --shadow-sm: 0 12px 30px rgba(24, 25, 29, .06);
+      --ease: cubic-bezier(.2, .75, .2, 1);
+      --u: min(1vw, 1.777778vh);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; width: 100%; margin: 0; overflow: hidden; }
+    body { display: grid; place-items: center; background: var(--surface-soft); color: var(--ink); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+    button, a { font: inherit; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button:focus-visible, a:focus-visible { outline: 3px solid var(--brand); outline-offset: 4px; }
+    .deck { position: relative; width: min(100vw, 177.777778vh); height: min(100vh, 56.25vw); overflow: hidden; background: var(--bg); box-shadow: var(--shadow-sm); }
+    .slide { position: absolute; inset: 0; padding: calc(var(--u) * 5) calc(var(--u) * 6.4) calc(var(--u) * 6.5); display: flex; flex-direction: column; gap: calc(var(--u) * 2.2); opacity: 0; visibility: hidden; transform: translateX(calc(var(--u) * 2)); transition: opacity .38s var(--ease), transform .48s var(--ease), visibility .48s; background: radial-gradient(circle at 82% 20%, var(--brand-glow), transparent 38%), var(--bg); }
+    .slide.active { opacity: 1; visibility: visible; transform: none; z-index: 1; }
+    .slide.exit-left { transform: translateX(calc(var(--u) * -2)); }
+    .number { position: absolute; top: calc(var(--u) * 2.7); right: calc(var(--u) * 4); color: var(--muted); font-size: calc(var(--u) * .92); letter-spacing: .08em; font-weight: 700; }
+    .eyebrow { display: flex; gap: .7em; align-items: center; color: var(--brand-ink); font-size: calc(var(--u) * 1.04); text-transform: uppercase; letter-spacing: .13em; font-weight: 800; margin: 0 0 calc(var(--u) * 1.2); }
+    .eyebrow::before { content: ""; width: 1.8em; height: 2px; background: var(--brand); }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: calc(var(--u) * 4.8); line-height: 1.05; letter-spacing: -.055em; }
+    h2 { font-size: calc(var(--u) * 4.15); line-height: 1.06; letter-spacing: -.05em; }
+    h3 { font-size: calc(var(--u) * 1.85); line-height: 1.13; letter-spacing: -.025em; }
+    .accent { color: var(--brand-ink); }
+    .lede { margin-top: calc(var(--u) * 1.15); font-size: calc(var(--u) * 1.37); line-height: 1.4; color: var(--muted); }
+    .grid { display: grid; gap: calc(var(--u) * 1.5); }
+    .three { grid-template-columns: repeat(3, 1fr); }
+    .two { grid-template-columns: repeat(2, 1fr); }
+    .wide-left { grid-template-columns: 1.15fr 1fr; }
+    .card { padding: calc(var(--u) * 2.05); background: var(--surface); border: 1px solid var(--line); border-radius: calc(var(--u) * 1.4); box-shadow: var(--shadow-sm); }
+    .card.soft { background: var(--brand-soft); border-color: var(--brand-border); }
+    .card p, .card li { font-size: calc(var(--u) * 1.25); line-height: 1.48; color: var(--muted); }
+    .card p { margin-top: calc(var(--u) * 1.05); }
+    .card ul { padding-left: 1.15em; margin: calc(var(--u) * 1.25) 0 0; display: grid; gap: calc(var(--u) * .8); }
+    .card li::marker { color: var(--brand); }
+    .kicker { display: block; font-size: calc(var(--u) * .95); text-transform: uppercase; letter-spacing: .10em; font-weight: 800; color: var(--brand-ink); margin-bottom: calc(var(--u) * 1.15); }
+    .card b, .card strong { color: var(--ink); }
+    .band { display: flex; align-items: center; gap: calc(var(--u) * 1.8); padding: calc(var(--u) * 1.3) calc(var(--u) * 1.65); border-radius: calc(var(--u) * 1); background: var(--brand-soft); border: 1px solid var(--brand-border); font-size: calc(var(--u) * 1.28); line-height: 1.4; color: var(--brand-ink); }
+    .band strong { flex-shrink: 0; }
+    .band.bottom { margin-top: auto; }
+    .band.neutral { background: var(--surface-soft); color: var(--muted); border-color: var(--line); }
+    .chip { display: inline-flex; padding: .5em .8em; border-radius: .6em; background: var(--brand-soft); color: var(--brand-ink); font-size: calc(var(--u) * 1.05); font-weight: 750; }
+    .chips { display: flex; flex-wrap: wrap; gap: calc(var(--u) * .7); margin-top: calc(var(--u) * 1.3); }
+    .rule { margin-top: calc(var(--u) * 1.4); padding-top: calc(var(--u) * 1.15); border-top: 1px solid var(--line); }
+    .rule b { display: block; font-size: calc(var(--u) * 1.2); }
+    .rule p { font-size: calc(var(--u) * 1.13); margin-top: calc(var(--u) * .35); }
+    .topics { grid-template-columns: repeat(3, 1fr); gap: calc(var(--u) * .9); }
+    .topic { display: flex; align-items: center; gap: calc(var(--u) * 1.2); padding: calc(var(--u) * 1.25) calc(var(--u) * 1.35); min-height: calc(var(--u) * 6); background: var(--surface); border: 1px solid var(--line); border-radius: calc(var(--u) * 1); text-decoration: none; transition: border-color .2s, transform .2s, background .2s; }
+    .topic:hover { border-color: var(--brand-border); background: var(--brand-soft); transform: translateY(calc(var(--u) * -.15)); }
+    .topic > span { font-size: calc(var(--u) * 1.1); color: var(--brand); font-weight: 800; }
+    .topic b { display: block; font-size: calc(var(--u) * 1.26); }
+    .topic small { display: block; color: var(--muted); font-size: calc(var(--u) * 1); margin-top: .4em; }
+    .directory { gap: calc(var(--u) * 2); }
+    #privacy, #refunds { gap: calc(var(--u) * 1.6); }
+    .directory .lede { margin-top: calc(var(--u) * 1); }
+    .directory-note { color: var(--muted); font-size: calc(var(--u) * 1.03); }
+    .step { display: flex; align-items: center; gap: calc(var(--u) * 1); margin-bottom: calc(var(--u) * 1.5); }
+    .step > span { display: grid; place-items: center; background: var(--brand-soft); color: var(--brand-ink); width: calc(var(--u) * 3.1); height: calc(var(--u) * 3.1); border-radius: 50%; font-size: calc(var(--u) * 1.5); font-weight: 800; }
+    .big { font-size: calc(var(--u) * 3.05); font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+    .evidence { margin-top: calc(var(--u) * 1.6); padding: calc(var(--u) * 1); border-radius: calc(var(--u) * .7); background: var(--surface); font-size: calc(var(--u) * 1.1); line-height: 1.45; }
+    .evidence small { display: block; color: var(--muted); margin-bottom: .4em; font-size: calc(var(--u) * .91); }
+    .confidence { padding: calc(var(--u) * 1.7); }
+    .confidence .kicker { margin-bottom: calc(var(--u) * .85); }
+    .confidence .evidence { margin-top: calc(var(--u) * 1.1); }
+    .confidence.high { background: var(--success-soft); }
+    .confidence.medium { background: var(--warning-soft); }
+    .confidence.low { background: var(--risk-soft); }
+    .confidence.high .big, .confidence.high .kicker { color: var(--success-ink); }
+    .confidence.medium .big, .confidence.medium .kicker { color: var(--warning-ink); }
+    .confidence.low .big, .confidence.low .kicker { color: var(--risk-ink); }
+    .confidence h3 { margin-top: calc(var(--u) * 1.1); font-size: calc(var(--u) * 1.65); }
+    .confidence .action { margin-top: calc(var(--u) * 1); font-size: calc(var(--u) * 1.15); font-weight: 800; }
+    .source-list { display: grid; gap: calc(var(--u) * 1.25); }
+    .source-row { display: grid; grid-template-columns: calc(var(--u) * 3) 1fr; gap: calc(var(--u) * 1.1); padding: calc(var(--u) * 1.25) 0; border-bottom: 1px solid var(--line); }
+    .source-row:last-child { border-bottom: 0; }
+    .source-row > b { font-size: calc(var(--u) * 2.2); color: var(--brand); }
+    .source-row h3 { font-size: calc(var(--u) * 1.65); }
+    .source-row p { margin-top: calc(var(--u) * .5); font-size: calc(var(--u) * 1.16); color: var(--muted); line-height: 1.45; }
+    .lifecycle { display: flex; align-items: center; gap: calc(var(--u) * .7); }
+    .lifecycle .state { flex: 1; text-align: center; padding: calc(var(--u) * 1.65) calc(var(--u) * .6); border-radius: calc(var(--u) * .9); border: 1px solid var(--brand-border); background: var(--surface); font-size: calc(var(--u) * 1.13); font-weight: 750; }
+    .lifecycle .state:last-child { background: var(--success-soft); color: var(--success-ink); border-color: transparent; }
+    .lifecycle > span { color: var(--brand); font-size: calc(var(--u) * 1.4); }
+    .compact { padding: calc(var(--u) * 1.6); }
+    .compact h3 { font-size: calc(var(--u) * 1.5); }
+    .compact p { font-size: calc(var(--u) * 1.13); margin-top: calc(var(--u) * .55); }
+    .experiment { display: grid; grid-template-columns: 1fr auto 1fr; gap: calc(var(--u) * 1.3); align-items: stretch; }
+    .versus { align-self: center; font-size: calc(var(--u) * 1.2); color: var(--muted); }
+    .warning { background: var(--warning-soft); color: var(--warning-ink); border-color: transparent; }
+    .warning strong { color: var(--warning-ink); }
+    .nav { position: absolute; left: calc(var(--u) * 3); right: calc(var(--u) * 3); bottom: calc(var(--u) * 1.65); display: flex; align-items: center; gap: calc(var(--u) * .65); z-index: 5; }
+    .nav a, .nav button { display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: calc(var(--u) * .65); background: var(--surface); color: var(--muted); padding: calc(var(--u) * .6) calc(var(--u) * .9); text-decoration: none; font-size: calc(var(--u) * .94); line-height: 1.1; cursor: pointer; }
+    .nav .topics-link { background: var(--brand-soft); color: var(--brand-ink); border-color: var(--brand-border); font-weight: 750; }
+    .nav .nav-label { margin-left: auto; margin-right: calc(var(--u) * 1); color: var(--muted); font-size: calc(var(--u) * .9); }
+    .nav button:disabled { opacity: .35; cursor: default; }
+    .progress { position: absolute; height: calc(var(--u) * .24); bottom: 0; left: 0; width: 100%; background: var(--brand-soft); z-index: 5; }
+    .progress > div { height: 100%; width: 0; background: var(--brand); transition: width .35s var(--ease); }
+    .active .card, .active .topic, .active .source-row, .active .lifecycle { animation: arrive .5s var(--ease) both; }
+    .active .card:nth-child(2), .active .topic:nth-child(3n+2), .active .source-row:nth-child(2) { animation-delay: .07s; }
+    .active .card:nth-child(3), .active .topic:nth-child(3n+3), .active .source-row:nth-child(3) { animation-delay: .14s; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(calc(var(--u) * .7)); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+    @media print {
+      html, body { height: auto; overflow: visible; display: block; background: white; }
+      :root { --u: 1vw; }
+      .deck { width: 100vw; height: auto; overflow: visible; box-shadow: none; }
+      .slide { position: relative; height: 56.25vw; opacity: 1; visibility: visible; transform: none; break-after: page; }
+      .nav, .progress { display: none !important; }
+      .card, .topic { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck" id="deck" aria-label="ReturnPilot Q&A appendix">
+    <section class="slide directory active" id="topics" data-title="Topics">
+      <span class="number">01 / 13</span>
+      <header><div class="eyebrow">ReturnPilot · Q&amp;A appendix</div><h1>Let’s go a little <span class="accent">deeper.</span></h1><p class="lede">Choose a question. Open only the detail you need.</p></header>
+      <nav class="grid topics" aria-label="Question topics">
+        <a class="topic" href="#why-us"><span>01</span><div><b>Why this product?</b><small>Value beyond reminders</small></div></a>
+        <a class="topic" href="#planning"><span>02</span><div><b>How does planning work?</b><small>Before and after initiation</small></div></a>
+        <a class="topic" href="#personalization"><span>03</span><div><b>Can it learn my habits?</b><small>Goals, routines and control</small></div></a>
+        <a class="topic" href="#confidence"><span>04</span><div><b>How sure is the answer?</b><small>Evidence and confidence</small></div></a>
+        <a class="topic" href="#ai"><span>05</span><div><b>What actually uses AI?</b><small>AI, rules and the user</small></div></a>
+        <a class="topic" href="#sources"><span>06</span><div><b>Which data do we trust?</b><small>Policies and valid drop-offs</small></div></a>
+        <a class="topic" href="#privacy"><span>07</span><div><b>What about privacy?</b><small>Access, processing and choice</small></div></a>
+        <a class="topic" href="#refunds"><span>08</span><div><b>When is a return done?</b><small>Wallet, handoff and refunds</small></div></a>
+        <a class="topic" href="#reminders"><span>09</span><div><b>What if I delay?</b><small>Decisions and reminders</small></div></a>
+        <a class="topic" href="#mvp"><span>10</span><div><b>What do we build first?</b><small>MVP and integrations</small></div></a>
+        <a class="topic" href="#validation"><span>11</span><div><b>How do we test it?</b><small>Accuracy, value and risks</small></div></a>
+        <a class="topic" href="#business"><span>12</span><div><b>Will people pay?</b><small>Audience and hypotheses</small></div></a>
+      </nav>
+      <p class="directory-note">Proposed product design · ← → change topic · T topics · F fullscreen</p>
+    </section>
+
+    <section class="slide" id="why-us" data-title="Why this product?">
+      <span class="number">02 / 13</span>
+      <header><div class="eyebrow">01 · Product value</div><h2>From knowing the deadline<br>to <span class="accent">knowing the next step.</span></h2><p class="lede">Our proposed advantage is coordinating several returns over time.</p></header>
+      <div class="grid three">
+        <article class="card"><span class="kicker">Decide</span><h3>What needs<br>attention first?</h3><p>Prioritize intended returns by deadline and refund at risk.</p><div class="rule"><b>Less decision friction</b><p>The user still chooses Keep, Return or Not sure.</p></div></article>
+        <article class="card soft"><span class="kicker">Act</span><h3>What can I<br>do together?</h3><p>Help start each return, confirm its method and group compatible drop-offs.</p><div class="rule"><b>Less administrative work</b><p>One action plan and one place for return materials.</p></div></article>
+        <article class="card"><span class="kicker">Follow through</span><h3>What is<br>still unfinished?</h3><p>Keep item status, reminders and retailer refund updates connected.</p><div class="rule"><b>Less repeated input</b><p>An ongoing workflow across orders and retailers.</p></div></article>
+      </div>
+      <div class="band bottom"><strong>The hypothesis to test</strong><span>Does this produce more completed returns than reminders alone?</span></div>
+    </section>
+
+    <section class="slide" id="planning" data-title="Two-stage planning">
+      <span class="number">03 / 13</span>
+      <header><div class="eyebrow">02 · Planning in two stages</div><h2>Prioritize first.<br><span class="accent">Confirm the trip second.</span></h2><p class="lede">The first plan is a proposal. Actual return instructions make the trip valid.</p></header>
+      <div class="grid two">
+        <article class="card"><div class="step"><span>1</span><h3>Before starting the returns</h3></div><p>Use deadlines, refund amounts and known requirements to decide what needs action.</p><div class="rule"><b>“Start the jacket and top returns today.”</b><p>Target has more time and can wait.</p></div><div class="chips"><span class="chip">Priority</span><span class="chip">Suggested timing</span></div></article>
+        <article class="card soft"><div class="step"><span>2</span><h3>After the methods are confirmed</h3></div><p>Read the selected method, QR or label, eligible location and opening hours.</p><div class="rule"><b>“Take both to this UPS location.”</b><p>Combine only if both returns qualify for that stop.</p></div><div class="chips"><span class="chip">Confirmed method</span><span class="chip">Compatible grouping</span></div></article>
+      </div>
+      <div class="band bottom"><strong>If the details change</strong><span>Update the plan before asking the user to make the trip.</span></div>
+    </section>
+
+    <section class="slide" id="personalization" data-title="Preferences and habits">
+      <span class="number">04 / 13</span>
+      <header><div class="eyebrow">03 · AI-assisted personalization</div><h2>A plan that fits your routine.<br><span class="accent">With you in control.</span></h2></header>
+      <div class="grid wide-left">
+        <article class="card"><span class="kicker">Start with explicit preferences</span><h3>What matters to you?</h3><div class="chips"><span class="chip">Fewer trips</span><span class="chip">Protect refunds</span><span class="chip">Finish ASAP</span></div><div class="rule"><b>Then suggest patterns over time</b><p>“You usually use the UPS near home.”<br>“You often handle returns on weekends.”</p></div><div class="rule"><b>Editable suggestions</b><p>The core plan works even with no user history.</p></div></article>
+        <article class="card soft"><span class="kicker">Illustrative recommendation</span><h3>Two returns.<br>One familiar UPS stop.</h3><p>Use your preferred location and combine the jacket and top, once both methods are confirmed.</p><div class="band warning" style="margin-top:calc(var(--u) * 1.7);display:block"><strong>Go Friday, not this weekend.</strong><br>The earlier deadline comes first.</div></article>
+      </div>
+      <div class="band bottom"><strong>Preferences guide the plan.</strong><span>Confirmed requirements and deadlines set its limits.</span></div>
+    </section>
+
+    <section class="slide" id="confidence" data-title="Confidence and evidence">
+      <span class="number">05 / 13</span>
+      <header><div class="eyebrow">04 · Confidence for each field</div><h2>How sure are we?<br><span class="accent">Show the evidence.</span></h2></header>
+      <div class="grid three">
+        <article class="card confidence high"><span class="kicker">Direct evidence</span><div class="big">High</div><h3>Return by Sep 25</h3><p>The order states an explicit return-by date.</p><div class="evidence"><small>Source</small>Retailer order email</div><div class="action">Use the supported date.</div></article>
+        <article class="card confidence medium"><span class="kicker">An informed estimate</span><div class="big">Medium</div><h3>Estimated: Sep 25</h3><p>Calculated from the policy and known order dates.</p><div class="evidence"><small>Source</small>Official policy + order details</div><div class="action">Clearly label the estimate.</div></article>
+        <article class="card confidence low"><span class="kicker">More information needed</span><div class="big">Low</div><h3>Deadline unverified</h3><p>A delivery date or eligibility detail is missing.</p><div class="evidence"><small>Source</small>Incomplete receipt</div><div class="action">Ask the user to confirm.</div></article>
+      </div>
+      <div class="band bottom"><strong>Evidence quality, not an accuracy percentage.</strong><span>Keep the source visible and uncertainty actionable.</span></div>
+    </section>
+
+    <section class="slide" id="ai" data-title="AI, rules and the user">
+      <span class="number">06 / 13</span>
+      <header><div class="eyebrow">05 · Why AI?</div><h2>AI understands the mess.<br><span class="accent">Rules check the plan.</span></h2></header>
+      <div class="grid three">
+        <article class="card soft"><span class="kicker">AI · understand</span><h3>Turn mixed formats<br>into usable facts.</h3><ul><li>Read emails, receipts and screenshots</li><li>Interpret policy conditions and exceptions</li><li>Recognize return and refund updates</li><li>Help interpret preferences and explain suggestions</li></ul></article>
+        <article class="card"><span class="kicker">Rules · verify + organize</span><h3>Apply explicit<br>constraints.</h3><ul><li>Check required fields and dates</li><li>Apply supported eligibility rules</li><li>Match methods, locations and hours</li><li>Prioritize and group valid actions</li></ul></article>
+        <article class="card"><span class="kicker">User · decide</span><h3>Approve the<br>important choices.</h3><ul><li>Choose Keep, Return or Not sure</li><li>Correct missing or uncertain details</li><li>Set goals and edit preferences</li><li>Confirm the retailer submission</li></ul></article>
+      </div>
+      <div class="band bottom"><strong>Model choice remains open.</strong><span>Evaluate real examples before selecting a model or training approach.</span></div>
+    </section>
+
+    <section class="slide" id="sources" data-title="Sources and drop-off eligibility">
+      <span class="number">07 / 13</span>
+      <header><div class="eyebrow">06 · Data sources</div><h2>Use the most specific evidence.<br><span class="accent">Check what applies.</span></h2></header>
+      <div class="grid wide-left">
+        <div class="source-list">
+          <div class="source-row"><b>01</b><div><h3>Order and return records</h3><p>Emails, receipts and confirmations: explicit dates, selected methods, QR codes and labels.</p></div></div>
+          <div class="source-row"><b>02</b><div><h3>Structured retailer policies</h3><p>Return windows, clock start dates, category exceptions, final-sale and membership rules.</p></div></div>
+          <div class="source-row"><b>03</b><div><h3>Official-policy fallback</h3><p>Read and structure the official policy when coverage is missing, unclear or outdated.</p></div></div>
+        </div>
+        <article class="card soft"><span class="kicker">Can these items share a stop?</span><h3>Eligibility first.<br>Distance second.</h3><p>Confirm each item’s actual return instructions and eligible drop-off location.</p><div class="rule"><b>Then use maps</b><p>Compare distance, routes and opening hours.</p></div><div class="rule"><b>A conflict or missing detail?</b><p>Flag it and request confirmation before finalizing.</p></div></article>
+      </div>
+    </section>
+
+    <section class="slide" id="privacy" data-title="Privacy and processing">
+      <span class="number">08 / 13</span>
+      <header><div class="eyebrow">07 · Privacy by choice</div><h2>Useful with less data.<br><span class="accent">Connected only by choice.</span></h2></header>
+      <div class="grid three">
+        <article class="card"><span class="kicker">Input options</span><h3>Choose what<br>to share.</h3><ul><li>Optional Gmail connection</li><li>Forward selected emails</li><li>Upload a screenshot or receipt</li></ul><div class="rule"><b>Explain actual permissions.</b><p>Inbox authorization may be broader than shopping messages.</p></div></article>
+        <article class="card soft"><span class="kicker">Data minimization</span><h3>Keep the<br>necessary fields.</h3><ul><li>Orders and refund amounts</li><li>Policies and return methods</li><li>ZIP code or preferred area</li></ul><div class="rule"><b>Extra access stays optional.</b><p>Calendar and precise location can add convenience.</p></div></article>
+        <article class="card"><span class="kicker">Proposed processing</span><h3>Local where practical.<br>Cloud when needed.</h3><p>Minimize what goes to cloud AI for complex parsing.</p><div class="rule"><b>Define before implementation</b><p>Retention, deletion, access controls and provider data terms.</p></div></article>
+      </div>
+      <div class="band bottom"><strong>No bank connection or continuous GPS required.</strong><span>The processing architecture is still to be finalized.</span></div>
+    </section>
+
+    <section class="slide" id="refunds" data-title="Wallet and refund boundary">
+      <span class="number">09 / 13</span>
+      <header><div class="eyebrow">08 · From handoff to refund</div><h2>The wallet gets you to drop-off.<br><span class="accent">Updates close the loop.</span></h2></header>
+      <div class="lifecycle"><div class="state">Return<br>initiated</div><span>→</span><div class="state">Drop-off<br>pending</div><span>→</span><div class="state">Dropped<br>off</div><span>→</span><div class="state">Retailer<br>received</div><span>→</span><div class="state">Refund<br>issued</div></div>
+      <div class="grid two">
+        <article class="card"><span class="kicker">Return Wallet</span><h3>One item, all its materials.</h3><p>QR or label · order number · refund amount · deadline · method · location · instructions.</p><div class="rule"><b>Ready at the counter</b><p>Show the materials for each return in the shared stop.</p></div></article>
+        <article class="card soft"><span class="kicker">Status evidence</span><h3>Track the real handoff.</h3><p>Use carrier tracking or confirmation messages. Let the user mark drop-off when needed.</p><div class="rule"><b>Retailer confirms refund issuance</b><p>The user can optionally confirm that the money arrived.</p></div></article>
+      </div>
+      <div class="band bottom"><strong>“Refund issued” is the MVP endpoint.</strong><span>It does not verify a bank deposit or promise instant payment.</span></div>
+    </section>
+
+    <section class="slide" id="reminders" data-title="Decisions and reminders">
+      <span class="number">10 / 13</span>
+      <header><div class="eyebrow">09 · Decisions + reminders</div><h2>Help me move forward.<br><span class="accent">At the right moment.</span></h2></header>
+      <div class="grid three">
+        <article class="card"><span class="kicker">Before the decision</span><h3>“I’m not sure yet.”</h3><p>Keep the item in a deciding state and set a decision reminder.</p><div class="chips"><span class="chip">Keep</span><span class="chip">Return</span><span class="chip">Not sure</span></div><div class="rule"><b>The user decides.</b><p>AI does not choose what to keep.</p></div></article>
+        <article class="card soft"><span class="kicker">Before the deadline</span><h3>“What needs doing?”</h3><p>Remind the user to decide, initiate or drop off according to the item’s state.</p><div class="rule"><b>Adjust timing and intensity.</b><p>Respect user settings and the remaining return window.</p></div></article>
+        <article class="card"><span class="kicker">After a missed window</span><h3>“What can I do now?”</h3><p>Clearly mark the missed deadline and offer relevant resale links.</p><div class="rule"><b>A fallback, outside the core.</b><p>No resale marketplace is required for the MVP.</p></div></article>
+      </div>
+      <div class="band bottom"><strong>One reminder, one clear next action.</strong><span>Decision → initiation → drop-off → refund follow-up.</span></div>
+    </section>
+
+    <section class="slide" id="mvp" data-title="MVP and integrations">
+      <span class="number">11 / 13</span>
+      <header><div class="eyebrow">10 · Scope + feasibility</div><h2>Start with a small,<br><span class="accent">reliable workflow.</span></h2><p class="lede">Retailer partnerships are not a prerequisite for the initial product.</p></header>
+      <div class="grid three">
+        <article class="card soft"><span class="kicker">Semester MVP · Oct 15</span><h3>2–3 retailers</h3><p>Extract orders, verify policies and prepare the next action.</p><div class="rule"><b>User confirms submission.</b><p>Use the retailer’s own return flow.</p></div></article>
+        <article class="card"><span class="kicker">Proposed next stage · Nov 19</span><h3>Follow through</h3><p>Add handoff and refund tracking; test completion and user effort.</p><div class="rule"><b>Measure the economics.</b><p>Test pricing, model and support costs.</p></div></article>
+        <article class="card"><span class="kicker">Broader spec · After validation</span><h3>10–15 retailers</h3><p>Expand the reusable policy and return-method layer.</p><div class="rule"><b>Explore authorized integrations.</b><p>Retailer or logistics partners where they add value.</p></div></article>
+      </div>
+      <div class="band bottom"><strong>Start from available inputs.</strong><span>User documents + official policies + retailer return pages + drop-off data.</span></div>
+    </section>
+
+    <section class="slide" id="validation" data-title="Testing and risks">
+      <span class="number">12 / 13</span>
+      <header><div class="eyebrow">11 · Validation + risks</div><h2>Reliable answers.<br><span class="accent">More completed returns.</span></h2><p class="lede">Test the data quality and the user outcome separately.</p></header>
+      <div class="experiment"><article class="card compact"><span class="kicker">Control</span><h3>Verified deadlines + reminders</h3><p>Same deadline evidence and reminder schedule.</p></article><span class="versus">vs.</span><article class="card compact soft"><span class="kicker">ReturnPilot</span><h3>The same reminders + action workflow</h3><p>Randomize by user; compare on-time completion.</p></article></div>
+      <div class="grid three">
+        <article class="card compact"><span class="kicker">Accuracy risk</span><h3>A wrong deadline</h3><p>Compare extracted fields and policy judgments with human-reviewed examples.</p></article>
+        <article class="card compact"><span class="kicker">Behavior risk</span><h3>The package stays home</h3><p>Measure completed returns and effort, beyond clicks or plan views.</p></article>
+        <article class="card compact"><span class="kicker">Adoption + cost risk</span><h3>Useful, but rarely used?</h3><p>Track permission choices, repeat use, paid conversion and support costs.</p></article>
+      </div>
+      <div class="band bottom"><strong>Primary outcome</strong><span>Share of intended, eligible returns completed on time. No measured uplift yet.</span></div>
+    </section>
+
+    <section class="slide" id="business" data-title="Audience and business model">
+      <span class="number">13 / 13</span>
+      <header><div class="eyebrow">12 · Audience + business hypotheses</div><h2>Who needs it often enough<br>to <span class="accent">keep using it?</span></h2></header>
+      <div class="grid three">
+        <article class="card"><span class="kicker">Start with behavior</span><h3>Frequent shoppers.<br>Multiple retailers.</h3><p>Look for overlapping returns, delayed decisions and repeated return errands.</p><div class="rule"><b>Validate the segment.</b><p>Shopping and return habits matter more than age alone.</p></div></article>
+        <article class="card soft"><span class="kicker">Possible business models</span><h3>Pricing is<br>still a hypothesis.</h3><ul><li>Annual or monthly subscription</li><li>Free basics, paid planning or automation</li><li>Later: partner or resale referrals</li></ul></article>
+        <article class="card"><span class="kicker">What we need to learn</span><h3>Value, frequency<br>and cost.</h3><p>Does saved effort justify paying? Is usage recurring? Can the service be economical?</p><div class="rule"><b>Annual may fit uneven usage.</b><p>Test it alongside willingness to pay and repeat use.</p></div></article>
+      </div>
+      <div class="band bottom"><strong>Long-term advantage to build</strong><span>Reliable cross-retailer workflows, reusable return knowledge and recurring user value.</span></div>
+    </section>
+
+    <nav class="nav" aria-label="Presentation navigation">
+      <a class="topics-link" href="#topics">Topics</a>
+      <a href="index.html#17">Back to pitch ↗</a>
+      <span class="nav-label" id="currentTopic">Topics</span>
+      <button id="prevBtn" aria-label="Previous topic">←</button>
+      <button id="nextBtn" aria-label="Next topic">→</button>
+      <button id="fullBtn" aria-label="Toggle fullscreen">⛶</button>
+    </nav>
+    <div class="progress" aria-hidden="true"><div id="progressBar"></div></div>
+  </main>
+  <script>
+    (() => {
+      const slides = [...document.querySelectorAll('.slide')];
+      const deck = document.getElementById('deck');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const progressBar = document.getElementById('progressBar');
+      let index = 0;
+
+      function readHash() {
+        const id = location.hash.slice(1);
+        const found = slides.findIndex(slide => slide.id === id);
+        return found >= 0 ? found : 0;
+      }
+      function showSlide(next, updateHistory = true) {
+        index = Math.max(0, Math.min(slides.length - 1, next));
+        const focusedSlide = document.activeElement.closest('.slide');
+        if (focusedSlide && focusedSlide !== slides[index]) document.activeElement.blur();
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+          slide.classList.toggle('exit-left', i < index);
+          slide.setAttribute('aria-hidden', String(i !== index));
+          slide.inert = i !== index;
+          slide.querySelector('.number').textContent = `${String(i + 1).padStart(2, '0')} / ${slides.length}`;
+        });
+        if (updateHistory && location.hash !== `#${slides[index].id}`) history.pushState(null, '', `#${slides[index].id}`);
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === slides.length - 1;
+        document.getElementById('currentTopic').textContent = slides[index].dataset.title;
+        progressBar.style.width = `${((index + 1) / slides.length) * 100}%`;
+        document.title = `ReturnPilot Q&A · ${slides[index].dataset.title}`;
+      }
+
+      async function toggleFullscreen() {
+        try {
+          if (document.fullscreenElement) await document.exitFullscreen();
+          else await document.documentElement.requestFullscreen();
+        } catch (_) {}
+      }
+      document.addEventListener('click', event => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+        const target = slides.findIndex(slide => `#${slide.id}` === link.getAttribute('href'));
+        if (target >= 0) { event.preventDefault(); showSlide(target); }
+      });
+      document.addEventListener('keydown', event => {
+        if (event.target.closest('input, textarea, select, [contenteditable]')) return;
+        if (event.target.closest('button, a') && ['Enter', ' '].includes(event.key)) return;
+        const key = event.key.toLowerCase();
+        if (['arrowright', 'arrowdown', 'pagedown', ' '].includes(key)) { event.preventDefault(); showSlide(index + 1); }
+        else if (['arrowleft', 'arrowup', 'pageup'].includes(key)) { event.preventDefault(); showSlide(index - 1); }
+        else if (key === 'home' || key === 't') { event.preventDefault(); showSlide(0); }
+        else if (key === 'end') { event.preventDefault(); showSlide(slides.length - 1); }
+        else if (key === 'f') { event.preventDefault(); toggleFullscreen(); }
+      });
+      window.addEventListener('popstate', () => showSlide(readHash(), false));
+      window.addEventListener('hashchange', () => showSlide(readHash(), false));
+      prevBtn.addEventListener('click', () => showSlide(index - 1));
+      nextBtn.addEventListener('click', () => showSlide(index + 1));
+      document.getElementById('fullBtn').addEventListener('click', toggleFullscreen);
+      let startX = null;
+      deck.addEventListener('pointerdown', event => {
+        startX = event.target.closest('button, a') ? null : event.clientX;
+      });
+      deck.addEventListener('pointerup', event => {
+        if (startX === null) return;
+        const delta = event.clientX - startX;
+        startX = null;
+        if (Math.abs(delta) > 55) showSlide(index + (delta < 0 ? 1 : -1));
+      });
+      deck.addEventListener('pointercancel', () => { startX = null; });
+      showSlide(readHash(), false);
+    })();
+  </script>
+</body>
+</html>
