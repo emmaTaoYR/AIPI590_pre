@@ -989,483 +989,6 @@
       font-style: normal;
     }
 
-    /* Slides 5-7: product demo */
-    .demo-detect, .demo-select, .demo-plan {
-      position: absolute;
-      color: var(--ink);
-      background: radial-gradient(circle at 86% 15%, rgba(217,79,125,.07), transparent 25%), var(--bg);
-    }
-
-    .demo-copy {
-      position: absolute;
-      left: 6.5%;
-      top: 50%;
-      width: 31%;
-      transform: translateY(-50%);
-    }
-
-    .demo-copy .eyebrow, .demo-plan-intro .eyebrow {
-      margin-bottom: .9em;
-      color: var(--brand);
-      font-size: clamp(13px, 1vw, 16px);
-      font-weight: 700;
-    }
-
-    .demo-copy h2, .demo-plan-intro h2 {
-      max-width: 9em;
-      font-size: clamp(48px, 4.55vw, 74px);
-      line-height: .98;
-      letter-spacing: -.055em;
-      font-weight: 760;
-    }
-
-    .demo-copy h2 em, .demo-plan-intro h2 em { color: var(--brand); font-style: normal; }
-    .demo-copy .subhead, .demo-plan-intro .subhead {
-      max-width: 21em;
-      margin-top: 1.05vw;
-      color: var(--muted);
-      font-size: clamp(18px, 1.35vw, 22px);
-      line-height: 1.35;
-      font-weight: 540;
-    }
-
-    .demo-icon {
-      width: 1.35em;
-      height: 1.35em;
-      flex: 0 0 auto;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    /* Detect purchases */
-    .demo-detect-cluster {
-      position: absolute;
-      left: 42%;
-      right: 6.5%;
-      top: 16%;
-      bottom: 10%;
-      display: grid;
-      grid-template-columns: 1fr 8vw 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 1.1vw;
-      padding-bottom: 5.3vw;
-      isolation: isolate;
-    }
-
-    .demo-detect-lines {
-      position: absolute;
-      inset: 8% 6% 15%;
-      z-index: 0;
-      width: 88%;
-      height: 77%;
-      overflow: visible;
-      pointer-events: none;
-    }
-
-    .demo-detect-lines path {
-      fill: none;
-      stroke: rgba(217,79,125,.38);
-      stroke-width: 1.4;
-      stroke-dasharray: 4 5;
-      opacity: 0;
-    }
-
-    .demo-detect.active .demo-detect-lines path { animation: demoLineIn .45s .35s ease forwards; }
-    @keyframes demoLineIn { to { opacity: 1; } }
-
-    .demo-source-card {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: .75vw;
-      align-content: center;
-      min-height: 8vw;
-      padding: 1.15vw 1.2vw;
-      border: 1px solid var(--line);
-      border-radius: 1vw;
-      background: var(--surface);
-      box-shadow: var(--shadow-sm);
-      opacity: 0;
-      transform: translateY(14px);
-    }
-
-    .demo-detect.active .demo-source-card { animation: demoCardIn .5s var(--ease) forwards; }
-    .demo-detect.active .demo-source-card:nth-of-type(2) { animation-delay: .10s; }
-    .demo-detect.active .demo-source-card:nth-of-type(3) { animation-delay: .20s; }
-    .demo-detect.active .demo-source-card:nth-of-type(4) { animation-delay: .30s; }
-    @keyframes demoCardIn { to { opacity: 1; transform: translateY(0); } }
-
-    .demo-source-card:nth-of-type(1) { grid-column: 1; grid-row: 1; }
-    .demo-source-card:nth-of-type(2) { grid-column: 3; grid-row: 1; }
-    .demo-source-card:nth-of-type(3) { grid-column: 1; grid-row: 2; }
-    .demo-source-card:nth-of-type(4) { grid-column: 3; grid-row: 2; }
-
-    .demo-source-icon {
-      display: grid;
-      place-items: center;
-      width: 2.8vw;
-      min-width: 34px;
-      aspect-ratio: 1;
-      border-radius: .7vw;
-      color: var(--brand);
-      background: var(--brand-soft);
-    }
-
-    .demo-source-meta { min-width: 0; }
-    .demo-source-meta b { display: block; font-size: clamp(17px, 1.18vw, 21px); font-weight: 700; }
-    .demo-source-meta span { display: block; margin-top: .25em; color: var(--muted); font-size: clamp(15px, .98vw, 18px); font-weight: 540; }
-    .demo-source-meta small { display: block; margin-top: .35em; color: var(--muted-2); font-size: clamp(13px, .82vw, 15px); font-weight: 560; }
-
-    .demo-scan-node {
-      z-index: 2;
-      grid-column: 2;
-      grid-row: 1 / span 2;
-      align-self: center;
-      justify-self: center;
-      display: grid;
-      place-items: center;
-      width: 6.7vw;
-      min-width: 72px;
-      aspect-ratio: 1;
-      border: 1px solid rgba(217,79,125,.30);
-      border-radius: 50%;
-      color: var(--brand);
-      background: var(--surface);
-      box-shadow: 0 12px 30px rgba(217,79,125,.12);
-    }
-
-    .demo-scan-node::before {
-      content: "";
-      position: absolute;
-      inset: -.65vw;
-      border: 1px dashed rgba(217,79,125,.30);
-      border-radius: inherit;
-      animation: demoScanRing 2.2s ease-out infinite;
-    }
-
-    @keyframes demoScanRing { 0% { opacity: .7; transform: scale(.82); } 100% { opacity: 0; transform: scale(1.45); } }
-
-    .demo-scan-status {
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      z-index: 3;
-      width: 100%;
-      transform: translateX(-50%);
-      color: var(--ink);
-      text-align: center;
-      font-size: clamp(17px, 1.1vw, 20px);
-      font-weight: 650;
-    }
-
-    .demo-scan-status small {
-      display: block;
-      margin-top: .28em;
-      color: var(--muted);
-      font-size: clamp(14px, .86vw, 16px);
-      font-weight: 540;
-    }
-
-    /* Select return items */
-    .demo-select-grid {
-      position: absolute;
-      left: 39%;
-      right: 6.5%;
-      top: 16%;
-      bottom: 12%;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.1vw;
-      align-content: center;
-    }
-
-    .demo-product-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 4.1vw 1fr auto;
-      gap: 1vw;
-      align-items: center;
-      min-height: 10.2vw;
-      padding: 1.25vw;
-      border: 1px solid var(--line);
-      border-radius: 1.1vw;
-      background: var(--surface);
-      box-shadow: var(--shadow-sm);
-      opacity: 0;
-      transform: translateY(14px);
-    }
-
-    .demo-select.active .demo-product-card { animation: demoCardIn .48s var(--ease) forwards; }
-    .demo-select.active .demo-product-card:nth-child(2) { animation-delay: .10s; }
-    .demo-select.active .demo-product-card:nth-child(3) { animation-delay: .20s; }
-    .demo-select.active .demo-product-card:nth-child(4) { animation-delay: .30s; }
-
-    .demo-product-card.selected { border-color: rgba(217,79,125,.46); background: var(--brand-soft); }
-    .demo-product-art {
-      display: grid;
-      place-items: center;
-      width: 4.1vw;
-      min-width: 48px;
-      aspect-ratio: 1;
-      border-radius: .9vw;
-      color: var(--brand);
-      background: rgba(255,255,255,.68);
-    }
-
-    .demo-product-art .demo-icon { width: 2.15vw; min-width: 27px; height: 2.15vw; min-height: 27px; }
-    .demo-product-info b { display: block; font-size: clamp(20px, 1.36vw, 24px); letter-spacing: -.025em; font-weight: 700; }
-    .demo-product-info span { display: block; margin-top: .22em; color: var(--muted); font-size: clamp(17px, 1.06vw, 19px); font-weight: 560; }
-    .demo-product-value { text-align: right; }
-    .demo-product-value strong { display: block; font-size: clamp(22px, 1.55vw, 27px); letter-spacing: -.035em; font-weight: 760; }
-    .demo-product-value small { display: block; margin-top: .25em; color: var(--muted); font-size: clamp(15px, .9vw, 16px); font-weight: 600; }
-    .demo-check {
-      position: absolute;
-      top: .75vw;
-      right: .75vw;
-      display: grid;
-      place-items: center;
-      width: 1.7vw;
-      min-width: 22px;
-      aspect-ratio: 1;
-      border: 1.5px solid #C9CCD2;
-      border-radius: 50%;
-      color: transparent;
-      background: var(--surface);
-    }
-
-    .demo-product-card.selected .demo-check {
-      color: #fff;
-      border-color: var(--brand);
-      background: var(--brand);
-      animation: demoCheckIn .42s var(--ease) both;
-    }
-
-    .demo-product-card.selected:nth-child(2) .demo-check { animation-delay: .52s; }
-    .demo-product-card.selected:nth-child(3) .demo-check { animation-delay: .66s; }
-    @keyframes demoCheckIn { from { transform: scale(.72); } 70% { transform: scale(1.12); } to { transform: scale(1); } }
-
-    .demo-select-action {
-      position: absolute;
-      left: 39%;
-      right: 6.5%;
-      bottom: 5.7%;
-      text-align: center;
-    }
-
-    .demo-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 20vw;
-      padding: .88em 1.45em;
-      border-radius: 999px;
-      color: #fff;
-      background: var(--brand);
-      box-shadow: 0 14px 30px rgba(217,79,125,.22);
-      font-size: clamp(18px, 1.2vw, 21px);
-      font-weight: 700;
-    }
-
-    .demo-selected-count { margin-top: .58em; color: var(--muted); font-size: clamp(15px, .92vw, 17px); font-weight: 560; }
-
-    /* Build and reveal */
-    .demo-plan { display: block; padding: 5.3% 6.5% 5.2%; }
-    .demo-plan-intro { position: relative; z-index: 1; }
-    .demo-plan-intro h2 { max-width: 13em; font-size: clamp(45px, 4.25vw, 68px); }
-    .demo-plan-intro .subhead { margin-top: .55vw; }
-
-    .demo-processing, .demo-final {
-      position: absolute;
-      left: 6.5%;
-      right: 6.5%;
-      top: 24%;
-      bottom: 8%;
-    }
-
-    .demo-processing {
-      display: grid;
-      place-items: center;
-      opacity: 0;
-      transform: translateY(8px);
-    }
-
-    .demo-plan.active .demo-processing { animation: demoProcessIn 2.85s var(--ease) forwards; }
-    @keyframes demoProcessIn {
-      0% { opacity: 0; transform: translateY(8px); }
-      12%, 73% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-8px); visibility: hidden; }
-    }
-
-    .demo-processing-card {
-      width: min(43vw, 660px);
-      padding: 2.2vw 2.4vw 1.8vw;
-      border: 1px solid var(--line);
-      border-radius: 1.3vw;
-      background: var(--surface);
-      box-shadow: var(--shadow-md);
-    }
-
-    .demo-processing-card h3 { font-size: clamp(26px, 2.15vw, 36px); letter-spacing: -.04em; font-weight: 720; }
-    .demo-process-steps { display: grid; gap: .75vw; margin-top: 1.3vw; }
-    .demo-process-steps span { display: flex; align-items: center; gap: .7em; color: var(--muted); font-size: clamp(18px, 1.2vw, 21px); font-weight: 560; opacity: .35; }
-    .demo-process-steps span::before { content: ""; width: .76em; aspect-ratio: 1; border: 2px solid var(--brand); border-radius: 50%; }
-    .demo-plan.active .demo-process-steps span { animation: demoStep 2.55s linear both; }
-    .demo-plan.active .demo-process-steps span:nth-child(2) { animation-delay: .48s; }
-    .demo-plan.active .demo-process-steps span:nth-child(3) { animation-delay: .96s; }
-    .demo-plan.active .demo-process-steps span:nth-child(4) { animation-delay: 1.44s; }
-    @keyframes demoStep { 0%, 100% { opacity: .35; } 18%, 48% { opacity: 1; color: var(--ink); } }
-    .demo-process-progress { height: 5px; margin-top: 1.5vw; overflow: hidden; border-radius: 999px; background: var(--brand-soft); }
-    .demo-process-progress::after { content: ""; display: block; height: 100%; background: var(--brand); transform: scaleX(0); transform-origin: left; }
-    .demo-plan.active .demo-process-progress::after { animation: demoProgress 2.65s linear forwards; }
-    @keyframes demoProgress { to { transform: scaleX(1); } }
-
-    .demo-final {
-      opacity: 0;
-      transform: translateY(10px);
-      pointer-events: none;
-    }
-
-    .demo-plan.active .demo-final { animation: demoFinalIn .55s 2.62s var(--ease) forwards; }
-    @keyframes demoFinalIn { to { opacity: 1; transform: translateY(0); pointer-events: auto; } }
-
-    .demo-ready-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 2vw;
-      margin-bottom: 1.2vw;
-    }
-
-    .demo-ready-header h3 { font-size: clamp(28px, 2.35vw, 39px); letter-spacing: -.045em; font-weight: 760; }
-    .demo-ready-header p { margin-top: .3em; color: var(--muted); font-size: clamp(17px, 1.1vw, 20px); font-weight: 540; }
-    .demo-why-button {
-      padding: .7em 1em;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--ink);
-      background: var(--surface);
-      font-size: clamp(15px, .94vw, 17px);
-      font-weight: 620;
-      cursor: pointer;
-    }
-
-    .demo-plan-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.7fr .9fr;
-      min-height: 25.7vw;
-      overflow: hidden;
-      isolation: isolate;
-      border: 1px solid var(--line);
-      border-radius: 1.35vw;
-      background: var(--surface);
-      box-shadow: var(--shadow-md);
-    }
-
-    .demo-timeline { position: relative; z-index: 1; padding: 1.4vw 1.75vw; }
-    .demo-step {
-      position: relative;
-      display: grid;
-      grid-template-columns: 2.5vw 8.8vw 1fr;
-      gap: 1vw;
-      padding: 1.05vw 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .demo-step:first-child { border-top: 0; }
-    .demo-step::after { content: ""; position: absolute; left: 1.12vw; top: 3.15vw; bottom: -1.15vw; border-left: 1px dashed rgba(217,79,125,.40); }
-    .demo-step:last-child::after { display: none; }
-    .demo-step-number {
-      z-index: 1;
-      display: grid;
-      place-items: center;
-      width: 2.25vw;
-      min-width: 28px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      color: #fff;
-      background: var(--brand);
-      font-size: clamp(16px, 1vw, 18px);
-      font-weight: 720;
-    }
-
-    .demo-step.secondary .demo-step-number { color: var(--muted); background: #EEF0F2; }
-    .demo-step-date { color: var(--brand-active); font-size: clamp(15px, .9vw, 17px); font-weight: 700; }
-    .demo-step-date strong { display: block; margin-top: .2em; color: var(--ink); font-size: clamp(19px, 1.25vw, 23px); letter-spacing: -.025em; font-weight: 700; }
-    .demo-step-content > b { display: block; font-size: clamp(20px, 1.35vw, 24px); font-weight: 700; }
-    .demo-step-content > p { margin-top: .25em; color: var(--muted); font-size: clamp(16px, .98vw, 18px); line-height: 1.3; font-weight: 540; }
-    .demo-plan-items { display: flex; flex-wrap: wrap; gap: .5vw; margin-top: .6vw; }
-    .demo-plan-item { display: inline-flex; align-items: center; gap: .45em; padding: .46em .62em; border-radius: .65vw; color: var(--ink); background: var(--brand-soft); font-size: clamp(14px, .84vw, 16px); font-weight: 600; }
-    .demo-plan-item .demo-icon { width: 1.15em; height: 1.15em; color: var(--brand); }
-    .demo-plan-tags { display: flex; gap: .45vw; margin-top: .55vw; }
-    .demo-plan-tags span { padding: .38em .62em; border: 1px solid rgba(217,79,125,.18); border-radius: 999px; color: var(--brand-active); background: var(--brand-soft); font-size: clamp(13px, .76vw, 15px); font-weight: 620; }
-
-    .demo-summary {
-      position: relative;
-      z-index: 1;
-      padding: 1.5vw;
-      background: linear-gradient(145deg, #FFF8FA, var(--brand-soft));
-    }
-
-    .demo-refund { color: var(--success); font-size: clamp(52px, 4.25vw, 70px); line-height: .88; letter-spacing: -.07em; font-weight: 780; }
-    .demo-refund-label { margin-top: .55em; color: var(--success); font-size: clamp(14px, .78vw, 16px); letter-spacing: .09em; font-weight: 700; }
-    .demo-trip-change { display: flex; align-items: center; gap: .36em; margin-top: 1.05vw; color: var(--ink); font-size: clamp(22px, 1.65vw, 29px); letter-spacing: -.035em; font-weight: 700; }
-    .demo-trip-change .old { color: var(--muted); text-decoration: line-through; font-weight: 560; }
-    .demo-trip-change .arrow { color: var(--ink); }
-    .demo-trip-change .new { color: var(--brand-active); }
-
-    .demo-summary-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: .45vw; margin-top: 1.15vw; }
-    .demo-summary-metrics div { padding: .7vw .35vw; border: 1px solid var(--line); border-radius: .68vw; background: rgba(255,255,255,.7); text-align: center; }
-    .demo-summary-metrics b { display: block; font-size: clamp(15px, .94vw, 17px); font-weight: 720; }
-    .demo-summary-metrics span { display: block; margin-top: .3em; color: var(--muted); font-size: clamp(12px, .64vw, 14px); line-height: 1.15; font-weight: 560; }
-    .demo-confirmations { display: grid; gap: .5em; margin-top: 1.1vw; color: #3A7560; font-size: clamp(14px, .78vw, 16px); line-height: 1.25; font-weight: 590; }
-    .demo-confirmations span { display: flex; gap: .45em; align-items: start; }
-    .demo-confirmations .demo-icon { width: 1.1em; height: 1.1em; color: var(--success); }
-
-    .demo-reason.fragment {
-      position: absolute;
-      z-index: 10;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: grid;
-      grid-template-columns: auto repeat(4, 1fr);
-      align-items: center;
-      gap: .85vw;
-      min-height: 0;
-      height: 0;
-      padding: 0 1.6vw;
-      overflow: hidden;
-      border-top: 1px solid transparent;
-      color: var(--ink);
-      background: var(--surface);
-      box-shadow: 0 -12px 26px rgba(24,25,29,.06);
-      opacity: 0;
-      transform: none;
-      filter: none;
-      transition: height .42s var(--ease), padding .42s var(--ease), opacity .28s ease, border-color .28s ease;
-    }
-
-    .demo-reason.fragment.visible {
-      height: 23%;
-      min-height: 5.8vw;
-      padding: .78vw 1.6vw;
-      border-color: var(--line);
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-
-    .demo-reason-title { color: var(--brand-active); font-size: clamp(13px, .76vw, 15px); letter-spacing: .08em; font-weight: 700; }
-    .demo-reason-item b { display: block; font-size: clamp(14px, .82vw, 16px); font-weight: 680; }
-    .demo-reason-item span { display: block; margin-top: .22em; color: var(--muted); font-size: clamp(13px, .72vw, 15px); line-height: 1.2; font-weight: 540; }
-    .demo-reason-tags { position: absolute; right: 1.5vw; bottom: .35vw; display: flex; gap: .35vw; }
-    .demo-reason-tags span { padding: .3em .5em; border-radius: 999px; color: var(--brand-active); background: var(--brand-soft); font-size: clamp(10px, .58vw, 12px); font-weight: 620; }
-
     /* Slide 9 */
     .market { grid-template-rows: auto 1fr auto; }
 
@@ -1830,7 +1353,7 @@
       box-shadow: var(--shadow-sm);
      border-color: var(--line);  backdrop-filter: none; }
 
-    .help, .notes { background: var(--surface);  color: var(--ink); }
+    .help { background: var(--surface);  color: var(--ink); }
 
     /* Controls */
     .chrome {
@@ -1904,27 +1427,7 @@
 
     .help.show { opacity: 1; transform: translate(-50%, 0); }
 
-    .notes {
-      position: absolute;
-      left: 3%;
-      right: 3%;
-      bottom: 4%;
-      z-index: 120;
-      display: none;
-      max-height: 38%;
-      overflow: auto;
-      padding: 1.25em 1.4em;
-      border: 1px solid var(--line);
-      border-radius: 1em;
-      color: var(--ink);
-      background: var(--surface);
-      box-shadow: var(--shadow-md);
-      font-size: clamp(12px, 1.03vw, 17px);
-      line-height: 1.5;
-      backdrop-filter: none;
-    }
 
-    .notes.show { display: block; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -1965,7 +1468,7 @@
       background: var(--brand-soft);
       border-color: var(--brand-border);
     }
-    .deck:has(.continuation.active) :is(.help, .notes) {
+    .deck:has(.continuation.active) .help {
       color: var(--ink);
       background: var(--surface);
       border-color: var(--line);
@@ -2243,14 +1746,17 @@
 
     /* A light, connected diagram closes the deck with the privacy approach. */
     .data-privacy {
-      grid-template-rows: auto minmax(0, 1fr) auto;
-      gap: 2vw;
+      --p: min(1vw, 1.777778vh);
+      display: flex;
+      flex-direction: column;
+      padding: calc(var(--p) * 5) calc(var(--p) * 6.5) calc(var(--p) * 5.3);
+      gap: calc(var(--p) * 3);
       background: var(--continuation-bg);
     }
 
-    .privacy-heading { text-align: center; }
+    .privacy-heading { text-align: left; }
     .privacy-heading .eyebrow { margin-bottom: 1.05vw; }
-    .privacy-heading h2 { font-size: clamp(38px, 5.15vw, 85px); letter-spacing: -.055em; }
+    .privacy-heading h2 { font-size: calc(var(--p) * 4.05); letter-spacing: -.055em; }
     .privacy-heading h2 span { color: var(--brand-ink); }
     .privacy-heading > p { margin-top: 1vw; color: var(--muted); font-size: clamp(14px, 1.4vw, 23px); line-height: 1.4; }
 
@@ -2260,7 +1766,8 @@
       align-items: center;
       gap: 3vw;
       width: 100%;
-      align-self: center;
+      align-self: start;
+      margin-top: calc(var(--p) * 1.2);
     }
 
     .privacy-stage-label {
@@ -2421,19 +1928,8 @@
 
 .sq .accent, .sq .mint {color:var(--brand-ink);}
 .sq a {color:var(--brand-ink);}
-.deck:has(.sq.active) .notes {white-space:pre-line;max-height:60%;}
 
     /* Selected upstream improvements; the light palette and 21-slide sequence stay intact. */
-    .demo-plan-intro h2 { max-width: none; font-size: 3.2vw; line-height: 1.08; }
-    .demo-plan-intro .subhead { font-size: 1.2vw; max-width: none; }
-    .demo-final { top: 28%; bottom: 5%; }
-    .demo-ready-header h3 { font-size: 2vw; }
-    .demo-ready-header p { font-size: 1.1vw; }
-    .demo-plan-card:has(.demo-reason.visible) { padding-bottom: 6.5vw; }
-    .demo-reason.fragment.visible { height: 6.5vw; min-height: 0; }
-    .demo-reason-tags { display: none; }
-    .demo-timeline, .demo-summary { padding: 1.4vw; }
-    .demo-plan-card { min-height: 24vw; }
     .audit-source {
       position: absolute; left: 6.5%; right: 12%; bottom: 2%;
       font-size: clamp(9px, .78vw, 13px); line-height: 1.35; color: var(--muted);
@@ -2442,14 +1938,322 @@
     .control:focus-visible, a:focus-visible, button:focus-visible {
       outline: 3px solid var(--brand); outline-offset: 4px;
     }
+
+    /* Short pitch: keep the workflow continuous and the closing discussion simple. */
+    .pair-review { grid-template-rows: auto 1fr; gap: 3vw; }
+    .pair-review-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: center; }
+    .pair-principles { display: grid; gap: 1.8vw; }
+    .pair-principles > div + div { border-top: 1px solid var(--line); padding-top: 1.8vw; }
+    .pair-principles h3 { color: var(--brand-ink); font-size: 2.2vw; letter-spacing: -.035em; }
+    .pair-principles p { margin-top: .6vw; color: var(--muted); font-size: 1.4vw; line-height: 1.45; }
+    .pair-example { padding: 2.5vw; border: 1px solid var(--brand-border); border-radius: 1.5vw; background: var(--surface); box-shadow: var(--shadow-sm); }
+    .pair-example h3 { margin-top: 1.2vw; font-size: 2.5vw; letter-spacing: -.04em; }
+    .pair-example .sq-status { font-size: 1.05vw; padding: .6vw .85vw; margin: 1.2vw 0; }
+    .pair-example p { font-size: 1.4vw; line-height: 1.5; color: var(--muted); }
+    .pair-example .sq-fake-button { margin-top: 1.5vw; padding: 1vw; font-size: 1.3vw; }
+    .pair-example small { display: block; margin-top: 1vw; font-size: 1.05vw; color: var(--muted); }
+    .qa-close { place-items: center; text-align: center; background: var(--continuation-bg); }
+    .qa-content { width: 100%; }
+    .qa-close .eyebrow { color: var(--brand-ink); }
+    .qa-close h2 { font-size: clamp(52px, 7vw, 112px); line-height: 1.02; }
+    .qa-close .accent { color: var(--brand-ink); }
+    .qa-close p { margin-top: 2.4vw; color: var(--muted); font-size: 1.8vw; }
+    .qa-invite { margin-top: 3vw; color: var(--brand-ink); font-size: 1.35vw; }
+    .qa-open-link { display: inline-flex; align-items: center; margin-top: 1.5vw; padding: .85vw 1.4vw; border: 1px solid var(--brand-border); border-radius: .7vw; background: var(--brand-soft); color: var(--brand-ink); font-size: 1.15vw; font-weight: 750; text-decoration: none; transition: background .2s, color .2s; }
+    .qa-open-link:hover { background: var(--brand-active); color: var(--surface); }
+
+    /* A continuous five-step workflow, with immediate content and shared navigation. */
+    .workflow, .competition-clear { --w: min(1vw, 1.777778vh); background: var(--continuation-bg); }
+    .workflow { display: flex; flex-direction: column; gap: calc(var(--w) * 1.8); padding: calc(var(--w) * 5) calc(var(--w) * 6.5) calc(var(--w) * 5.3); }
+    /* Keep the journey moving without simulated loading or extra reveal clicks. */
+    .workflow { --wf-enter-x: calc(var(--w) * 3); transform: none; transition: opacity .38s var(--ease), visibility .38s; }
+    .workflow.exit-left { transform: none; }
+    .workflow.active .wf-header { animation: wfHeadingIn .52s var(--ease) both; }
+    .workflow.active .wf-body { animation: wfBodyIn .68s .06s var(--ease) both; }
+    .workflow.active .wf-rail .current { animation: wfStepIn .6s .08s var(--ease) both; }
+    @keyframes wfHeadingIn {
+      from { opacity: 0; transform: translateY(calc(var(--w) * .9)); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes wfBodyIn {
+      from { opacity: 0; transform: translateX(var(--wf-enter-x)); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes wfStepIn {
+      from { background-color: transparent; border-color: transparent; transform: scale(.96); }
+      to { background-color: var(--brand-soft); border-color: var(--brand-border); transform: scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .workflow, .workflow.active .wf-header, .workflow.active .wf-body,
+      .workflow.active .wf-rail .current { animation: none; transition: none; }
+    }
+    .wf-header .eyebrow { color: var(--brand-ink); font-size: calc(var(--w) * 1.02); margin-bottom: calc(var(--w) * 1.2); }
+    .wf-header h2 { max-width: none; margin: 0; font-size: calc(var(--w) * 4.05); line-height: 1.1; letter-spacing: -.045em; }
+    .wf-header h2 span { color: var(--brand-ink); }
+    .wf-header > p { margin: calc(var(--w) * 1.1) 0 0; color: var(--muted); font-size: calc(var(--w) * 1.35); line-height: 1.45; }
+    .wf-body { flex: 1; min-height: 0; display: grid; align-content: center; gap: calc(var(--w) * 1.7); }
+    .wf-panel { background: var(--surface); border: 1px solid var(--line); border-radius: calc(var(--w) * 1.4); padding: calc(var(--w) * 1.9); box-shadow: var(--shadow-sm); }
+    .wf-panel h3, .wf-next-action h3 { margin: 0; font-size: calc(var(--w) * 2.1); letter-spacing: -.035em; line-height: 1.15; }
+    .wf-panel-top { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--w) * 1); padding-bottom: calc(var(--w) * 1.4); }
+    .wf-chip { display: inline-flex; padding: .5em .7em; border-radius: .65em; background: var(--brand-soft); color: var(--brand-ink); font-size: calc(var(--w) * 1.05); font-weight: 750; white-space: nowrap; }
+    .wf-label { display: block; color: var(--brand-ink); font-size: calc(var(--w) * .95); font-weight: 800; text-transform: uppercase; letter-spacing: .11em; margin-bottom: calc(var(--w) * 1.25); }
+    .wf-icon { width: 1.5em; height: 1.5em; flex-shrink: 0; }
+    .wf-arrow { color: var(--brand); font-size: calc(var(--w) * 3); justify-self: center; align-self: center; }
+    .wf-art { display: grid; place-items: center; width: calc(var(--w) * 3.8); height: calc(var(--w) * 3.8); border-radius: calc(var(--w) * .8); color: var(--brand-ink); background: var(--brand-soft); font-size: calc(var(--w) * 1.6); flex-shrink: 0; }
+    .wf-rail { display: grid; grid-template-columns: repeat(5, 1fr); gap: calc(var(--w) * .7); list-style: none; padding: calc(var(--w) * 1.15) 0 0; margin: 0; border-top: 1px solid var(--line); }
+    .wf-rail li { display: flex; align-items: center; gap: calc(var(--w) * .6); padding: calc(var(--w) * .7) calc(var(--w) * .7); border: 1px solid transparent; border-radius: calc(var(--w) * .65); color: var(--muted); font-size: calc(var(--w) * 1.02); white-space: nowrap; }
+    .wf-rail li > span { width: calc(var(--w) * 1.8); height: calc(var(--w) * 1.8); display: grid; place-items: center; background: var(--surface-soft); border-radius: 50%; font-size: calc(var(--w) * .94); font-weight: 800; }
+    .wf-rail .current { color: var(--brand-ink); background: var(--brand-soft); border-color: var(--brand-border); }
+    .wf-rail .current > span { background: var(--brand-active); color: var(--surface); }
+    .wf-rail .complete { color: var(--brand-ink); }
+    .wf-rail .complete > span { background: var(--brand-soft); }
+    .wf-detect { grid-template-columns: .95fr auto 1.1fr; align-items: center; }
+    .wf-inputs { display: grid; gap: calc(var(--w) * 1.3); }
+    .wf-inputs > .wf-label { margin: 0; }
+    .wf-source { display: flex; align-items: center; gap: calc(var(--w) * 1.3); padding: calc(var(--w) * 1.65); border: 1px solid var(--brand-border); border-radius: calc(var(--w) * 1); background: var(--brand-soft); }
+    .wf-source > .wf-icon { color: var(--brand-ink); width: calc(var(--w) * 2.7); height: calc(var(--w) * 2.7); }
+    .wf-source b { display: block; font-size: calc(var(--w) * 1.55); }
+    .wf-source span { display: block; margin-top: calc(var(--w) * .45); color: var(--muted); font-size: calc(var(--w) * 1.05); line-height: 1.4; }
+    .wf-record { display: flex; align-items: center; gap: calc(var(--w) * .9); padding: calc(var(--w) * .6) 0; border-top: 1px solid var(--line); }
+    .wf-record .wf-art { width: calc(var(--w) * 2.9); height: calc(var(--w) * 2.9); font-size: calc(var(--w) * 1.1); }
+    .wf-record b, .wf-record strong { font-size: calc(var(--w) * 1.2); }
+    .wf-record div > span { display: block; color: var(--muted); font-size: calc(var(--w) * 1); margin-top: .2em; }
+    .wf-record strong { margin-left: auto; color: var(--brand-ink); }
+    .wf-panel-foot { border-top: 1px solid var(--line); padding-top: calc(var(--w) * 1.1); margin-top: calc(var(--w) * .65); color: var(--muted); font-size: calc(var(--w) * 1.05); line-height: 1.4; }
+    .wf-selection { gap: calc(var(--w) * 1.6); }
+    .wf-items { display: grid; grid-template-columns: repeat(4,1fr); gap: calc(var(--w) * 1.2); }
+    .wf-item { padding: calc(var(--w) * 1.6); border: 2px solid var(--brand-border); border-radius: calc(var(--w) * 1.2); background: var(--surface); box-shadow: var(--shadow-sm); }
+    .wf-item.selected { border-color: var(--brand); }
+    .wf-item-top { display: flex; justify-content: space-between; align-items: start; gap: calc(var(--w) * .6); margin-bottom: calc(var(--w) * 2); }
+    .wf-choice { font-size: calc(var(--w) * .96); font-weight: 750; color: var(--brand-ink); background: var(--brand-soft); padding: .45em .6em; border-radius: .5em; white-space: nowrap; }
+    .wf-item h3 { font-size: calc(var(--w) * 1.55); letter-spacing: -.035em; margin: 0; }
+    .wf-item p { font-size: calc(var(--w) * 1.15); color: var(--muted); margin: calc(var(--w) * .55) 0 calc(var(--w) * 1.6); }
+    .wf-item-meta { border-top: 1px solid var(--line); padding-top: calc(var(--w) * 1.2); display: flex; flex-direction: column; gap: calc(var(--w) * .5); }
+    .wf-item-meta b { font-size: calc(var(--w) * 2.15); color: var(--brand-ink); }
+    .wf-item-meta span { color: var(--muted); font-size: calc(var(--w) * 1.05); }
+    .wf-item.kept { border-color: var(--line); background: var(--surface-soft); box-shadow: none; }
+    .wf-item.kept .wf-art, .wf-item.kept .wf-choice { color: var(--muted); background: var(--surface); }
+    .wf-item.kept .wf-item-meta b { color: var(--muted); }
+    .wf-selection-summary { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--w) * 2); padding: calc(var(--w) * 1.3) calc(var(--w) * 1.6); background: var(--brand-soft); border-radius: calc(var(--w) * .85); }
+    .wf-selection-summary b { display: block; font-size: calc(var(--w) * 1.45); }
+    .wf-selection-summary span { display: block; color: var(--muted); font-size: calc(var(--w) * 1.05); margin-top: .35em; }
+    .wf-selection-summary > strong { color: var(--brand-ink); font-size: calc(var(--w) * 1.25); }
+    .wf-priorities { grid-template-columns: 1.3fr .9fr; align-items: stretch; }
+    .wf-priority-row { display: flex; align-items: center; gap: calc(var(--w) * 1.05); padding: calc(var(--w) * 1.6) 0; border-top: 1px solid var(--line); }
+    .wf-priority-tag { padding: .55em .7em; border-radius: .5em; background: var(--brand-soft); color: var(--brand-ink); font-size: calc(var(--w) * .98); font-weight: 800; white-space: nowrap; }
+    .wf-priority-row b { font-size: calc(var(--w) * 1.23); }
+    .wf-priority-row div > span { display: block; color: var(--muted); font-size: calc(var(--w) * 1.02); margin-top: .45em; }
+    .wf-priority-row > strong { margin-left: auto; font-size: calc(var(--w) * 1.45); color: var(--brand-ink); }
+    .wf-priority-row.later .wf-priority-tag { color: var(--muted); background: var(--surface-soft); }
+    .wf-next-action { padding: calc(var(--w) * 2.1); border-radius: calc(var(--w) * 1.4); background: var(--brand-soft); border: 1px solid var(--brand-border); display: flex; flex-direction: column; justify-content: center; }
+    .wf-next-action h3 { font-size: calc(var(--w) * 2.5); color: var(--brand-ink); }
+    .wf-next-action p { font-size: calc(var(--w) * 1.15); color: var(--muted); line-height: 1.45; margin: calc(var(--w) * 1) 0 0; }
+    .wf-next-detail { border-top: 1px solid var(--brand-border); margin-top: calc(var(--w) * 1.7); padding-top: calc(var(--w) * 1.35); }
+    .wf-next-detail b { font-size: calc(var(--w) * 1.22); }
+    .wf-execution { grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: calc(var(--w) * 1.3); }
+    .wf-start > p, .wf-trip > p { color: var(--muted); font-size: calc(var(--w) * 1.14); line-height: 1.45; margin: calc(var(--w) * 1.2) 0 0; }
+    .wf-merchant { display: flex; align-items: center; justify-content: space-between; padding: calc(var(--w) * 1.15) 0; gap: calc(var(--w) * 1); border-bottom: 1px solid var(--line); font-size: calc(var(--w) * 1.2); }
+    .wf-merchant:first-of-type { margin-top: calc(var(--w) * 1.2); }
+    .wf-merchant > span { color: var(--brand-ink); font-weight: 750; font-size: calc(var(--w) * 1.02); background: var(--brand-soft); border-radius: .5em; padding: .55em .7em; }
+    .wf-trip { background: var(--brand-soft); border-color: var(--brand-border); }
+    .wf-trip h3 { display: flex; align-items: center; gap: calc(var(--w) * .7); color: var(--brand-ink); font-size: calc(var(--w) * 2.55); }
+    .wf-trip h3 .wf-icon { width: 1.1em; height: 1.1em; }
+    .wf-confirmed { display: flex; align-items: center; gap: calc(var(--w) * .7); margin-top: calc(var(--w) * 1.6); }
+    .wf-confirmed > span { background: var(--surface); color: var(--success-ink); border-radius: .5em; padding: .55em .7em; font-size: calc(var(--w) * 1.08); font-weight: 750; }
+    .wf-confirmed > b { margin-left: auto; color: var(--brand-ink); font-size: calc(var(--w) * 2.5); }
+    .wf-trip-ready { display: grid; grid-template-columns: auto 1fr; column-gap: calc(var(--w) * .7); row-gap: .3em; padding-top: calc(var(--w) * 1.3); border-top: 1px solid var(--brand-border); margin-top: calc(var(--w) * 1.3); font-size: calc(var(--w) * 1.22); }
+    .wf-trip-ready .wf-icon { grid-row: 1 / 3; color: var(--success-ink); }
+    .wf-trip-ready span { font-size: calc(var(--w) * 1.05); color: var(--muted); }
+    .wf-inline-status { grid-column: 1 / -1; display: flex; gap: calc(var(--w) * 1.3); font-size: calc(var(--w) * 1.1); color: var(--muted); padding: 0 calc(var(--w) * .3); }
+    .wf-inline-status b { color: var(--ink); }
+    .wf-refunds { grid-template-columns: 1.15fr .95fr; gap: calc(var(--w) * 3.5); align-items: center; }
+    .wf-ticket { display: flex; align-items: center; gap: calc(var(--w) * 1.2); padding: calc(var(--w) * 1.8) 0; border-top: 1px solid var(--line); }
+    .wf-ticket > .wf-icon { width: calc(var(--w) * 3.6); height: calc(var(--w) * 3.6); color: var(--brand-ink); }
+    .wf-ticket b { font-size: calc(var(--w) * 1.25); }
+    .wf-ticket div > span { display: block; margin-top: calc(var(--w) * .5); color: var(--muted); font-size: calc(var(--w) * 1.08); }
+    .wf-ticket > strong { margin-left: auto; color: var(--brand-ink); font-size: calc(var(--w) * 1.65); }
+    .wf-status-list > .wf-label { margin-bottom: calc(var(--w) * .7); }
+    .wf-status-row { position: relative; display: flex; align-items: center; gap: calc(var(--w) * 1.1); padding: calc(var(--w) * 1.1) 0; }
+    .wf-status-row > span { display: grid; place-items: center; width: calc(var(--w) * 2.7); height: calc(var(--w) * 2.7); background: var(--success-soft); color: var(--success-ink); border-radius: 50%; font-size: calc(var(--w) * 1.4); }
+    .wf-status-row b { display: block; font-size: calc(var(--w) * 1.7); }
+    .wf-status-row small { display: block; color: var(--muted); font-size: calc(var(--w) * 1.02); margin-top: .35em; }
+    .wf-refund-issued { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--w) * 1.3); background: var(--success-soft); border: 1px solid var(--success-border); border-radius: calc(var(--w) * 1.1); padding: calc(var(--w) * 1.7); margin-top: calc(var(--w) * 1.2); }
+    .wf-refund-issued .wf-label { color: var(--success-ink); margin-bottom: calc(var(--w) * .5); }
+    .wf-refund-issued b { color: var(--success-ink); font-size: calc(var(--w) * 4.4); letter-spacing: -.05em; line-height: 1; }
+    .wf-refund-issued p { margin: 0; color: var(--success-ink); font-size: calc(var(--w) * 1.1); line-height: 1.5; }
+    .competition-clear { gap: calc(var(--w) * 2.2); }
+    .competition-clear .competition-header h2 { font-size: calc(var(--w) * 3.8); line-height: 1.08; max-width: none; }
+    .competition-clear .comp-accent { color: var(--brand-ink); }
+    .competition-clear .scope-map { align-items: stretch; gap: calc(var(--w) * 1.15); }
+    .competition-clear .scope { min-height: calc(var(--w) * 20); padding: calc(var(--w) * 1.6); background: var(--surface); border: 1px solid var(--brand-border); border-top: calc(var(--w) * .4) solid var(--brand); justify-content: flex-start; box-shadow: var(--shadow-sm); color: var(--ink); }
+    .competition-clear .scope-ours { background: var(--brand-soft); border: 2px solid var(--brand-active); border-top-width: calc(var(--w) * .4); }
+    .competition-clear .comp-type { display: inline-flex; align-self: flex-start; color: var(--brand-ink); background: var(--brand-soft); border-radius: .5em; padding: .6em .7em; font-size: calc(var(--w) * .9); font-weight: 800; line-height: 1.35; text-transform: uppercase; letter-spacing: .035em; }
+    .competition-clear .scope-ours .comp-type { color: var(--surface); background: var(--brand-active); }
+    .competition-clear .scope h3 { margin: calc(var(--w) * 2.2) 0 calc(var(--w) * 1); font-size: calc(var(--w) * 1.85); color: var(--ink); }
+    .competition-clear .scope-ours h3 { color: var(--brand-ink); }
+    .competition-clear .scope p { margin: 0; color: var(--ink); font-size: calc(var(--w) * 1.18); font-weight: 550; line-height: 1.65; }
+    .comp-transition { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--w) * 2); border-top: 1px solid var(--brand-border); padding-top: calc(var(--w) * 1.4); }
+    .comp-transition b { display: block; font-size: calc(var(--w) * 1.55); color: var(--ink); }
+    .comp-transition span { display: block; color: var(--muted); font-size: calc(var(--w) * 1.15); margin-top: .4em; }
+    .comp-transition > strong { color: var(--brand-ink); font-size: calc(var(--w) * 1.3); white-space: nowrap; }
+
+    /* One reveal per workflow page; two beats for method confirmation and grouping. */
+    .workflow .fragment { opacity: 0; transform: translateY(calc(var(--w) * 1)); filter: none; pointer-events: none; transition: opacity .45s var(--ease), transform .52s var(--ease); }
+    .workflow .fragment.visible { opacity: 1; transform: none; pointer-events: auto; }
+    .wf-detect .wf-arrow { transition: opacity .4s var(--ease), transform .5s var(--ease); }
+    .wf-detect:has(.wf-panel:not(.visible)) .wf-arrow { opacity: 0; transform: translateX(calc(var(--w) * -.8)); }
+    .wf-selection .wf-item, .wf-selection .wf-choice, .wf-selection .wf-art { transition: opacity .4s var(--ease), border-color .4s var(--ease), background-color .4s var(--ease), color .4s var(--ease); }
+    .wf-selection:has(.wf-selection-summary:not(.visible)) .wf-item { border-color: var(--line); background: var(--surface); }
+    .wf-selection:has(.wf-selection-summary:not(.visible)) .wf-choice { opacity: 0; }
+    .wf-method-check > p { margin: calc(var(--w) * 1) 0 0; color: var(--muted); font-size: calc(var(--w) * 1.12); line-height: 1.4; }
+    .wf-trip > h3 { font-size: calc(var(--w) * 1.9); }
+    .wf-group-result { margin-top: calc(var(--w) * 1.6); }
+    .wf-group-head { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--w) * 1); color: var(--brand-ink); }
+    .wf-group-head b { font-size: calc(var(--w) * 2.1); }
+    .wf-group-head strong { font-size: calc(var(--w) * 2.8); }
+    .wf-group-result .wf-trip-ready { display: flex; flex-direction: column; }
+
+    /* AI overview: two aligned sheets, with a small connector instead of an AI block. */
+    .ai-overview { --a: min(1vw, 1.777778vh); display: flex; flex-direction: column; gap: calc(var(--a) * 3.2); padding: calc(var(--a) * 5) calc(var(--a) * 6.5) calc(var(--a) * 6); background: var(--continuation-bg); }
+    .ai-overview-heading .eyebrow { color: var(--brand-ink); font-size: calc(var(--a) * 1.02); margin-bottom: calc(var(--a) * 1.25); }
+    .ai-overview-heading h2 { font-size: calc(var(--a) * 4.4); line-height: 1.08; letter-spacing: -.045em; max-width: none; margin: 0; }
+    .ai-overview-heading h2 span { color: var(--brand-ink); }
+    .ai-overview-heading > p { font-size: calc(var(--a) * 1.4); color: var(--muted); line-height: 1.45; margin: calc(var(--a) * 1.2) 0 0; }
+    .ai-overview-content { display: grid; grid-template-columns: 42% 52%; gap: 6%; align-items: stretch; position: relative; margin: auto 0; }
+    .ai-source-sheet, .ai-result-sheet { border-radius: calc(var(--a) * 1.4); border: 1px solid var(--line); padding: calc(var(--a) * 2.1); background: var(--surface); box-shadow: var(--shadow-sm); }
+    .ai-result-sheet { background: var(--brand-soft); border-color: var(--brand-border); }
+    .ai-small-label { display: block; color: var(--muted); font-size: calc(var(--a) * .93); font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: calc(var(--a) * .75); }
+    .ai-result-sheet .ai-small-label { color: var(--brand-ink); }
+    .ai-sheet-heading h3 { font-size: calc(var(--a) * 2.2); line-height: 1.15; letter-spacing: -.035em; margin: 0; }
+    .ai-sheet-heading { padding-bottom: calc(var(--a) * 1.6); }
+    .ai-source-entry { display: flex; align-items: center; gap: calc(var(--a) * 1.2); padding: calc(var(--a) * 1.3) 0; border-top: 1px solid var(--line); }
+    .ai-document-icon { display: grid; place-items: center; width: calc(var(--a) * 3.4); height: calc(var(--a) * 3.7); flex-shrink: 0; border: 1px solid var(--brand-border); border-radius: calc(var(--a) * .7); background: var(--brand-soft); color: var(--brand-ink); }
+    .ai-document-icon svg { width: 62%; height: 62%; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+    .ai-source-entry b { font-size: calc(var(--a) * 1.35); }
+    .ai-source-entry p { color: var(--muted); font-size: calc(var(--a) * 1.12); margin: calc(var(--a) * .4) 0 0; }
+    .ai-source-caption { color: var(--muted); border-top: 1px solid var(--line); padding-top: calc(var(--a) * 1.3); margin: 0; font-size: calc(var(--a) * 1.04); line-height: 1.45; }
+    .ai-small-bridge { position: absolute; left: 45%; top: 48%; transform: translate(-50%, -50%); display: grid; justify-items: center; gap: calc(var(--a) * .6); color: var(--brand-ink); }
+    .ai-small-bridge > span { font-weight: 800; font-size: calc(var(--a) * 1.1); }
+    .ai-small-bridge > b { font-size: calc(var(--a) * 2.6); font-weight: 500; line-height: 1; }
+    .ai-detail-head, .ai-detail-row { display: grid; grid-template-columns: 1.6fr .7fr .85fr; gap: calc(var(--a) * 1); align-items: center; }
+    .ai-detail-head { padding: calc(var(--a) * .7) 0 calc(var(--a) * 1.1); color: var(--brand-ink); font-size: calc(var(--a) * .98); font-weight: 750; border-bottom: 1px solid var(--brand-border); }
+    .ai-detail-row { padding: calc(var(--a) * 1.7) 0; border-bottom: 1px solid var(--brand-border); }
+    .ai-detail-row:last-child { border-bottom: 0; }
+    .ai-detail-row b { display: block; font-size: calc(var(--a) * 1.35); }
+    .ai-detail-row div > span { display: block; color: var(--muted); margin-top: calc(var(--a) * .4); font-size: calc(var(--a) * 1.1); }
+    .ai-detail-row > strong { font-size: calc(var(--a) * 2.1); letter-spacing: -.035em; color: var(--brand-ink); }
+    .ai-detail-row > time { font-size: calc(var(--a) * 1.16); font-weight: 700; color: var(--ink); background: var(--surface); padding: .6em .7em; border-radius: .6em; text-align: center; white-space: nowrap; }
+    .ai-overview .fragment { filter: none; transform: translateY(calc(var(--a) * 1.5)); transition: opacity .5s var(--ease), transform .55s var(--ease); }
+    .ai-overview .fragment.visible { opacity: 1; transform: none; }
+
+    /* One click selects the three items in sequence, then shows the total. */
+    .wf-selection:has(.wf-selection-summary.visible) .wf-item.selected .wf-choice { animation: wfCheckPicked .34s var(--ease) both; }
+    .wf-selection:has(.wf-selection-summary.visible) .wf-item.selected:nth-child(2) { transition-delay: .4s; }
+    .wf-selection:has(.wf-selection-summary.visible) .wf-item.selected:nth-child(3) { transition-delay: .8s; }
+    .wf-selection:has(.wf-selection-summary.visible) .wf-item.selected:nth-child(2) .wf-choice { animation-delay: .4s; }
+    .wf-selection:has(.wf-selection-summary.visible) .wf-item.selected:nth-child(3) .wf-choice { animation-delay: .8s; }
+    .wf-selection:has(.wf-selection-summary.visible) .wf-item.kept .wf-choice { transition-delay: 1.15s; }
+    .workflow .wf-selection-summary.fragment.visible { transition-delay: 1.2s; }
+    @keyframes wfCheckPicked {
+      from { opacity: 0; transform: translateY(.35em) scale(.88); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .wf-selection .wf-item, .wf-selection .wf-choice, .wf-selection-summary { animation: none !important; transition-delay: 0s !important; }
+    }
+    /* A single reveal follows the return through each status update. */
+    .wf-status-list.fragment { opacity: 1; transform: none; filter: none; }
+    .wf-status-list > .wf-status-row,
+    .wf-status-list > .wf-refund-issued { opacity: 0; transform: translateY(calc(var(--w) * .8)); transition: opacity .4s var(--ease), transform .45s var(--ease); }
+    .wf-status-list.visible > .wf-status-row,
+    .wf-status-list.visible > .wf-refund-issued { opacity: 1; transform: none; }
+    .wf-status-list.visible > .wf-status-row:nth-of-type(2) { transition-delay: .5s; }
+    .wf-status-list.visible > .wf-refund-issued { transition-delay: 1s; }
+    @media (prefers-reduced-motion: reduce) {
+      .wf-status-list > .wf-status-row,
+      .wf-status-list > .wf-refund-issued { transition: none !important; }
+    }
+
+    /* Orders, official policies and refund updates have equal visual weight. */
+    .ai-three-roles { gap: calc(var(--a) * 2.6); }
+    .ai-three-roles .ai-overview-heading h2 { font-size: calc(var(--a) * 4.05); }
+    .ai-roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(var(--a) * 1.4); margin: auto 0; }
+    .ai-role-card { position: relative; padding: calc(var(--a) * 2); background: var(--surface); border: 1px solid var(--brand-border); border-top: calc(var(--a) * .35) solid var(--brand); border-radius: calc(var(--a) * 1.3); box-shadow: var(--shadow-sm); }
+    .ai-role-number { display: block; color: var(--brand-ink); font-size: calc(var(--a) * 1.15); font-weight: 800; letter-spacing: .06em; margin-bottom: calc(var(--a) * 1.5); }
+    .ai-role-card h3 { font-size: calc(var(--a) * 2.35); color: var(--brand-ink); letter-spacing: -.035em; margin: 0; }
+    .ai-role-source { color: var(--ink); font-size: calc(var(--a) * 1.4); line-height: 1.45; margin: calc(var(--a) * 1.1) 0 calc(var(--a) * 1.8); }
+    .ai-role-output { padding-top: calc(var(--a) * 1.5); border-top: 1px solid var(--line); }
+    .ai-role-output > span { display: block; color: var(--muted); font-size: calc(var(--a) * 1.12); margin-bottom: calc(var(--a) * .7); }
+    .ai-role-output > b { display: block; color: var(--ink); font-size: calc(var(--a) * 1.55); line-height: 1.4; }
+    .ai-role-example { background: var(--brand-soft); border-radius: calc(var(--a) * .8); padding: calc(var(--a) * 1.2); margin-top: calc(var(--a) * 1.8); }
+    .ai-role-example strong { display: block; color: var(--brand-ink); font-size: calc(var(--a) * 1.3); }
+    .ai-role-example > span { display: block; color: var(--muted); font-size: calc(var(--a) * 1.1); margin-top: calc(var(--a) * .4); }
+
+    .competition-clear .scope.fragment { filter: none; transform: translateY(calc(var(--w) * 1.5)); transition: opacity .45s var(--ease), transform .5s var(--ease); }
+    .competition-clear .scope.fragment.visible { opacity: 1; transform: none; }
+    .competition-clear .comp-transition { opacity: 0; transform: translateY(calc(var(--w) * .8)); transition: opacity .4s var(--ease), transform .4s var(--ease); }
+    .competition-clear:has(.scope-ours.visible) .comp-transition { opacity: 1; transform: none; transition-delay: .2s; }
+
+    .privacy-data-boundary { display: grid; gap: calc(var(--p) * .75); margin-top: calc(var(--p) * 1.1); text-align: left; }
+    .privacy-data-boundary > div { padding: calc(var(--p) * .85) calc(var(--p) * 1.1); border-radius: calc(var(--p) * .65); }
+    .privacy-collect { background: var(--brand-soft); border-left: 3px solid var(--brand); }
+    .privacy-exclude { background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--ink); }
+    .privacy-data-boundary strong { display: block; color: var(--brand-ink); font-size: calc(var(--p) * 1.1); font-weight: 850; letter-spacing: .055em; margin-bottom: calc(var(--p) * .4); }
+    .privacy-exclude strong { color: var(--ink); }
+    .privacy-data-boundary p { color: var(--ink); font-size: calc(var(--p) * 1.08); line-height: 1.4; }
+    .data-privacy .privacy-emblem { width: calc(var(--p) * 8); height: calc(var(--p) * 8); }
+    .data-privacy .privacy-emblem svg { width: calc(var(--p) * 4.5); height: calc(var(--p) * 4.5); }
+
+    .privacy-clean { gap: calc(var(--p) * 4); }
+    .privacy-columns { display: grid; grid-template-columns: 1fr 1.07fr 1fr; gap: calc(var(--p) * 3); }
+    .privacy-column { border-top: 2px solid var(--brand-border); padding-top: calc(var(--p) * 1.5); }
+    .privacy-column-label { color: var(--brand-ink); font-size: calc(var(--p) * 1.05); font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+    .privacy-column h3 { color: var(--ink); font-size: calc(var(--p) * 2.05); letter-spacing: -.045em; line-height: 1.2; margin: calc(var(--p) * 1.15) 0 calc(var(--p) * 2.2); }
+    .privacy-detail + .privacy-detail { margin-top: calc(var(--p) * 1.7); }
+    .privacy-detail h4 { font-size: calc(var(--p) * 1.45); color: var(--ink); font-weight: 700; letter-spacing: -.02em; margin: 0 0 calc(var(--p) * .55); }
+    .privacy-detail p, .privacy-optional p { color: var(--muted); font-size: calc(var(--p) * 1.23); line-height: 1.55; margin: 0; }
+    .privacy-yes h4, .privacy-no h4 { font-size: calc(var(--p) * 1.17); letter-spacing: .04em; font-weight: 850; }
+    .privacy-yes h4 { color: var(--brand-ink); }
+    .privacy-no { padding-top: calc(var(--p) * 1.5); border-top: 1px solid var(--line); }
+    .privacy-no p { color: var(--ink); }
+    .privacy-optional { border-top: 1px solid var(--line); margin-top: calc(var(--p) * 2); padding-top: calc(var(--p) * 1.4); }
+    .privacy-optional b { display: block; color: var(--brand-ink); font-size: calc(var(--p) * 1.2); margin-bottom: calc(var(--p) * .4); }
+    .privacy-clean .fragment { filter: none; transform: translateY(calc(var(--p) * 1.2)); }
+    .privacy-clean .fragment.visible { transform: none; }
+
+    .privacy-shield .privacy-columns { align-items: center; }
+    .privacy-shield .privacy-column { border-top: 0; padding-top: 0; }
+    .privacy-shield-center { position: relative; text-align: center; }
+    .privacy-shield-center::before, .privacy-shield-center::after { content: ""; position: absolute; top: calc(var(--p) * 4.5); width: calc(var(--p) * 6); height: 1px; background: var(--brand-border); }
+    .privacy-shield-center::before { left: calc(var(--p) * -1); }
+    .privacy-shield-center::after { right: calc(var(--p) * -1); }
+    .privacy-shield .privacy-emblem { width: calc(var(--p) * 9); height: calc(var(--p) * 9); box-shadow: none; }
+    .privacy-shield-center h3 { margin: calc(var(--p) * 1.5) 0 calc(var(--p) * 1.6); }
+    .privacy-shield-center .privacy-no { border-top: 0; padding-top: 0; }
+    .privacy-shield-center .privacy-no h4 { color: var(--brand-ink); margin-bottom: calc(var(--p) * .7); }
+    .privacy-shield-center .privacy-no p { line-height: 1.7; }
+    .privacy-shield-center.visible .privacy-check { stroke-dashoffset: 0; }
+    .privacy-shield-center.visible .privacy-emblem { animation: privacyEmblemIn .55s var(--ease) both; }
+
+    .privacy-shield .privacy-columns { grid-template-columns: 1fr 1.07fr 1fr; margin-top: calc(var(--p) * 1); }
+    .privacy-shield .privacy-source-list { gap: calc(var(--p) * 1.4); }
+    .privacy-shield .privacy-stage-label { font-size: calc(var(--p) * 1.02); margin-bottom: calc(var(--p) * 1.6); }
+    .privacy-shield .privacy-process { padding-left: 0; }
+    .privacy-shield .privacy-source-icon { flex-basis: calc(var(--p) * 3.5); height: calc(var(--p) * 3.5); }
+    .privacy-shield .privacy-source-row b { font-size: calc(var(--p) * 1.52); }
+    .privacy-shield .privacy-source-row small { font-size: calc(var(--p) * 1.04); }
+    .privacy-shield .privacy-process-row b { font-size: calc(var(--p) * 2.2); }
+    .privacy-shield .privacy-process-row small { font-size: calc(var(--p) * 1.08); }
+    .privacy-permission-note { display: flex; align-items: center; justify-content: center; gap: calc(var(--p) * 1.1); border-top: 1px solid var(--line); padding-top: calc(var(--p) * 1.3); color: var(--muted); font-size: calc(var(--p) * 1.1); }
+    .privacy-permission-note strong { color: var(--brand-ink); font-weight: 750; }
   </style>
 </head>
 <body>
   <main class="app" aria-label="AIPI590 pitch deck">
     <div class="deck" id="deck">
 
-      <section class="slide hook active" data-title="Interactive hook" data-notes="Ask for a show of hands after each question. Let the two cards come out one at a time, then pause on the problem statement.">
-        <span class="slide-number">01 / 21</span>
+      <section class="slide hook active" data-title="Interactive hook">
+        <span class="slide-number">01 / 17</span>
         <div class="eyebrow">Quick question</div>
         <div class="hook-content">
           <div class="card-stage" aria-label="Two audience questions">
@@ -2470,8 +2274,8 @@
         </div>
       </section>
 
-      <section class="slide product-reveal" data-title="Product reveal" data-notes="This is the formal start of the pitch. Introduce the product name and the team, then move into the concrete return example.">
-        <span class="slide-number">02 / 21</span>
+      <section class="slide product-reveal" data-title="Product reveal">
+        <span class="slide-number">02 / 17</span>
         <div class="product-inner">
           <div class="product-mark fragment">R</div>
           <h1 class="fragment">ReturnPilot</h1>
@@ -2483,8 +2287,8 @@
         </div>
       </section>
 
-      <section class="slide pain-a" data-title="Target user and one return" data-notes="Introduce the target user, then zoom into one Amazon return. Let the small decisions accumulate visually. Pause after ‘And that’s just ONE item.’">
-        <span class="slide-number">03 / 21</span>
+      <section class="slide pain-a" data-title="Target user and one return">
+        <span class="slide-number">03 / 17</span>
         <div class="pain-intro">
           <p class="pain-target">Our target users are <span>frequent shoppers</span> who buy across <span>multiple retailers</span>.</p>
           <div class="retailer-strip" aria-label="Retailers">
@@ -2527,8 +2331,8 @@
         </div>
       </section>
 
-      <section class="slide pain-b" data-title="Multiple retailers and money lost" data-notes="Expand from one retailer to several. Show how fragmented workflows lead to postponement. Let the small refund values accumulate into $95 lost, then finish on the calm core pain statement.">
-        <span class="slide-number">04 / 21</span>
+      <section class="slide pain-b" data-title="Multiple retailers and money lost">
+        <span class="slide-number">04 / 17</span>
         <h2 class="continuation-title"><span>ONE</span> item was already annoying. Now imagine four retailers.</h2>
 
         <div class="retailer-board" aria-label="Four retailers with different return workflows">
@@ -2605,37 +2409,8 @@
         </div>
       </section>
 
-      <section class="slide solution-detect" data-title="Detect purchases" data-notes="Show that purchases are detected automatically from confirmation emails and receipts. The user does not manually enter every item.">
-        <span class="slide-number">05 / 21</span>
-        <div class="product-copy-area"><div class="eyebrow">1. Detect purchases</div><h2>Your purchases are <em>already here</em></h2><p class="subhead">We automatically find your orders from emails and receipts.</p></div>
-        <div class="detect-visual"><div class="scan-node">↗</div>
-          <article class="source-card"><div class="source-top"><span>Amazon</span><small>Email</small></div><p>Order confirmed<br><span>Wireless Headphones · $129</span></p></article>
-          <article class="source-card"><div class="source-top"><span>Banana Republic</span><small>Email</small></div><p>Order confirmed<br><span>Jacket · $79</span></p></article>
-          <article class="source-card"><div class="source-top"><span>Temu</span><small>Email</small></div><p>Order confirmed<br><span>Top · $28</span></p></article>
-          <article class="source-card"><div class="source-top"><span>Target Receipt</span><small>Receipt</small></div><p>Receipt captured<br><span>Skincare Set · $42</span></p></article>
-          <div class="scan-status">Scanning purchases…<small>Extracting order details, return info, and deadlines</small></div>
-        </div>
-      </section>
-
-      <section class="slide solution-select" data-title="Select return items" data-notes="The user simply selects what they want to return. Emphasize how small the user action is.">
-        <span class="slide-number">06 / 21</span>
-        <div class="product-copy-area"><div class="eyebrow">2. Select items</div><h2>Choose what you want <em>to return</em></h2><p class="subhead">Select the items you don’t want. We’ll figure out the rest.</p></div>
-        <div class="select-visual"><div class="product-grid">
-          <article class="product-card selected"><span class="select-box">✓</span><span class="product-thumb"></span><div class="product-copy"><b>Banana Republic</b><span>Jacket</span></div><div class="product-meta"><strong>$79</strong><small>Return by Sep 18</small></div></article>
-          <article class="product-card selected"><span class="select-box">✓</span><span class="product-thumb"></span><div class="product-copy"><b>Temu</b><span>Top</span></div><div class="product-meta"><strong>$28</strong><small>Return by Sep 20</small></div></article>
-          <article class="product-card selected"><span class="select-box">✓</span><span class="product-thumb"></span><div class="product-copy"><b>Target</b><span>Skincare Set</span></div><div class="product-meta"><strong>$42</strong><small>Return by Sep 28</small></div></article>
-          <article class="product-card"><span class="select-box">✓</span><span class="product-thumb"></span><div class="product-copy"><b>Amazon</b><span>Wireless Headphones</span></div><div class="product-meta"><strong>$129</strong><small>Return eligible</small></div></article>
-        </div><div class="plan-cta">Plan my returns →</div><div class="selected-count">3 items selected</div></div>
-      </section>
-
-      <section class="slide solution-plan" data-title="Build return plan" data-notes="Behind the scenes, we compare deadlines, methods, and compatible drop-offs. Keep this fast — the complexity is handled for the user.">
-        <span class="slide-number">07 / 21</span>
-        <div class="product-copy-area"><div class="eyebrow">3. AI planning</div><h2>We’re building <em>your return plan</em></h2><div class="planning-list"><div>Checking deadlines…</div><div>Comparing return methods…</div><div>Grouping compatible drop-offs…</div><div>Optimizing time + refund…</div></div></div>
-        <div class="plan-visual"><div class="planning-card"><div class="eyebrow">Working quietly in the background</div><h3>Handling the decisions for you</h3><p>Finding the simplest, fastest way to get your money back…</p><div class="planning-progress"></div><p style="color:var(--success);font-weight:800">Return plan ready ✓</p></div></div>
-      </section>
-
-      <section class="slide market" data-title="Why now" data-notes="These numbers show the frequency and scale of online shopping and returns. They do not size the abandoned-refund segment. That segment remains our validation question.">
-        <span class="slide-number">08 / 21</span>
+      <section class="slide market" data-title="Why now">
+        <span class="slide-number">05 / 17</span>
         <header class="market-header">
           <div>
             <div class="eyebrow">Why now</div>
@@ -2661,342 +2436,119 @@
           <span><b>The missing number:</b> refunds people intended to claim, but lost to delay and fragmented workflows.</span>
           <span>Our first validation target</span>
         </div>
-      <footer class="audit-source">Sources: <a target="_blank" rel="noopener" href="https://www2.census.gov/retail/releases/historical/ecomm/25q4.pdf">Census, Mar. 2026</a> · <a target="_blank" rel="noopener" href="https://nrf.com/media-center/press-releases/consumers-expected-to-return-nearly-850-billion-in-merchandise-in-2025">NRF / Happy Returns, 2025</a>. Consumer n=2,006 past-year online returners; 7.7 is the 18–30 subgroup.</footer></section>
+      </section>
 
-      <section class="slide competition" data-title="Competitive landscape" data-notes="The market is not empty. Competitor offerings are not proof of demand for our product. Our opportunity is the decision and action layer across retailers.">
-        <span class="slide-number">09 / 21</span>
-        <header class="competition-header">
-          <div>
-            <div class="eyebrow">Competitive landscape</div>
-            <h2>The market solves pieces of the journey</h2>
-          </div>
-          <p class="subhead">The open space sits between knowing about a return and completing the right action.</p>
-        </header>
+      <section class="slide competition competition-clear" data-title="Competitive landscape">
+        <span class="slide-number">06 / 17</span>
+        <header class="competition-header"><div><div class="eyebrow">Competitive landscape</div><h2>Different tools.<br><span class="comp-accent">Different parts of a return.</span></h2></div></header>
         <div class="scope-map">
-          <article class="scope fragment">
-            <span class="scope-index">01</span>
-            <h3>Return Before</h3>
-            <p>Deadline identification and reminders</p>
-          </article>
-          <article class="scope fragment">
-            <span class="scope-index">02</span>
-            <h3>HawkReturn</h3>
-            <p>Email detection and refund risk alerts</p>
-          </article>
-          <article class="scope fragment">
-            <span class="scope-index">03</span>
-            <h3>ReturnQueen</h3>
-            <p>Doorstep pickup and printer-free execution</p>
-          </article>
-          <article class="scope fragment">
-            <span class="scope-index">04</span>
-            <h3>Our assistant</h3>
-            <p>Priorities, combined trips, locations, and timing across retailers</p>
-          </article>
+          <article class="scope fragment"><span class="comp-type">Remind</span><h3>Return Before</h3><p>Identify deadlines.<br>Send reminders.</p></article>
+          <article class="scope fragment"><span class="comp-type">Detect</span><h3>HawkReturn</h3><p>Find orders in email.<br>Flag refund risk.</p></article>
+          <article class="scope fragment"><span class="comp-type">Pick up</span><h3>ReturnQueen</h3><p>Doorstep pickup.<br>Printer-free returns.</p></article>
+          <article class="scope scope-ours fragment"><span class="comp-type">Coordinate · Our hypothesis</span><h3>ReturnPilot</h3><p>Prioritize actions.<br>Combine valid trips.<br>Follow refunds.</p></article>
         </div>
-        <div class="gap-line fragment">
-          <span>Reminder. Detection. Pickup.</span>
-          <span>Our hypothesis: a better cross-retailer action plan.</span>
-        </div>
-      <footer class="audit-source">Vendor-described features: <a target="_blank" rel="noopener" href="https://apps.apple.com/us/app/return-before/id6797138750">Return Before</a> · <a target="_blank" rel="noopener" href="https://www.hawkreturn.com/">HawkReturn</a> · <a target="_blank" rel="noopener" href="https://returnqueen.com/pricing">ReturnQueen</a>. Differentiation remains a hypothesis.</footer></section>
+        <div class="comp-transition"><div><b>Our idea: connect the whole workflow.</b><span>From finding a purchase to following its refund.</span></div><strong>Here’s how it works →</strong></div>
+      </section>
 
-      <section class="slide handoff" data-title="Handoff" data-notes="Hand off to the next speaker: what makes this product meaningfully different and why AI is fundamental to the advantage.">
-        <span class="slide-number">10 / 21</span>
-        <div class="handoff-inner">
-          <div class="eyebrow">The next question</div>
-          <h2><span class="handoff-context">The market proves the need.</span> <span class="handoff-question">What creates<br>our edge?</span></h2>
-          <p class="subhead">What makes this solution meaningfully different, and why does AI matter here?</p>
-          <div class="handoff-questions fragment">
-            <span>Why us?</span>
-            <span>Why AI?</span>
-          </div>
+      <section class="slide workflow" data-title="Workflow 1: Find purchases">
+        <span class="slide-number">07 / 17</span>
+        <header class="wf-header"><div class="eyebrow">Our workflow · 01 / 05</div><h2>From purchases <span>to refunds.</span></h2><p>First, bring orders and receipts into one clear list.</p></header>
+        <div class="wf-body wf-detect"><div class="wf-inputs"><span class="wf-label">What you share</span><div class="wf-source"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><div><b>Order emails</b><span>Connect an inbox or forward selected emails</span></div></div><div class="wf-source"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg><div><b>Screenshots + receipts</b><span>Add purchases without connecting an inbox</span></div></div></div><span class="wf-arrow" aria-hidden="true">→</span><article class="wf-panel fragment"><div class="wf-panel-top"><h3>Your purchases</h3><span class="wf-chip">4 items found</span></div><div class="wf-record"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 4 3 4-3 4 5-3 2v9H7v-9L4 9z"/><path d="M12 7v13"/></svg></span><div><b>Banana Republic</b><span>Jacket</span></div><strong>$79</strong></div><div class="wf-record"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 4 2 4-2 5 5-4 3-2-2v10H9V10l-2 2-4-3z"/></svg></span><div><b>Temu</b><span>Top</span></div><strong>$28</strong></div><div class="wf-record"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4v4l2 2v11H8V9l2-2z"/><path d="M9 13h6"/></svg></span><div><b>Target</b><span>Skincare Set</span></div><strong>$42</strong></div><div class="wf-record"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h4v6H5a1 1 0 0 1-1-1zM20 14h-4v6h3a1 1 0 0 0 1-1z"/></svg></span><div><b>Amazon</b><span>Headphones</span></div><strong>$129</strong></div><div class="wf-panel-foot">Order details, amounts and return deadlines together.</div></article></div>
+        <ol class="wf-rail" aria-label="Return workflow"><li class="current" aria-current="step"><span>1</span><b>Find purchases</b></li><li class=""><span>2</span><b>Choose items</b></li><li class=""><span>3</span><b>Set priorities</b></li><li class=""><span>4</span><b>Start &amp; group</b></li><li class=""><span>5</span><b>Track refunds</b></li></ol>
+      </section>
+
+      <section class="slide workflow" data-title="Workflow 2: Choose items">
+        <span class="slide-number">08 / 17</span>
+        <header class="wf-header"><div class="eyebrow">Our workflow · 02 / 05</div><h2>You choose <span>what to return.</span></h2><p>Select the items you want to send back. Keep the rest.</p></header>
+        <div class="wf-body wf-selection"><div class="wf-items"><article class="wf-item selected"><div class="wf-item-top"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 4 3 4-3 4 5-3 2v9H7v-9L4 9z"/><path d="M12 7v13"/></svg></span><span class="wf-choice">✓ Return</span></div><h3>Banana Republic</h3><p>Jacket</p><div class="wf-item-meta"><b>$79</b><span>Return by Sep 18</span></div></article><article class="wf-item selected"><div class="wf-item-top"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 4 2 4-2 5 5-4 3-2-2v10H9V10l-2 2-4-3z"/></svg></span><span class="wf-choice">✓ Return</span></div><h3>Temu</h3><p>Top</p><div class="wf-item-meta"><b>$28</b><span>Return by Sep 20</span></div></article><article class="wf-item selected"><div class="wf-item-top"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4v4l2 2v11H8V9l2-2z"/><path d="M9 13h6"/></svg></span><span class="wf-choice">✓ Return</span></div><h3>Target</h3><p>Skincare Set</p><div class="wf-item-meta"><b>$42</b><span>Return by Sep 28</span></div></article><article class="wf-item kept"><div class="wf-item-top"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h4v6H5a1 1 0 0 1-1-1zM20 14h-4v6h3a1 1 0 0 0 1-1z"/></svg></span><span class="wf-choice">Keep</span></div><h3>Amazon</h3><p>Headphones</p><div class="wf-item-meta"><b>$129</b><span>No return action</span></div></article></div><div class="wf-selection-summary fragment"><div><b>3 items selected</b><span>$149 in potential refunds</span></div><strong>Next: see what to handle first →</strong></div></div>
+        <ol class="wf-rail" aria-label="Return workflow"><li class="complete"><span>1</span><b>Find purchases</b></li><li class="current" aria-current="step"><span>2</span><b>Choose items</b></li><li class=""><span>3</span><b>Set priorities</b></li><li class=""><span>4</span><b>Start &amp; group</b></li><li class=""><span>5</span><b>Track refunds</b></li></ol>
+      </section>
+
+      <section class="slide workflow" data-title="Workflow 3: Set priorities">
+        <span class="slide-number">09 / 17</span>
+        <header class="wf-header"><div class="eyebrow">Our workflow · 03 / 05</div><h2>A clear plan for <span>what to do next.</span></h2><p>The plan puts earlier deadlines first and shows what can wait.</p></header>
+        <div class="wf-body wf-priorities"><article class="wf-panel"><div class="wf-panel-top"><h3>Your action list</h3><span class="wf-chip">3 selected items</span></div><div class="wf-priority-row"><span class="wf-priority-tag">Start now</span><div><b>Banana Republic · Jacket</b><span>Return by Sep 18 · Earlier deadline</span></div><strong>$79</strong></div><div class="wf-priority-row"><span class="wf-priority-tag">Start now</span><div><b>Temu · Top</b><span>Return by Sep 20 · Coming up next</span></div><strong>$28</strong></div><div class="wf-priority-row later"><span class="wf-priority-tag">Can wait</span><div><b>Target · Skincare Set</b><span>Return by Sep 28 · More time left</span></div><strong>$42</strong></div></article><aside class="wf-next-action fragment"><span class="wf-label">Your next action</span><h3>Start the jacket<br>and top returns.</h3><p>These are the two earlier deadlines.</p><div class="wf-next-detail"><b>Then confirm the drop-off methods.</b><p>We can group the trip once the retailer instructions are available.</p></div></aside></div>
+        <ol class="wf-rail" aria-label="Return workflow"><li class="complete"><span>1</span><b>Find purchases</b></li><li class="complete"><span>2</span><b>Choose items</b></li><li class="current" aria-current="step"><span>3</span><b>Set priorities</b></li><li class=""><span>4</span><b>Start &amp; group</b></li><li class=""><span>5</span><b>Track refunds</b></li></ol>
+      </section>
+
+      <section class="slide workflow" data-title="Workflow 4: Start and group">
+        <span class="slide-number">10 / 17</span>
+        <header class="wf-header"><div class="eyebrow">Our workflow · 04 / 05</div><h2>Start the returns. <span>Confirm one trip.</span></h2><p>Use each retailer’s return flow. Then combine items with compatible drop-off instructions.</p></header>
+        <div class="wf-body wf-execution"><article class="wf-panel wf-start"><span class="wf-label">Start with each retailer</span><h3>You confirm the return.</h3><div class="wf-merchant"><b>Banana Republic</b><span>Start return →</span></div><div class="wf-merchant"><b>Temu</b><span>Start return →</span></div><p>Read the selected methods,<br>QR codes and labels.</p></article><span class="wf-arrow" aria-hidden="true">→</span><article class="wf-panel wf-trip"><span class="wf-label">Read the retailer instructions</span><h3>Check the drop-off methods.</h3><div class="wf-method-check fragment"><div class="wf-confirmed"><span>✓ Jacket · UPS</span><span>✓ Top · UPS</span></div><p>Both items qualify for the same location.</p></div><div class="wf-group-result fragment"><div class="wf-group-head"><b>One UPS stop.</b><strong>$107</strong></div><div class="wf-trip-ready"><b>✓ Return Wallet ready</b><span>Both codes and labels together.</span></div></div></article><div class="wf-inline-status"><b>Target · $42</b><span>Handle separately on your next Target visit.</span></div></div>
+        <ol class="wf-rail" aria-label="Return workflow"><li class="complete"><span>1</span><b>Find purchases</b></li><li class="complete"><span>2</span><b>Choose items</b></li><li class="complete"><span>3</span><b>Set priorities</b></li><li class="current" aria-current="step"><span>4</span><b>Start &amp; group</b></li><li class=""><span>5</span><b>Track refunds</b></li></ol>
+      </section>
+
+      <section class="slide workflow" data-title="Workflow 5: Track refunds">
+        <span class="slide-number">11 / 17</span>
+        <header class="wf-header"><div class="eyebrow">Our workflow · 05 / 05</div><h2>Drop off. <span>Follow every refund.</span></h2><p>Open the Return Wallet at the counter, then follow the status updates.</p></header>
+        <div class="wf-body wf-refunds"><article class="wf-panel wf-wallet"><div class="wf-panel-top"><h3>Return Wallet</h3><span class="wf-chip">UPS · 2 returns</span></div><div class="wf-ticket"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h2v2h-2zM19 17h2v4h-4M11 3v3M11 10v3H7M3 11h2M11 16v5M15 11h6"/></svg><div><b>Banana Republic · Jacket</b><span>Return code / label ready</span></div><strong>$79</strong></div><div class="wf-ticket"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h2v2h-2zM19 17h2v4h-4M11 3v3M11 10v3H7M3 11h2M11 16v5M15 11h6"/></svg><div><b>Temu · Top</b><span>Return code / label ready</span></div><strong>$28</strong></div><div class="wf-panel-foot">Target’s $42 return is still pending.</div></article><div class="wf-status-list fragment"><span class="wf-label">Updates over time</span><div class="wf-status-row"><span>✓</span><div><b>Dropped off</b><small>Handoff confirmed</small></div></div><div class="wf-status-row"><span>✓</span><div><b>Retailers received</b><small>Return received and processed</small></div></div><div class="wf-refund-issued"><div><span class="wf-label">Refunds issued</span><b>$107</b></div><p>Both retailers confirmed.<br>Jacket + top complete.</p></div></div></div>
+        <ol class="wf-rail" aria-label="Return workflow"><li class="complete"><span>1</span><b>Find purchases</b></li><li class="complete"><span>2</span><b>Choose items</b></li><li class="complete"><span>3</span><b>Set priorities</b></li><li class="complete"><span>4</span><b>Start &amp; group</b></li><li class="current" aria-current="step"><span>5</span><b>Track refunds</b></li></ol>
+      </section>
+
+      <section class="slide ai-overview ai-three-roles" data-title="Why AI: orders, policies and refund updates">
+        <span class="slide-number">12 / 17</span>
+        <header class="ai-overview-heading"><div class="eyebrow">Behind the workflow · AI</div><h2>AI reads orders, policies<br><span>and refund updates.</span></h2></header>
+        <div class="ai-roles-grid">
+          <article class="ai-role-card fragment"><span class="ai-role-number">01</span><h3>Read orders</h3><p class="ai-role-source">Emails, screenshots<br>and receipts</p><div class="ai-role-output"><span>Find the purchase details</span><b>Items, amounts<br>and delivery dates</b></div><div class="ai-role-example"><strong>Jacket · $79</strong><span>Banana Republic</span></div></article>
+            <article class="ai-role-card fragment"><span class="ai-role-number">02</span><h3>Check policies</h3><p class="ai-role-source">Official retailer<br>policy pages</p><div class="ai-role-output"><span>Work out what applies</span><b>Return deadlines,<br>eligibility and exceptions</b></div><div class="ai-role-example"><strong>Can I return it?</strong><span>By when, and how?</span></div></article>
+            <article class="ai-role-card fragment"><span class="ai-role-number">03</span><h3>Follow refunds</h3><p class="ai-role-source">Return and refund<br>confirmation messages</p><div class="ai-role-output"><span>Keep the status updated</span><b>Retailer received<br>→ Refund issued</b></div><div class="ai-role-example"><strong>Refund issued · $107</strong><span>Jacket + top</span></div></article>
         </div>
       </section>
 
-      <section class="slide continuation" data-title="Why us: put the plan into action" data-notes="Continue the exact Banana Republic, Temu and Target example from slide 7. The user has selected items and received a proposed plan. First click: the user initiates the Banana Republic and Temu returns in the retailer flows. Second click: read the actual return instructions and confirm both are compatible with the same UPS location. Third click: the shared UPS stop is ready. These methods are illustrative, not universal retailer policies. Target can wait for a later store visit. Keep the narration focused on the next action; policy and integration details are unnecessary for the idea pitch.">
-        <span class="slide-number">11 / 21</span>
-        <header class="continuation-header">
-          <div>
-            <div class="eyebrow">Why us · Put the plan into action</div>
-            <h2>Your plan is ready.<br><span class="accent">Now make it happen.</span></h2>
-          </div>
-          <p class="subhead">Same items. Same plan.<br>One clear next step at a time.</p>
-        </header>
-
-        <div class="continue-plan">
-          <article class="plan-recap">
-            <span class="story-label">Where we left off</span>
-            <h3>Your return plan</h3>
-            <div class="recap-stop">
-              <b>UPS Store</b>
-              <p>Banana Republic · Jacket<br>Temu · Top</p>
-              <small>2 returns · $107</small>
-            </div>
-            <div class="recap-wait"><b>Target · Skincare Set</b><p>Can wait until your next Target visit.</p></div>
-          </article>
-          <span class="story-connector" aria-hidden="true">›</span>
-          <div class="next-step-stage" aria-label="Steps after receiving the return plan">
-            <div class="step-placeholder"><span>Next</span><p>Let’s finish these returns.</p></div>
-            <div class="workflow-moment start-moment fragment">
-              <span class="story-label">01 · Start the returns</span>
-              <h3>Start each return<br>with the retailer</h3>
-              <div class="retailer-actions">
-                <div class="retailer-action"><b>Banana Republic</b><span>Start return</span></div>
-                <div class="retailer-action"><b>Temu</b><span>Start return</span></div>
-              </div>
-              <p>We take you to each retailer’s return flow.</p>
-            </div>
-            <div class="workflow-moment method-moment fragment">
-              <span class="story-label">02 · Instructions confirmed</span>
-              <h3>Both returns<br>can go to UPS</h3>
-              <div class="retailer-actions">
-                <div class="retailer-action"><b>Banana Republic</b><span>✓ UPS</span></div>
-                <div class="retailer-action"><b>Temu</b><span>✓ UPS</span></div>
-              </div>
-              <p>The actual return instructions confirm the shared stop.</p>
-            </div>
-            <div class="workflow-moment trip-moment fragment">
-              <span class="story-label">03 · Ready to go</span>
-              <h3>One UPS stop.<br>Both returns.</h3>
-              <div class="trip-summary"><b>$107</b><span>Banana Republic Jacket<br>Temu Top</span></div>
-              <p>Your codes and labels are ready in the Return Wallet.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="story-footer"><span>From a suggested plan to <strong>a trip you can actually make.</strong></span><small>Illustrative product workflow</small></div>
-      </section>
-
-      <section class="slide continuation" data-title="Why us: through to the refund" data-notes="Continue the same two confirmed UPS returns from slide 11. The wallet is visible at the start, with each item's return material together. The grid icons are schematic QR/label illustrations. Reveal drop-off, retailer receipt and finally a $107 refund-issued confirmation, one click at a time. This represents the later lifecycle, not instant processing or guaranteed refund timing. $107 equals the Banana Republic jacket ($79) plus the Temu top ($28); the $42 Target return is still pending for a later visit. The MVP closes at refund issued by the retailer, without claiming the bank has received it. End on the value: the assistant stays with the return through completion.">
-        <span class="slide-number">12 / 21</span>
-        <header class="continuation-header">
-          <div>
-            <div class="eyebrow">Why us · Through to the refund</div>
-            <h2>Everything ready at drop-off.<br><span class="accent">Every refund followed through.</span></h2>
-          </div>
-        </header>
-
-        <div class="completion-flow">
-          <article class="return-wallet">
-            <div class="wallet-top"><h3>Return Wallet</h3><span>UPS · 2 returns</span></div>
-            <div class="wallet-ticket">
-              <span class="wallet-code" aria-hidden="true">▦</span>
-              <div><b>Banana Republic</b><p>Jacket · $79</p><small>Return code / label ready</small></div>
-            </div>
-            <div class="wallet-ticket">
-              <span class="wallet-code" aria-hidden="true">▦</span>
-              <div><b>Temu</b><p>Top · $28</p><small>Return code / label ready</small></div>
-            </div>
-            <p class="wallet-caption">Open once. Everything is here.</p>
-          </article>
-          <span class="story-connector" aria-hidden="true">›</span>
-          <div class="refund-journey" aria-label="Return status over time">
-            <div class="refund-step fragment"><span class="refund-check" aria-hidden="true">✓</span><b>Dropped off</b><small>At UPS</small></div>
-            <div class="refund-step fragment"><span class="refund-check" aria-hidden="true">✓</span><b>Retailers received</b><small>Later</small></div>
-            <div class="refund-result fragment">
-              <div><span class="story-label">Refunds issued</span><strong class="refund-amount">$107</strong><p>Both retailers confirmed.</p></div>
-              <span class="refund-seal" aria-hidden="true">✓</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="story-footer fragment"><span><strong>One plan, all the way to “Refund issued.”</strong></span><small>Target stays on the plan for your next visit.</small></div>
-      </section>
-
-      <section class="slide continuation ai-story" data-title="Why AI: understand the information" data-notes="Spec sections 6, 11 and 32. This is the first of three AI slides: understand, help personalize planning, and show confidence. Use the same purchases so the audience does not need another example. Reveal the different input formats, AI, and the shared item list. AI extracts purchase details, interprets policies and exceptions, and recognizes return or refund updates. That context supports planning. Standard rules and optimization enforce deadlines and valid grouping. A shared reader reduces the need for a separate parser per retailer. The displayed records and dates are illustrative and match slide 7. Transition to how preferences and learned habits shape the plan.">
-        <span class="slide-number">13 / 21</span>
-        <header class="continuation-header">
-          <div>
-            <div class="eyebrow">Why AI · Understand the information</div>
-            <h2>Different retailers. Different formats.<br><span class="mint">AI makes them work together.</span></h2>
-          </div>
-        </header>
-
-        <div class="ai-flow">
-          <div class="input-documents fragment">
-            <span class="story-label">What comes in</span>
-            <article class="input-document"><small>Order email</small><b>Banana Republic</b><p>Jacket · $79</p></article>
-            <article class="input-document"><small>Order screenshot</small><b>Temu</b><p>Top · $28</p></article>
-            <article class="input-document"><small>Receipt photo</small><b>Target</b><p>Skincare Set · $42</p></article>
-          </div>
-          <div class="ai-reader fragment">
-            <b>AI</b>
-            <h3>Reads and<br>understands</h3>
-            <p>Orders, policies<br>and return updates</p>
-          </div>
-          <article class="unified-purchases fragment">
-            <span class="story-label">One consistent view</span>
-            <h3>Ready to plan</h3>
-            <div class="unified-row"><div><b>Banana Republic</b><small>Return by Sep 18</small></div><strong>$79</strong></div>
-            <div class="unified-row"><div><b>Temu</b><small>Return by Sep 20</small></div><strong>$28</strong></div>
-            <div class="unified-row"><div><b>Target</b><small>Return by Sep 28</small></div><strong>$42</strong></div>
-            <div class="planning-ready">Rules prioritize and group the returns.</div>
-          </article>
-        </div>
-
-        <div class="story-footer fragment"><span><strong>AI connects the orders, policies and return updates.</strong><br>That understanding becomes the starting point for your plan.</span><small>Next: planning around you.</small></div>
-      </section>
-
-      <section class="slide continuation personal-planning" data-title="Why AI: planning and learning your habits" data-notes="Spec sections 7, 15 and 22, plus the requested AI-assisted planning story. Continue the Banana Republic and Temu example. The user's explicit goal is fewer trips. First click: show lightweight habits the system could learn over time, a UPS location near home and weekend returns. These are editable suggestions, never mandatory. Second click: AI helps connect this context with the return information to personalize the proposed plan; optimization confirms a compatible UPS stop and checks constraints. Third click: the earlier Friday deadline overrides the weekend habit. This is the same illustrative Friday deadline used in slide 7, not a current-date calculation. Fourth click: reinforce user control and the division of work. This is a proposed product capability, with habit learning developed over time. The user still chooses Keep, Return or Not sure.">
-        <span class="slide-number">14 / 21</span>
-        <header class="continuation-header">
-          <div>
-            <div class="eyebrow">Why AI · Planning + learning</div>
-            <h2>AI helps shape a plan<br><span class="accent">that fits your routine.</span></h2>
-          </div>
-          <p class="subhead">Your preferences guide it.<br>Your habits help refine it.</p>
-        </header>
-
-        <div class="personal-flow">
-          <article class="preference-profile">
-            <span class="story-label">You set the direction</span>
-            <h3>What works for you?</h3>
-            <div class="chosen-goal"><span>Your goal</span><b>Fewer trips</b></div>
-            <div class="learned-habits fragment">
-              <span class="story-label">Over time, it learns</span>
-              <div class="habit-row"><span class="habit-icon" aria-hidden="true">UPS</span><div><b>Your usual drop-off</b><small>UPS near home</small></div></div>
-              <div class="habit-row"><span class="habit-icon" aria-hidden="true">SAT</span><div><b>Your usual timing</b><small>You often return on weekends</small></div></div>
-              <p class="habit-control">Suggested habits. You can change them anytime.</p>
-            </div>
-          </article>
-          <span class="story-connector" aria-hidden="true">›</span>
-          <article class="personal-plan fragment">
-            <span class="story-label">AI-assisted planning</span>
-            <h3>Your next UPS trip</h3>
-            <div class="personal-stop"><b>UPS near home</b><p>Banana Republic + Temu<br>Before Friday’s deadline</p></div>
-            <div class="personal-reasons"><span>One combined trip</span><span>Your familiar stop</span></div>
-            <div class="deadline-check fragment">
-              <span aria-hidden="true">!</span>
-              <div><b>This one cannot wait for the weekend.</b><p>The earlier deadline takes priority.</p></div>
-            </div>
-          </article>
-        </div>
-
-        <div class="story-footer fragment"><span><strong>AI helps personalize the plan. Rules protect the deadlines.</strong></span><small>Your choices stay in control.</small></div>
-      </section>
-
-      <section class="slide continuation confidence-story" data-title="Why AI: confidence and visible sources" data-notes="Spec sections 8, 11 and 28. Deadlines and eligibility carry a confidence level tied to the available evidence. Reveal High, Medium and Low one at a time, then the takeaway. High: an explicit return-by date in an order email. Medium: a deadline estimated from the current official policy and order information. Low: missing item details leave eligibility unclear, so ask the user to confirm or check the retailer. These are illustrative evidence scenarios, not claims about the retailers in the earlier workflow. Confidence labels are qualitative, not measured accuracy percentages or guarantees. Order-specific evidence takes priority over generic policies, and deterministic validation supports the interpretation. End on a clear product benefit: the user can see the source and knows when a confirmation is needed.">
-        <span class="slide-number">15 / 21</span>
-        <header class="continuation-header">
-          <div>
-            <div class="eyebrow">Why AI · Confidence + transparency</div>
-            <h2>How sure are we?<br><span class="accent">The source stays visible.</span></h2>
-          </div>
-          <p class="subhead">Return deadlines and eligibility<br>come with a confidence level.</p>
-        </header>
-
-        <div class="confidence-cards">
-          <article class="confidence-card high fragment">
-            <span class="story-label">Confidence level</span>
-            <strong class="confidence-level">High</strong>
-            <h3>Return by Sep 25</h3>
-            <p>An explicit date for this order.</p>
-            <div class="confidence-source"><span>Source</span><b>Retailer order email</b></div>
-            <div class="confidence-action">Plan using this date.</div>
-          </article>
-          <article class="confidence-card medium fragment">
-            <span class="story-label">Confidence level</span>
-            <strong class="confidence-level">Medium</strong>
-            <h3>Estimated: Sep 25</h3>
-            <p>A date inferred from the policy.</p>
-            <div class="confidence-source"><span>Source</span><b>Policy + order details</b></div>
-            <div class="confidence-action">Clearly mark the estimate.</div>
-          </article>
-          <article class="confidence-card low fragment">
-            <span class="story-label">Confidence level</span>
-            <strong class="confidence-level">Low</strong>
-            <h3>Eligibility unclear</h3>
-            <p>Item details are missing.</p>
-            <div class="confidence-source"><span>Source</span><b>Incomplete receipt</b></div>
-            <div class="confidence-action">Ask for confirmation.</div>
-          </article>
-        </div>
-
-        <div class="story-footer fragment"><span><strong>See the evidence. Confirm what’s uncertain.</strong></span><small>Illustrative confidence labels</small></div>
-      </section>
-
-      <section class="slide continuation data-privacy" data-title="Data sources and privacy by choice" data-notes="Spec sections 9, 10, 11, 16 and 24. This slide shows the proposed approach, not implemented security guarantees. First click: users can connect Gmail, forward selected shopping emails, or provide screenshots and receipt photos. Inbox connection is optional. Official retailer policies and official drop-off data, supplemented by maps, complete the information. Order-specific evidence takes priority; maps alone cannot establish return eligibility. Second click: emphasize data minimization, only order, policy, return-method and refund information, with ZIP code or a preferred area by default. The shield is a visual for the privacy principle, not a claim of verified security. Third click: planned processing happens on-device where practical and uses cloud AI for complex parsing and reasoning; the exact architecture remains to be determined. Fourth click: calendar and precise location remain optional, and the MVP requires neither bank access nor continuous background GPS. Precise location is used only when requested for nearby search. Do not claim a connected Gmail account technically grants access only to shopping emails.">
-        <span class="slide-number">16 / 21</span>
+      <section class="slide continuation data-privacy privacy-clean privacy-shield" data-title="Data sources and privacy by choice">
+        <span class="slide-number">13 / 17</span>
         <header class="privacy-heading">
           <div class="eyebrow">Data + privacy</div>
           <h2>Your data. <span>Your choice.</span></h2>
           <p>You choose what to share. We use only what your return needs.</p>
         </header>
-
-        <div class="privacy-diagram">
-          <div class="privacy-inputs fragment">
-            <span class="privacy-stage-label">Data sources</span>
-            <div class="privacy-source-list">
-              <div class="privacy-source-row">
-                <span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
-                <div><b>Order emails</b><small>Connect Gmail or forward selected emails.</small></div>
-              </div>
-              <div class="privacy-source-row">
-                <span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="3"/><circle cx="9" cy="8" r="1.5"/><path d="m5 17 4-4 3 3 3-5 4 6"/></svg></span>
-                <div><b>Screenshots &amp; receipts</b><small>Upload only the purchases you choose.</small></div>
-              </div>
-              <div class="privacy-source-row">
-                <span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5H3l9-5ZM5 11v7m7-7v7m7-7v7M3 21h18"/></svg></span>
-                <div><b>Official retailer data</b><small>Return policies, drop-off points &amp; maps.</small></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="privacy-gate fragment">
+        <div class="privacy-columns">
+<article class="privacy-column privacy-inputs fragment"><span class="privacy-stage-label">Data sources</span><div class="privacy-source-list"><div class="privacy-source-row"><span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span><div><b>Order emails</b><small>Connect Gmail or forward selected emails.</small></div></div><div class="privacy-source-row"><span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="3"/><circle cx="9" cy="8" r="1.5"/><path d="m5 17 4-4 3 3 3-5 4 6"/></svg></span><div><b>Screenshots &amp; receipts</b><small>Upload only the purchases you choose.</small></div></div><div class="privacy-source-row"><span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5H3l9-5ZM5 11v7m7-7v7m7-7v7M3 21h18"/></svg></span><div><b>Official retailer data</b><small>Return policies, drop-off points &amp; maps.</small></div></div></div></article>
+          <article class="privacy-column privacy-shield-center fragment">
             <div class="privacy-emblem" aria-hidden="true">
               <svg viewBox="0 0 64 72" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 5 55 14v20c0 15-10 25-23 32C19 59 9 49 9 34V14L32 5Z"/><path class="privacy-check" d="m21 34 8 8 16-17"/></svg>
             </div>
-            <h3>Only return essentials</h3>
-            <p>Orders, deadlines &amp; refund details.</p>
-            <p>ZIP code for nearby drop-offs.</p>
-          </div>
-
-          <div class="privacy-process fragment">
-            <span class="privacy-stage-label">Planned processing</span>
-            <div class="privacy-process-row">
-              <span class="privacy-process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></svg></span>
-              <div><b>On-device</b><small>Process locally where practical.</small></div>
-            </div>
-            <div class="privacy-process-row">
-              <span class="privacy-process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 0 1-.5-10 6 6 0 0 1 11.6 1.5A4.3 4.3 0 0 1 18 18H7Z"/></svg></span>
-              <div><b>Cloud AI</b><small>For complex parsing and reasoning.</small></div>
-            </div>
-          </div>
+            <h3>No unnecessary data.</h3>
+            <div class="privacy-detail privacy-no"><h4>WE DON’T COLLECT</h4><p>Unrelated emails<br>Bank details<br>Continuous location history</p></div>
+          </article>
+<article class="privacy-column privacy-process fragment"><span class="privacy-stage-label">Planned processing</span><div class="privacy-process-row"><span class="privacy-process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></svg></span><div><b>On-device</b><small>Process locally where practical.</small></div></div><div class="privacy-process-row"><span class="privacy-process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 0 1-.5-10 6 6 0 0 1 11.6 1.5A4.3 4.3 0 0 1 18 18H7Z"/></svg></span><div><b>Cloud AI</b><small>For complex parsing and reasoning.</small></div></div></article>
         </div>
+        <div class="privacy-permission-note">Calendar &amp; precise location <strong>Always optional</strong></div>
+      </section>
 
-        <div class="privacy-choices fragment">
-          <span><i aria-hidden="true"></i>Calendar &amp; precise location: <strong>optional</strong></span>
-          <span><i aria-hidden="true"></i>No bank connection</span>
-          <span><i aria-hidden="true"></i>No background location tracking</span>
+      <section class="slide sq" data-title="Success metrics"><span class="slide-number">14 / 17</span><div class="eyebrow">Proposed pilot · What counts as success?</div><h2>A click starts a return.<br><span class="accent">It doesn’t finish one.</span></h2><div class="sq-flow fragment"><span>Start the return</span><span>→</span><span>Meet the deadline</span><span>→</span><span>Confirm the refund</span></div><div class="sq-compare fragment"><div class="sq-card"><div class="sq-kicker">Control</div><h3>Reminders only</h3><p>Verified deadlines.<br>Scheduled reminders.</p></div><span class="sq-vs">vs.</span><div class="sq-card sq-treatment"><div class="sq-kicker">ReturnPilot</div><h3>Reminders + action</h3><p>The same reminders.<br>A prepared action workflow.</p></div></div><div class="sq-band sq-result fragment"><strong>Do more returns<br>finish on time?</strong><p>Primary: on-time completion rate.<br>Also: refunds, effort, errors and cost.</p></div></section>
+
+      <section class="slide sq" data-title="Product roadmap"><span class="slide-number">15 / 17</span><div class="eyebrow">Proposed development stages</div><h2>Roadmap</h2><div class="sq-grid sq-road"><div class="sq-card fragment"><div class="sq-kicker">Crawl · Oct 15</div><h3>Prepare it.</h3><ul><li>2–3 retailers</li><li>Extract orders; verify policies</li><li>Prepare an action page;<br>user confirms submission</li></ul><div class="sq-gate">Gate: a usable end-to-end MVP</div></div><div class="sq-card fragment"><div class="sq-kicker">Walk · Nov 19</div><h3>Test it.</h3><ul><li>Track handoff and refunds</li><li>Compare completion rates</li><li>Test pricing and support costs</li></ul><div class="sq-gate">Gate: evidence of user value</div></div><div class="sq-card fragment"><div class="sq-kicker">Run · After validation</div><h3>Expand it.</h3><ul><li>Authorized integrations</li><li>Broader retailer coverage</li><li>Pickup partners, if handoff is the barrier</li></ul><div class="sq-gate">Gate: evidence guides expansion</div></div></div><div class="sq-band fragment"><b>Build what gets the package moving.</b> Let pilot results set the next priority.</div></section>
+
+      <section class="slide continuation pair-review" data-title="Google PAIR: user confirmation">
+        <span class="slide-number">16 / 17</span>
+        <header class="continuation-header"><div><div class="eyebrow">Google PAIR · User control</div><h2>When AI is unsure,<br><span class="accent">the user confirms.</span></h2></div></header>
+        <div class="pair-review-layout">
+          <div class="pair-principles fragment">
+            <div><h3>Understand the task</h3><p>What does this return need?</p></div>
+            <div><h3>Show what is missing</h3><p>Make unclear details easy to spot.</p></div>
+            <div><h3>Ask for confirmation</h3><p>Let the user check or correct the details.</p></div>
+          </div>
+          <div class="pair-example fragment">
+            <span class="story-label">Example · Missing delivery date</span>
+            <h3>When was it delivered?</h3>
+            <span class="sq-status">Return deadline not yet verified</span>
+            <p>Confirm the delivery date so we can check your deadline.</p>
+            <div class="sq-fake-button">Confirm delivery date</div>
+            <small>Then update the deadline and plan.</small>
+          </div>
         </div>
       </section>
 
-<section class="slide sq" data-title="Market evidence" data-notes="[~35 seconds | Reveal the three data cards, then the target segment.]
-The intent is there. The follow-through is not. In a LendingTree survey, 44 percent had missed a return window, and 58 percent had kept an unwanted item because returning it felt inconvenient. NRF also found 7.7 online returns in a year among surveyed returners aged 18 to 30. So we start with frequent shoppers managing multiple retailers. The question is whether ReturnPilot helps them finish, and whether they will pay.
-
-中文：这些是有退货经历人群的调查；不是每年订单失败率，也不是所有年轻人的均值。次级用户：家庭购物管理者、偶尔购买高价商品的人。年轻 returners 可作为首批招募来源，但付费意愿未验证。
-Sizing 备用：129.2M households × 10% qualifying × $36/year ≈ $465M; × 30% coverage ≈ $140M。沿用前文的情景模型，不是验证后的市场规模。假设不能用 44% 直接替换。"><span class="slide-number">17 / 21</span><div class="eyebrow">Who goes first?</div><h2>The intent is there.<br><span class="accent">The follow-through isn’t.</span></h2><div class="sq-grid sq-evidence"><div class="sq-card fragment"><strong>44%</strong><p>Had missed a return window.</p><small>For an item they intended to return.</small></div><div class="sq-card fragment"><strong>58%</strong><p>Had kept an unwanted item.</p><small>Returning it felt too inconvenient.</small></div><div class="sq-card fragment"><strong>7.7</strong><p>Online returns in one year.</p><small>Surveyed returners aged 18–30.</small></div></div><div class="sq-band fragment"><b>Start here:</b> Frequent shoppers. Multiple retailers. Delayed returns.<br><span class="sq-sub">Still to prove: Will they pay? Will they finish more returns?</span></div><footer class="sq-foot"><a href="https://www.livenowfox.com/news/shoppers-returning-used-items" target="_blank" rel="noopener">LendingTree via LiveNOW FOX (Mar. 26, 2025)</a>: Feb. 2025, n=1,715 U.S. shoppers with return experience (self-reported). 44% and 58% describe past experience, not annual order failure rates.<br><a href="https://nrf.com/media-center/press-releases/consumers-expected-to-return-nearly-850-billion-in-merchandise-in-2025" target="_blank" rel="noopener">NRF / Happy Returns (2025)</a>: n=2,006 past-year online returners. 7.7 is the age 18–30 subgroup average, not all young adults.</footer></section>
-
-<section class="slide sq" data-title="Success metrics" data-notes="[~40 seconds | Reveal the journey, comparison, then the outcome.]
-A click starts a return. It does not finish one. We need to track the handoff and confirm the refund. To test our value, we would compare reminders alone with the same reminders plus ReturnPilot&#x27;s action workflow. The primary question is simple: do more intended, eligible returns finish on time? We would also track refunds, effort, deadline errors and support costs. We should not count every refund as money we saved. The difference between groups is what matters.
-
-中文：按用户随机分组，保持相同的已核实截止日和提醒频率；两组仅行动流程不同。事先定义各商家的完成要求、观察期和缺失数据处理，同一用户多笔订单在分析时需考虑。业务指标另看重复使用和付费转化。课堂对应 p.37：连接技术表现与用户、业务价值。"><span class="slide-number">18 / 21</span><div class="eyebrow">What would count as success?</div><h2>A click starts a return.<br><span class="accent">It doesn’t finish one.</span></h2><div class="sq-flow fragment"><span>Start the return</span><span>→</span><span>Meet the deadline</span><span>→</span><span>Confirm the refund</span></div><div class="sq-compare fragment"><div class="sq-card"><div class="sq-kicker">Control</div><h3>Reminders only</h3><p>Verified deadlines.<br>Scheduled reminders.</p></div><span class="sq-vs">vs.</span><div class="sq-card sq-treatment"><div class="sq-kicker">ReturnPilot</div><h3>Reminders + action</h3><p>The same reminders.<br>A prepared action workflow.</p></div></div><div class="sq-band sq-result fragment"><strong>Do more returns<br>finish on time?</strong><p>Primary: on-time completion rate.<br>Also: refunds, effort, errors and cost.</p></div><footer class="sq-foot">Proposed pilot, randomized by user. Completion rate = intended, eligible returns completed on time ÷ intended, eligible returns.<br>Use retailer-specific requirements. Track repeat use and paid conversion; no measured uplift is claimed.</footer></section>
-
-<section class="slide sq" data-title="Product roadmap" data-notes="[~40 seconds | Reveal Crawl → Walk → Run, then the closing line.]
-We start with one reliable workflow. By the October 15 midpoint, our proposed MVP covers two or three retailers: extract the order, verify the policy and prepare the action page. The user confirms submission. By the November 19 final, we aim to test completion and track handoff and refunds. Then we expand based on what we learn. If getting to a drop-off point is the real barrier, pickup partnerships may matter more than another reminder.
-
-中文：课程 p.5 已核实两次展示日期，但这些具体功能承诺是团队 proposed scope。Crawl–Walk–Run 来自 pp.88–94，是借用阶段思路，不是照搬课件的多年时间尺度。与 Dongping 对齐：前稿展示目标体验，本学期 MVP 保留用户确认。"><span class="slide-number">19 / 21</span><div class="eyebrow">How do we get there?</div><h2>One reliable workflow.<br><span class="accent">Then more retailers.</span></h2><div class="sq-grid sq-road"><div class="sq-card fragment"><div class="sq-kicker">Crawl · Oct 15</div><h3>Prepare it.</h3><ul><li>2–3 retailers</li><li>Extract orders; verify policies</li><li>Prepare an action page;<br>user confirms submission</li></ul><div class="sq-gate">Gate: a usable end-to-end MVP</div></div><div class="sq-card fragment"><div class="sq-kicker">Walk · Nov 19</div><h3>Test it.</h3><ul><li>Track handoff and refunds</li><li>Compare completion rates</li><li>Test pricing and support costs</li></ul><div class="sq-gate">Gate: evidence of user value</div></div><div class="sq-card fragment"><div class="sq-kicker">Run · After validation</div><h3>Expand it.</h3><ul><li>Authorized integrations</li><li>Broader retailer coverage</li><li>Pickup partners, if handoff is the barrier</li></ul><div class="sq-gate">Gate: evidence guides expansion</div></div></div><div class="sq-band fragment"><b>Build what gets the package moving.</b> Let pilot results set the next priority.</div><footer class="sq-foot">Proposed scope; course milestones: Oct 15 midpoint and Nov 19 final (Week 3, p. 5).<br>Crawl–Walk–Run adapted from Week 3, pp. 88–94; semester timing is our project plan, not the framework’s original timescale.</footer></section>
-
-<section class="slide sq" data-title="Google PAIR evaluation" data-notes="[~40 seconds | Reveal the framework, show one failure case, then the tradeoff.]
-PAIR makes us ask what happens when the AI is wrong. We need to understand the user&#x27;s context, show confidence levels, enable control and plan for failure. Here is one example: the delivery date is missing. We should flag the deadline as unverified, ask the user to correct the date, and keep a path to the merchant. Our opportunity is helping users recover money. Our biggest risk is that even a good plan leaves the package at home.
-
-中文：已核实 Week 3 pp.41–45 的四项名称。状态标签展示不确定性，不虚构模型置信百分比。示例界面只说明设计思路。PAIR 评价必须点出机会与风险，而不是只介绍框架。"><span class="slide-number">20 / 21</span><div class="eyebrow">Pressure-test the idea · Google PAIR</div><h2>Helpful AI needs<br><span class="accent">a way to be wrong.</span></h2><div class="sq-pair-layout"><div class="sq-pair-list fragment"><div class="sq-card"><h3>Understand User Context</h3><p>Where are they stuck: the policy or the drop-off?</p></div><div class="sq-card"><h3>Show Confidence Levels</h3><p>Show evidence and uncertainty.</p></div><div class="sq-card"><h3>Enable User Control</h3><p>Let users edit and approve.</p></div><div class="sq-card"><h3>Plan for Failure</h3><p>Keep a merchant fallback.</p></div></div><div class="sq-example fragment"><div class="sq-kicker">Illustrative product state</div><h3>When was it delivered?</h3><div class="sq-status">Missing information · deadline unverified</div><p>We need the delivery date before we can verify your return deadline.</p><div class="sq-fake-button">Add delivery date</div><small>Or open the merchant’s return page →</small></div></div><div class="sq-band fragment"><b>Opportunity:</b> Help users recover money.<br><b>Biggest risk:</b> The plan is ready. The package stays home.</div><footer class="sq-foot">Framework: Week 3 lecture, Google PAIR, pp. 41–45. Product application and risk assessment are our analysis.<br><a href="https://pair.withgoogle.com/guidebook/" target="_blank" rel="noopener">Google People + AI Guidebook</a> · Example UI is illustrative, not a working return submission.</footer></section>
-
-<section class="slide sq sq-question" data-title="Open questions" data-notes="[~15 seconds, then pause | Reveal the package problem, then the main question.]
-The return is ready. But the package never leaves the house. Have we solved enough of the problem? Thinking about your own experience, what would actually get you to finish that return?
-
-中文：问完停下来。没人回应时：Think about the last item you wanted to return but kept. What stopped you?
-备用问题（不需要全念）：Would you pay per return or subscribe? Which actions would you trust AI to complete for you?"><span class="slide-number">21 / 21</span><div class="eyebrow">One question for you</div><h2>The return is ready.<br><span class="fragment">The package <span class="mint">never<br>leaves the house.</span></span></h2><div class="sq-band fragment">Have we solved enough of the problem?</div><p class="sq-sub fragment">What would actually get you to finish that return?</p><footer class="sq-foot">Think about the last item you wanted to return, but kept.</footer></section>
+      <section class="slide qa-close" data-title="Q&A and feedback">
+        <span class="slide-number">17 / 17</span>
+        <div class="qa-content"><div class="eyebrow">Q&amp;A + feedback</div>
+          <h2>Would you use<br><span class="accent">ReturnPilot?</span></h2>
+          <p>What would make it more useful for you?</p>
+          <div class="qa-invite fragment">Questions, ideas and feedback welcome.</div>
+          <a class="qa-open-link" href="qa.html#topics">Open Q&amp;A →</a>
+        </div>
+      </section>
 
       <div class="chrome" aria-hidden="false">
         <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
@@ -3005,49 +2557,13 @@ The return is ready. But the package never leaves the house. Have we solved enou
           <button class="control" id="nextBtn" aria-label="Next">›</button>
           <button class="control" id="fullBtn" aria-label="Fullscreen">⛶</button>
         </div>
-        <div class="help" id="help">← → / Space to navigate · F fullscreen · N notes</div>
+        <div class="help" id="help">← → / Space to navigate · F fullscreen</div>
       </div>
-      <aside class="notes" id="notes" aria-live="polite"></aside>
     </div>
   </main>
 
   <script>
     (() => {
-      const icon = (paths) => '<svg class="demo-icon" viewBox="0 0 24 24" aria-hidden="true">' + paths + '</svg>';
-      const emailIcon = icon('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>');
-      const receiptIcon = icon('<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/>');
-      const jacketIcon = icon('<path d="m8 4 4 3 4-3 4 5-3 2v9H7v-9L4 9z"/><path d="M12 7v13"/>');
-      const shirtIcon = icon('<path d="m8 4 4 2 4-2 5 5-4 3-2-2v10H9V10l-2 2-4-3z"/>');
-      const bottleIcon = icon('<path d="M10 3h4v4l2 2v11H8V9l2-2z"/><path d="M9 13h6"/>');
-      const headphonesIcon = icon('<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h4v6H5a1 1 0 0 1-1-1zM20 14h-4v6h3a1 1 0 0 0 1-1z"/>');
-      const pinIcon = icon('<path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"/><circle cx="12" cy="10" r="2.5"/>');
-      const clockIcon = icon('<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>');
-      const checkIcon = icon('<path d="m5 12 4 4L19 6"/>');
-      const refineProductDemo = () => {
-        const detect = document.querySelector('.solution-detect');
-        if (detect) {
-          detect.className = 'slide demo-detect';
-          detect.dataset.title = 'Detect purchases';
-          detect.dataset.notes = 'Purchases are detected automatically from confirmation emails and uploaded receipts. The user does not manually enter everything.';
-          detect.innerHTML = '<span class="slide-number">05 / 21</span><div class="demo-copy"><div class="eyebrow">1. Detect purchases</div><h2>Your purchases are <em>already here</em></h2><p class="subhead">We automatically find your orders from emails and receipts.</p></div><div class="demo-detect-cluster"><svg class="demo-detect-lines" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M18 20 50 50"/><path d="M82 20 50 50"/><path d="M18 80 50 50"/><path d="M82 80 50 50"/></svg><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Amazon</b><span>Order confirmed</span><small>Wireless Headphones &middot; $129</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Banana Republic</b><span>Order confirmed</span><small>Jacket &middot; $79</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + emailIcon + '</span><div class="demo-source-meta"><b>Temu</b><span>Order confirmed</span><small>Top &middot; $28</small></div></article><article class="demo-source-card"><span class="demo-source-icon">' + receiptIcon + '</span><div class="demo-source-meta"><b>Target Receipt</b><span>Receipt captured</span><small>Skincare Set &middot; $42</small></div></article><div class="demo-scan-node">' + receiptIcon + '</div><div class="demo-scan-status">Scanning purchases...<small>Extracting order details, return info, and deadlines</small></div></div>';
-        }
-        const select = document.querySelector('.solution-select');
-        if (select) {
-          select.className = 'slide demo-select';
-          select.dataset.title = 'Select return items';
-          select.dataset.notes = 'The user simply chooses what they want to return. That is the main user action.';
-          const card = (selected, art, store, item, price, date) => '<article class="demo-product-card' + (selected ? ' selected' : '') + '"><span class="demo-check">' + checkIcon + '</span><span class="demo-product-art">' + art + '</span><div class="demo-product-info"><b>' + store + '</b><span>' + item + '</span></div><div class="demo-product-value"><strong>' + price + '</strong><small>' + date + '</small></div></article>';
-          select.innerHTML = '<span class="slide-number">06 / 21</span><div class="demo-copy"><div class="eyebrow">2. Select items</div><h2>Choose what you want <em>to return</em></h2><p class="subhead">Select the items you don\'t want. We\'ll figure out the rest.</p></div><div class="demo-select-grid">' + card(true, jacketIcon, 'Banana Republic', 'Jacket', '$79', 'Sep 18') + card(true, shirtIcon, 'Temu', 'Top', '$28', 'Sep 20') + card(true, bottleIcon, 'Target', 'Skincare Set', '$42', 'Sep 28') + card(false, headphonesIcon, 'Amazon', 'Wireless Headphones', '$129', 'Eligible') + '</div><div class="demo-select-action"><div class="demo-cta">Plan my returns &rarr;</div><div class="demo-selected-count">3 items selected</div></div>';
-        }
-        const plan = document.querySelector('.solution-plan');
-        if (plan) {
-          plan.className = 'slide demo-plan';
-          plan.dataset.title = 'Build and reveal the return plan';
-          plan.dataset.notes = 'We handle the complexity behind the scenes — deadlines, methods, and drop-offs — and turn it into one actionable plan. The output tells the user exactly when to go, where to go, what to return, and the potential refund amount.';
-          plan.innerHTML = '<span class="slide-number">07 / 21</span><div class="demo-plan-intro"><div class="eyebrow">3. Build your plan</div><h2>From selected items to <em>one clear plan</em></h2><p class="subhead">We compare deadlines, methods, and drop-offs for you.</p></div><div class="demo-processing"><div class="demo-processing-card"><h3>Building your return plan</h3><div class="demo-process-steps"><span>Checking deadlines...</span><span>Comparing return methods...</span><span>Grouping compatible drop-offs...</span><span>Optimizing time + refund...</span></div><div class="demo-process-progress"></div></div></div><div class="demo-final"><div class="demo-ready-header"><div><h3>Return plan ready ' + checkIcon + '</h3><p>One optimized route. Only the actions that matter.</p></div><button class="demo-why-button" type="button">See why this plan &darr;</button></div><div class="demo-plan-card"><div class="demo-timeline"><div class="demo-step"><span class="demo-step-number">1</span><div class="demo-step-date">Fri &middot; Sep 18<strong>4:30 PM</strong></div><div class="demo-step-content"><b>' + pinIcon + ' UPS Store</b><p>' + clockIcon + ' 18 min &middot; 2 returns</p><div class="demo-plan-items"><span class="demo-plan-item">' + jacketIcon + ' Jacket &middot; $79</span><span class="demo-plan-item">' + shirtIcon + ' Top &middot; $28</span></div><div class="demo-plan-tags"><span>Same drop-off</span><span>Earlier deadline</span></div></div></div><div class="demo-step secondary"><span class="demo-step-number">2</span><div class="demo-step-date">Tue &middot; Sep 22<strong>Any time</strong></div><div class="demo-step-content"><b>' + pinIcon + ' Target</b><p>' + bottleIcon + ' Skincare Set &middot; $42</p><p>Can wait until your next Target trip</p></div></div></div><aside class="demo-summary"><div class="demo-refund">$149</div><div class="demo-refund-label">Potential refund</div><div class="demo-trip-change"><span class="old">2 trips</span><span class="arrow">&rarr;</span><span class="new">1 trip</span></div><div class="demo-summary-metrics"><div><b>FRI</b><span>Do this by</span></div><div><b>18 MIN</b><span>Total time</span></div><div><b>1 STOP</b><span>UPS</span></div></div><div class="demo-confirmations"><span>' + checkIcon + ' Return deadlines added to calendar</span><span>' + checkIcon + ' Reminder created automatically</span></div></aside><aside class="demo-reason fragment"><div class="demo-reason-title">WHY THIS PLAN</div><div class="demo-reason-item"><b>Banana Republic + Temu</b><span>Same UPS drop-off</span></div><div class="demo-reason-item"><b>Banana Republic</b><span>Earlier deadline</span></div><div class="demo-reason-item"><b>Target</b><span>Later deadline - can wait</span></div><div class="demo-reason-item"><b>Grouping these returns</b><span>Saves one extra trip</span></div><div class="demo-reason-tags"><span>Earlier deadline</span><span>Same drop-off</span><span>Free return</span><span>Higher refund value</span></div></aside></div></div>';
-        }
-      };
-      refineProductDemo();
       const slides = [...document.querySelectorAll('.slide')];
       slides.forEach((slide, i) => {
         const label = slide.querySelector('.slide-number');
@@ -3058,10 +2574,8 @@ The return is ready. But the package never leaves the house. Have we solved enou
       const nextBtn = document.getElementById('nextBtn');
       const fullBtn = document.getElementById('fullBtn');
       const help = document.getElementById('help');
-      const notes = document.getElementById('notes');
       const deck = document.getElementById('deck');
       let index = Math.max(0, Math.min(slides.length - 1, Number(location.hash.slice(1)) - 1 || 0));
-      let noteOpen = false;
 
       const fragments = () => [...slides[index].querySelectorAll('.fragment')];
       const shown = () => fragments().filter(el => el.classList.contains('visible')).length;
@@ -3071,11 +2585,12 @@ The return is ready. But the package never leaves the house. Have we solved enou
         const pastMoments = slides.slice(0, index).reduce((sum, s) => sum + Math.max(1, s.querySelectorAll('.fragment').length + 1), 0);
         const current = 1 + shown();
         progressBar.style.width = `${Math.min(100, ((pastMoments + current) / totalMoments) * 100)}%`;
-        notes.textContent = slides[index].dataset.notes || '';
       }
 
       function showSlide(nextIndex, direction = 1) {
         nextIndex = Math.max(0, Math.min(slides.length - 1, nextIndex));
+        direction = nextIndex < index ? -1 : 1;
+        slides[nextIndex].style.setProperty('--wf-enter-x', `calc(var(--w) * ${direction * 3})`);
         slides.forEach((slide, i) => {
           slide.classList.remove('active', 'exit-left');
           if (i < nextIndex) slide.classList.add('exit-left');
@@ -3106,9 +2621,7 @@ The return is ready. But the package never leaves the house. Have we solved enou
         }
         if (index > 0) {
           showSlide(index - 1, -1);
-          if (!slides[index].classList.contains('demo-plan')) {
-            slides[index].querySelectorAll('.fragment').forEach(el => el.classList.add('visible'));
-          }
+          slides[index].querySelectorAll('.fragment').forEach(el => el.classList.add('visible'));
           updateChrome();
         }
       }
@@ -3120,10 +2633,6 @@ The return is ready. But the package never leaves the house. Have we solved enou
         } catch (_) {}
       }
 
-      function toggleNotes() {
-        noteOpen = !noteOpen;
-        notes.classList.toggle('show', noteOpen);
-      }
 
       document.addEventListener('keydown', event => {
         if (event.target.closest('a, button, input, textarea, select, [contenteditable]')) return;
@@ -3139,17 +2648,12 @@ The return is ready. But the package never leaves the house. Have we solved enou
           event.preventDefault(); showSlide(slides.length - 1);
         } else if (event.key.toLowerCase() === 'f') {
           event.preventDefault(); toggleFullscreen();
-        } else if (event.key.toLowerCase() === 'n') {
-          event.preventDefault(); toggleNotes();
         }
       });
 
       prevBtn.addEventListener('click', backward);
       nextBtn.addEventListener('click', forward);
       fullBtn.addEventListener('click', toggleFullscreen);
-      deck.addEventListener('click', event => {
-        if (event.target.closest('.demo-why-button')) forward();
-      });
       deck.addEventListener('dblclick', toggleFullscreen);
 
       let startX = 0;
