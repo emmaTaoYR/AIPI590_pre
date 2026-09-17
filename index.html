@@ -2256,15 +2256,21 @@
     .pair-example p { font-size: 1.4vw; line-height: 1.5; color: var(--muted); }
     .pair-example .sq-fake-button { margin-top: 1.5vw; padding: 1vw; font-size: 1.3vw; }
     .pair-example small { display: block; margin-top: 1vw; font-size: 1.05vw; color: var(--muted); }
-    .qa-close { place-items: center; text-align: center; background: var(--continuation-bg); }
-    .qa-content { width: 100%; }
-    .qa-close .eyebrow { color: var(--brand-ink); }
-    .qa-close h2 { font-size: clamp(52px, 7vw, 112px); line-height: 1.02; }
+    .qa-close { --q: min(1vw, 1.777778vh); place-items: stretch; background: radial-gradient(ellipse at 85% 50%, var(--brand-soft), transparent 62%), var(--bg); }
+    .qa-content { width: 100%; display: grid; grid-template-columns: 1fr calc(var(--q) * 33); gap: calc(var(--q) * 6); align-items: center; }
+    .qa-copy { align-self: start; }
+    .qa-copy .eyebrow { margin-bottom: calc(var(--q) * 3.4); color: var(--brand-ink); }
+    .qa-close h2 { margin: 0; font-size: calc(var(--q) * 6.2); line-height: 1.06; letter-spacing: -.055em; }
     .qa-close .accent { color: var(--brand-ink); }
-    .qa-close p { margin-top: 2.4vw; color: var(--muted); font-size: 1.8vw; }
-    .qa-invite { margin-top: 3vw; color: var(--brand-ink); font-size: 1.35vw; }
-    .qa-open-link { display: inline-flex; align-items: center; margin-top: 1.5vw; padding: .85vw 1.4vw; border: 1px solid var(--brand-border); border-radius: .7vw; background: var(--brand-soft); color: var(--brand-ink); font-size: 1.15vw; font-weight: 750; text-decoration: none; transition: background .2s, color .2s; }
-    .qa-open-link:hover { background: var(--brand-active); color: var(--surface); }
+    .qa-close p { max-width: calc(var(--q) * 36); margin: calc(var(--q) * 2.6) 0 0; color: var(--muted); font-size: calc(var(--q) * 2.1); line-height: 1.45; }
+    .qa-code { margin: 0; padding: calc(var(--q) * 1.7) calc(var(--q) * 1.7) calc(var(--q) * 2); text-align: center; background: var(--surface); border: 1px solid var(--brand-border); border-radius: calc(var(--q) * 2); box-shadow: 0 calc(var(--q) * 1.5) calc(var(--q) * 5) rgba(166, 44, 86, .09); }
+    .qa-code-link { display: block; border-radius: calc(var(--q) * .8); transition: box-shadow .2s; }
+    .qa-code-link:hover { box-shadow: 0 0 0 2px var(--brand-border); }
+    .qa-code-link:focus-visible { outline: 3px solid var(--brand-ink); outline-offset: 4px; }
+    .qa-code img { display: block; width: 100%; height: auto; background: #fff; border-radius: calc(var(--q) * .8); }
+    .qa-code figcaption { display: grid; justify-items: center; gap: calc(var(--q) * 1); margin-top: calc(var(--q) * .7); }
+    .qa-time { padding: calc(var(--q) * .55) calc(var(--q) * 1.2); border-radius: 999px; background: var(--brand-soft); color: var(--brand-ink); font-size: calc(var(--q) * 1.4); font-weight: 650; }
+
 
     /* A continuous five-step workflow, with immediate content and shared navigation. */
     .workflow, .competition-clear { --w: min(1vw, 1.777778vh); background: var(--continuation-bg); }
@@ -3281,13 +3287,22 @@
         </div>
       </section>
 
-      <section class="slide qa-close" data-title="Q&A and feedback">
+      <section class="slide qa-close" data-title="Join our early-access list">
         <span class="slide-number">18 / 18</span>
-        <div class="qa-content"><div class="eyebrow">Q&amp;A + feedback</div>
-          <h2>Would you use<br><span class="accent">ReturnPilot?</span></h2>
-          <p>What would make it more useful for you?</p>
-          <div class="qa-invite fragment">Questions, ideas and feedback welcome.</div>
-          <a class="qa-open-link" href="qa.html#topics">Open Q&amp;A →</a>
+        <div class="qa-content">
+          <div class="qa-copy">
+            <div class="eyebrow">ReturnPilot · Early access</div>
+            <h2>Interested in<br><span class="accent">trying it?</span></h2>
+            <p>Scan to join our early-access list.</p>
+          </div>
+          <figure class="qa-code">
+            <a class="qa-code-link" href="qa.html#topics" aria-label="Open ReturnPilot Q&amp;A">
+              <img src="assets/early-access-qr.jpg" width="300" height="300" alt="QR code to join our early-access list" />
+            </a>
+            <figcaption>
+              <span class="qa-time">takes &lt;20 seconds</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
