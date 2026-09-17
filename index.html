@@ -2422,6 +2422,26 @@
 .sq .accent, .sq .mint {color:var(--brand-ink);}
 .sq a {color:var(--brand-ink);}
 .deck:has(.sq.active) .notes {white-space:pre-line;max-height:60%;}
+
+    /* Selected upstream improvements; the light palette and 21-slide sequence stay intact. */
+    .demo-plan-intro h2 { max-width: none; font-size: 3.2vw; line-height: 1.08; }
+    .demo-plan-intro .subhead { font-size: 1.2vw; max-width: none; }
+    .demo-final { top: 28%; bottom: 5%; }
+    .demo-ready-header h3 { font-size: 2vw; }
+    .demo-ready-header p { font-size: 1.1vw; }
+    .demo-plan-card:has(.demo-reason.visible) { padding-bottom: 6.5vw; }
+    .demo-reason.fragment.visible { height: 6.5vw; min-height: 0; }
+    .demo-reason-tags { display: none; }
+    .demo-timeline, .demo-summary { padding: 1.4vw; }
+    .demo-plan-card { min-height: 24vw; }
+    .audit-source {
+      position: absolute; left: 6.5%; right: 12%; bottom: 2%;
+      font-size: clamp(9px, .78vw, 13px); line-height: 1.35; color: var(--muted);
+    }
+    .audit-source a { color: var(--brand-ink); text-underline-offset: .2em; }
+    .control:focus-visible, a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--brand); outline-offset: 4px;
+    }
   </style>
 </head>
 <body>
@@ -2621,29 +2641,29 @@
             <div class="eyebrow">Why now</div>
             <h2>A frequent behavior at massive scale</h2>
           </div>
-          <p class="subhead">Returns already happen often enough to support a product category. The missed-refund gap remains unmeasured.</p>
+          <p class="subhead">Returns are frequent. Willingness to pay for our workflow remains unvalidated.</p>
         </header>
         <div class="stats">
           <div class="stat fragment">
             <span class="stat-value">$1.23T</span>
-            <span class="stat-label">U.S. e-commerce sales in 2025</span>
+            <span class="stat-label">estimated U.S. retail e-commerce sales, 2025</span>
           </div>
           <div class="stat fragment">
-            <span class="stat-value">~19%</span>
-            <span class="stat-label">estimated online return rate</span>
+            <span class="stat-value">19.3%</span>
+            <span class="stat-label">estimated share of online sales returned, 2025</span>
           </div>
           <div class="stat fragment">
             <span class="stat-value">7.7</span>
-            <span class="stat-label">online returns per shopper aged 18–30 in the prior year</span>
+            <span class="stat-label">average past-year online returns among surveyed returners aged 18–30</span>
           </div>
         </div>
         <div class="unknown fragment">
           <span><b>The missing number:</b> refunds people intended to claim, but lost to delay and fragmented workflows.</span>
           <span>Our first validation target</span>
         </div>
-      </section>
+      <footer class="audit-source">Sources: <a target="_blank" rel="noopener" href="https://www2.census.gov/retail/releases/historical/ecomm/25q4.pdf">Census, Mar. 2026</a> · <a target="_blank" rel="noopener" href="https://nrf.com/media-center/press-releases/consumers-expected-to-return-nearly-850-billion-in-merchandise-in-2025">NRF / Happy Returns, 2025</a>. Consumer n=2,006 past-year online returners; 7.7 is the 18–30 subgroup.</footer></section>
 
-      <section class="slide competition" data-title="Competitive landscape" data-notes="The market is not empty. Each competitor proves a piece of demand. Our opportunity is the decision and action layer across retailers.">
+      <section class="slide competition" data-title="Competitive landscape" data-notes="The market is not empty. Competitor offerings are not proof of demand for our product. Our opportunity is the decision and action layer across retailers.">
         <span class="slide-number">09 / 21</span>
         <header class="competition-header">
           <div>
@@ -2676,9 +2696,9 @@
         </div>
         <div class="gap-line fragment">
           <span>Reminder. Detection. Pickup.</span>
-          <span>The decision layer still needs an owner.</span>
+          <span>Our hypothesis: a better cross-retailer action plan.</span>
         </div>
-      </section>
+      <footer class="audit-source">Vendor-described features: <a target="_blank" rel="noopener" href="https://apps.apple.com/us/app/return-before/id6797138750">Return Before</a> · <a target="_blank" rel="noopener" href="https://www.hawkreturn.com/">HawkReturn</a> · <a target="_blank" rel="noopener" href="https://returnqueen.com/pricing">ReturnQueen</a>. Differentiation remains a hypothesis.</footer></section>
 
       <section class="slide handoff" data-title="Handoff" data-notes="Hand off to the next speaker: what makes this product meaningfully different and why AI is fundamental to the advantage.">
         <span class="slide-number">10 / 21</span>
@@ -2817,7 +2837,7 @@
         <div class="story-footer fragment"><span><strong>AI connects the orders, policies and return updates.</strong><br>That understanding becomes the starting point for your plan.</span><small>Next: planning around you.</small></div>
       </section>
 
-      <section class="slide continuation personal-planning" data-title="Why AI: planning and learning your habits" data-notes="Spec sections 7, 15 and 22, plus the requested AI-assisted planning story. Continue the Banana Republic and Temu example. The user's explicit goal is fewer trips. First click: show lightweight habits the system could learn over time, a UPS location near home and weekend returns. These are editable suggestions, never mandatory. Second click: AI helps connect this context with the return information to personalize the proposed plan; optimization confirms a compatible UPS stop and checks constraints. Third click: the earlier Thursday deadline overrides the weekend habit. This is the same illustrative Thursday deadline used in slide 7, not a current-date calculation. Fourth click: reinforce user control and the division of work. This is a proposed product capability, with habit learning developed over time. The user still chooses Keep, Return or Not sure.">
+      <section class="slide continuation personal-planning" data-title="Why AI: planning and learning your habits" data-notes="Spec sections 7, 15 and 22, plus the requested AI-assisted planning story. Continue the Banana Republic and Temu example. The user's explicit goal is fewer trips. First click: show lightweight habits the system could learn over time, a UPS location near home and weekend returns. These are editable suggestions, never mandatory. Second click: AI helps connect this context with the return information to personalize the proposed plan; optimization confirms a compatible UPS stop and checks constraints. Third click: the earlier Friday deadline overrides the weekend habit. This is the same illustrative Friday deadline used in slide 7, not a current-date calculation. Fourth click: reinforce user control and the division of work. This is a proposed product capability, with habit learning developed over time. The user still chooses Keep, Return or Not sure.">
         <span class="slide-number">14 / 21</span>
         <header class="continuation-header">
           <div>
@@ -2843,7 +2863,7 @@
           <article class="personal-plan fragment">
             <span class="story-label">AI-assisted planning</span>
             <h3>Your next UPS trip</h3>
-            <div class="personal-stop"><b>UPS near home</b><p>Banana Republic + Temu<br>Before Thursday’s deadline</p></div>
+            <div class="personal-stop"><b>UPS near home</b><p>Banana Republic + Temu<br>Before Friday’s deadline</p></div>
             <div class="personal-reasons"><span>One combined trip</span><span>Your familiar stop</span></div>
             <div class="deadline-check fragment">
               <span aria-hidden="true">!</span>
@@ -3023,8 +3043,8 @@ The return is ready. But the package never leaves the house. Have we solved enou
         if (plan) {
           plan.className = 'slide demo-plan';
           plan.dataset.title = 'Build and reveal the return plan';
-          plan.dataset.notes = 'We handle the complexity behind the scenes — deadlines, methods, and drop-offs — and turn it into one actionable plan. The output tells the user exactly when to go, where to go, what to return, and how much money is protected.';
-          plan.innerHTML = '<span class="slide-number">07 / 21</span><div class="demo-plan-intro"><div class="eyebrow">3. Build your plan</div><h2>From selected items to <em>one clear plan</em></h2><p class="subhead">We compare deadlines, methods, and drop-offs for you.</p></div><div class="demo-processing"><div class="demo-processing-card"><h3>Building your return plan</h3><div class="demo-process-steps"><span>Checking deadlines...</span><span>Comparing return methods...</span><span>Grouping compatible drop-offs...</span><span>Optimizing time + refund...</span></div><div class="demo-process-progress"></div></div></div><div class="demo-final"><div class="demo-ready-header"><div><h3>Return plan ready ' + checkIcon + '</h3><p>One optimized route. Only the actions that matter.</p></div><button class="demo-why-button" type="button">See why this plan &darr;</button></div><div class="demo-plan-card"><div class="demo-timeline"><div class="demo-step"><span class="demo-step-number">1</span><div class="demo-step-date">Thu &middot; Sep 18<strong>4:30 PM</strong></div><div class="demo-step-content"><b>' + pinIcon + ' UPS Store</b><p>' + clockIcon + ' 18 min &middot; 2 returns</p><div class="demo-plan-items"><span class="demo-plan-item">' + jacketIcon + ' Jacket &middot; $79</span><span class="demo-plan-item">' + shirtIcon + ' Top &middot; $28</span></div><div class="demo-plan-tags"><span>Same drop-off</span><span>Earlier deadline</span></div></div></div><div class="demo-step secondary"><span class="demo-step-number">2</span><div class="demo-step-date">Mon &middot; Sep 22<strong>Any time</strong></div><div class="demo-step-content"><b>' + pinIcon + ' Target</b><p>' + bottleIcon + ' Skincare Set &middot; $42</p><p>Can wait until your next Target trip</p></div></div></div><aside class="demo-summary"><div class="demo-refund">$149</div><div class="demo-refund-label">Refund protected</div><div class="demo-trip-change"><span class="old">2 trips</span><span class="arrow">&rarr;</span><span class="new">1 trip</span></div><div class="demo-summary-metrics"><div><b>FRI</b><span>Do this by</span></div><div><b>18 MIN</b><span>Total time</span></div><div><b>1 STOP</b><span>UPS</span></div></div><div class="demo-confirmations"><span>' + checkIcon + ' Return deadlines added to calendar</span><span>' + checkIcon + ' Reminder created automatically</span></div></aside><aside class="demo-reason fragment"><div class="demo-reason-title">WHY THIS PLAN</div><div class="demo-reason-item"><b>Banana Republic + Temu</b><span>Same UPS drop-off</span></div><div class="demo-reason-item"><b>Banana Republic</b><span>Earlier deadline</span></div><div class="demo-reason-item"><b>Target</b><span>Later deadline - can wait</span></div><div class="demo-reason-item"><b>Grouping these returns</b><span>Saves one extra trip</span></div><div class="demo-reason-tags"><span>Earlier deadline</span><span>Same drop-off</span><span>Free return</span><span>Higher refund value</span></div></aside></div></div>';
+          plan.dataset.notes = 'We handle the complexity behind the scenes — deadlines, methods, and drop-offs — and turn it into one actionable plan. The output tells the user exactly when to go, where to go, what to return, and the potential refund amount.';
+          plan.innerHTML = '<span class="slide-number">07 / 21</span><div class="demo-plan-intro"><div class="eyebrow">3. Build your plan</div><h2>From selected items to <em>one clear plan</em></h2><p class="subhead">We compare deadlines, methods, and drop-offs for you.</p></div><div class="demo-processing"><div class="demo-processing-card"><h3>Building your return plan</h3><div class="demo-process-steps"><span>Checking deadlines...</span><span>Comparing return methods...</span><span>Grouping compatible drop-offs...</span><span>Optimizing time + refund...</span></div><div class="demo-process-progress"></div></div></div><div class="demo-final"><div class="demo-ready-header"><div><h3>Return plan ready ' + checkIcon + '</h3><p>One optimized route. Only the actions that matter.</p></div><button class="demo-why-button" type="button">See why this plan &darr;</button></div><div class="demo-plan-card"><div class="demo-timeline"><div class="demo-step"><span class="demo-step-number">1</span><div class="demo-step-date">Fri &middot; Sep 18<strong>4:30 PM</strong></div><div class="demo-step-content"><b>' + pinIcon + ' UPS Store</b><p>' + clockIcon + ' 18 min &middot; 2 returns</p><div class="demo-plan-items"><span class="demo-plan-item">' + jacketIcon + ' Jacket &middot; $79</span><span class="demo-plan-item">' + shirtIcon + ' Top &middot; $28</span></div><div class="demo-plan-tags"><span>Same drop-off</span><span>Earlier deadline</span></div></div></div><div class="demo-step secondary"><span class="demo-step-number">2</span><div class="demo-step-date">Tue &middot; Sep 22<strong>Any time</strong></div><div class="demo-step-content"><b>' + pinIcon + ' Target</b><p>' + bottleIcon + ' Skincare Set &middot; $42</p><p>Can wait until your next Target trip</p></div></div></div><aside class="demo-summary"><div class="demo-refund">$149</div><div class="demo-refund-label">Potential refund</div><div class="demo-trip-change"><span class="old">2 trips</span><span class="arrow">&rarr;</span><span class="new">1 trip</span></div><div class="demo-summary-metrics"><div><b>FRI</b><span>Do this by</span></div><div><b>18 MIN</b><span>Total time</span></div><div><b>1 STOP</b><span>UPS</span></div></div><div class="demo-confirmations"><span>' + checkIcon + ' Return deadlines added to calendar</span><span>' + checkIcon + ' Reminder created automatically</span></div></aside><aside class="demo-reason fragment"><div class="demo-reason-title">WHY THIS PLAN</div><div class="demo-reason-item"><b>Banana Republic + Temu</b><span>Same UPS drop-off</span></div><div class="demo-reason-item"><b>Banana Republic</b><span>Earlier deadline</span></div><div class="demo-reason-item"><b>Target</b><span>Later deadline - can wait</span></div><div class="demo-reason-item"><b>Grouping these returns</b><span>Saves one extra trip</span></div><div class="demo-reason-tags"><span>Earlier deadline</span><span>Same drop-off</span><span>Free return</span><span>Higher refund value</span></div></aside></div></div>';
         }
       };
       refineProductDemo();
@@ -3106,7 +3126,7 @@ The return is ready. But the package never leaves the house. Have we solved enou
       }
 
       document.addEventListener('keydown', event => {
-        if (event.target.closest('.sq a')) return;
+        if (event.target.closest('a, button, input, textarea, select, [contenteditable]')) return;
         if (['ArrowRight', 'ArrowDown', 'PageDown', 'Enter', ' '].includes(event.key)) {
           event.preventDefault();
           forward();
