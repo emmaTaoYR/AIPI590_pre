@@ -2244,12 +2244,12 @@
     }
 
     /* Short pitch: keep the workflow continuous and the closing discussion simple. */
-    .pair-review { grid-template-rows: auto 1fr; gap: 3vw; }
-    .pair-review-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: center; }
-    .pair-principles { display: grid; gap: 1.8vw; }
-    .pair-principles > div + div { border-top: 1px solid var(--line); padding-top: 1.8vw; }
-    .pair-principles h3 { color: var(--brand-ink); font-size: 2.2vw; letter-spacing: -.035em; }
-    .pair-principles p { margin-top: .6vw; color: var(--muted); font-size: 1.4vw; line-height: 1.45; }
+    .pair-review { grid-template-rows: auto 1fr; gap: 2.3vw; }
+    .pair-review-layout { display: grid; grid-template-columns: 1.02fr .98fr; gap: 5vw; align-items: center; }
+    .pair-principles { display: grid; gap: 1.15vw; }
+    .pair-principles > div + div { border-top: 1px solid var(--line); padding-top: 1.15vw; }
+    .pair-principles h3 { color: var(--brand-ink); font-size: 1.85vw; letter-spacing: -.035em; }
+    .pair-principles p { margin-top: .45vw; color: var(--muted); font-size: 1.18vw; line-height: 1.42; }
     .pair-example { padding: 2.5vw; border: 1px solid var(--brand-border); border-radius: 1.5vw; background: var(--surface); box-shadow: var(--shadow-sm); }
     .pair-example h3 { margin-top: 1.2vw; font-size: 2.5vw; letter-spacing: -.04em; }
     .pair-example .sq-status { font-size: 1.05vw; padding: .6vw .85vw; margin: 1.2vw 0; }
@@ -3262,12 +3262,13 @@
 
       <section class="slide continuation pair-review" data-title="Google PAIR: user confirmation">
         <span class="slide-number">17 / 18</span>
-        <header class="continuation-header"><div><div class="eyebrow">Google PAIR · User control</div><h2>When AI is unsure,<br><span class="accent">the user confirms.</span></h2></div></header>
+        <header class="continuation-header"><div><div class="eyebrow">Google PAIR · User control</div><h2>When AI is unsure,<br><span class="accent">keep the user in control.</span></h2></div></header>
         <div class="pair-review-layout">
           <div class="pair-principles fragment">
-            <div><h3>Understand the task</h3><p>What does this return need?</p></div>
-            <div><h3>Show what is missing</h3><p>Make unclear details easy to spot.</p></div>
-            <div><h3>Ask for confirmation</h3><p>Let the user check or correct the details.</p></div>
+            <div><h3>Understand User Context</h3><p>Identify what this return needs and where the user is stuck.</p></div>
+            <div><h3>Show Confidence Levels</h3><p>Make missing or uncertain details easy to spot.</p></div>
+            <div><h3>Enable User Control</h3><p>Let users review, correct, and approve key details.</p></div>
+            <div><h3>Plan for Failure</h3><p>Provide a clear fallback when the return path cannot be verified.</p></div>
           </div>
           <div class="pair-example fragment">
             <span class="story-label">Example · Missing delivery date</span>
