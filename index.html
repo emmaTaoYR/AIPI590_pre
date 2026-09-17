@@ -1334,6 +1334,310 @@
     .stat:nth-child(1) .stat-value { color: var(--brand-active); }
     .stat::after { border-color: rgba(217,79,125,.12); }
 
+    /* Slide 5 refresh: market context / opportunity framing */
+    .market {
+      grid-template-rows: auto 1fr auto;
+      gap: 1.7vw;
+      padding-top: 3.2vw;
+      padding-bottom: 2.5vw;
+    }
+
+    .market-header {
+      align-items: start;
+      gap: 4vw;
+    }
+
+    .market-header .eyebrow {
+      margin-bottom: .55em;
+      color: var(--brand-active);
+      font-size: clamp(13px, 1.05vw, 18px);
+      letter-spacing: .16em;
+      font-weight: 820;
+      text-transform: uppercase;
+    }
+
+    .market-header h2 {
+      max-width: 11.5em;
+      font-size: clamp(42px, 5.15vw, 88px);
+      line-height: .94;
+      letter-spacing: -.065em;
+    }
+
+    .market-header .subhead {
+      max-width: 26em;
+      padding-top: 1.7em;
+      color: var(--ink);
+      font-size: clamp(17px, 1.55vw, 26px);
+      line-height: 1.25;
+      font-weight: 690;
+    }
+
+    .market-header .subhead::after {
+      content: "Our opportunity is the money people meant to recover, but lost because returning felt too fragmented.";
+      display: block;
+      margin-top: 1em;
+      color: var(--muted);
+      font-size: .78em;
+      line-height: 1.35;
+      font-weight: 610;
+    }
+
+    .market .stats {
+      gap: 1.15vw;
+      align-items: stretch;
+    }
+
+    .market .stat {
+      min-height: 17.2vw;
+      padding: 1.65vw;
+      border: 1px solid rgba(36,31,33,.10);
+      border-radius: 1.15vw;
+      box-shadow: 0 18px 42px rgba(36,31,33,.09);
+    }
+
+    .market .stat:nth-child(1) {
+      min-height: 20.8vw;
+      color: #fff;
+      background: linear-gradient(145deg, #bf3d70, #8f234f);
+      border-color: rgba(143,35,79,.35);
+      box-shadow: 0 24px 52px rgba(143,35,79,.20);
+    }
+
+    .market .stat:nth-child(2),
+    .market .stat:nth-child(3) {
+      background: var(--surface);
+    }
+
+    .market .stat-value {
+      color: var(--brand-active);
+      font-size: clamp(52px, 6.6vw, 112px);
+      font-weight: 850;
+    }
+
+    .market .stat:nth-child(1) .stat-value {
+      color: #fff;
+      font-size: clamp(66px, 8.2vw, 140px);
+    }
+
+    .market .stat-label {
+      max-width: 17em;
+      margin-top: .75em;
+      color: var(--ink);
+      font-size: clamp(13px, 1.08vw, 19px);
+      line-height: 1.25;
+      font-weight: 680;
+    }
+
+    .market .stat:nth-child(1) .stat-label {
+      color: rgba(255,255,255,.86);
+    }
+
+    .market .stat::before {
+      border-width: 1.8vw;
+      border-color: rgba(255,255,255,.16);
+    }
+
+    .market .unknown {
+      display: block;
+      padding: 1.15vw 1.55vw 1.2vw;
+      border: 1px solid rgba(217,79,125,.30);
+      border-top-width: 1px;
+      border-radius: 1vw;
+      background: var(--brand-soft);
+      box-shadow: 0 14px 34px rgba(217,79,125,.10);
+      font-size: clamp(16px, 1.35vw, 23px);
+      line-height: 1.25;
+    }
+
+    .market .unknown span:first-child {
+      display: block;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .market .unknown b {
+      display: block;
+      margin-bottom: .15em;
+      color: var(--brand-active);
+      font-size: .78em;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .market .unknown span:last-child {
+      display: block;
+      margin-top: .7em;
+      color: var(--muted-2);
+      font-size: clamp(10px, .72vw, 13px);
+      line-height: 1.3;
+      font-weight: 560;
+      white-space: normal;
+    }
+
+    /* Slide 5 final: facts first, then one controlled opportunity reveal. */
+    .market {
+      --m: min(1vw, 1.777778vh);
+      grid-template-rows: auto 1fr auto;
+      gap: calc(var(--m) * 1.8);
+      padding: calc(var(--m) * 4.2) calc(var(--m) * 6.5) calc(var(--m) * 3.5);
+      background: var(--bg);
+    }
+
+    .market-header {
+      display: block;
+    }
+
+    .market-header .eyebrow {
+      margin-bottom: calc(var(--m) * .9);
+      font-size: calc(var(--m) * .98);
+    }
+
+    .market-header h2 {
+      max-width: 13em;
+      font-size: calc(var(--m) * 3.75);
+      line-height: 1;
+      letter-spacing: -.052em;
+    }
+
+    .market-header h2 span { color: var(--brand-ink); }
+
+    .market-header .subhead {
+      max-width: none;
+      padding-top: calc(var(--m) * .85);
+      color: var(--muted);
+      font-size: calc(var(--m) * 1.16);
+      line-height: 1.35;
+      font-weight: 570;
+    }
+
+    .market-header .subhead::after { content: none; }
+
+    .market .stats {
+      align-self: center;
+      grid-template-columns: 1.12fr 1fr 1fr;
+      gap: calc(var(--m) * 1.15);
+      align-items: stretch;
+    }
+
+    .market .stat,
+    .market .stat:nth-child(1) {
+      min-height: calc(var(--m) * 16.5);
+      justify-content: flex-end;
+      padding: calc(var(--m) * 1.55);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--m) * 1.05);
+      color: var(--ink);
+      background: var(--surface);
+      box-shadow: 0 12px 28px rgba(24,25,29,.055);
+    }
+
+    .market .stat:nth-child(1) {
+      border-color: var(--brand-border);
+      background: linear-gradient(145deg, #fff, #fcf3f7);
+      box-shadow: 0 16px 34px rgba(166,44,86,.08);
+    }
+
+    .market .stat::before {
+      display: none;
+    }
+
+    .market .stat-value,
+    .market .stat:nth-child(1) .stat-value {
+      color: var(--brand-active);
+      font-size: calc(var(--m) * 5.45);
+      line-height: .9;
+      font-weight: 830;
+    }
+
+    .market .stat:nth-child(1) .stat-value {
+      font-size: calc(var(--m) * 6.15);
+    }
+
+    .market .stat-label,
+    .market .stat:nth-child(1) .stat-label {
+      max-width: 18em;
+      margin-top: calc(var(--m) * .8);
+      color: var(--ink);
+      font-size: calc(var(--m) * 1.08);
+      line-height: 1.32;
+      font-weight: 650;
+    }
+
+    .market .stat-label small {
+      display: block;
+      margin-top: .35em;
+      color: var(--muted);
+      font-size: .8em;
+      font-weight: 600;
+    }
+
+    .market-source {
+      color: var(--muted-2);
+      font-size: calc(var(--m) * .69);
+      line-height: 1.35;
+      font-weight: 520;
+    }
+
+    .market-opportunity {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 12;
+      width: min(64%, calc(var(--m) * 66));
+      padding: calc(var(--m) * 3) calc(var(--m) * 3.4);
+      border: 1px solid var(--brand-border);
+      border-radius: calc(var(--m) * 1.25);
+      text-align: center;
+      background: rgba(255,253,252,.98);
+      box-shadow: 0 28px 76px rgba(80,32,50,.16);
+      transform: translate(-50%, -46%) scale(.98);
+      filter: none;
+    }
+
+    .market-opportunity.visible {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .market-opportunity .opportunity-label {
+      display: block;
+      margin-bottom: calc(var(--m) * 1.1);
+      color: var(--brand-ink);
+      font-size: calc(var(--m) * .92);
+      letter-spacing: .15em;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .market-opportunity strong {
+      display: block;
+      color: var(--ink);
+      font-size: calc(var(--m) * 2.55);
+      line-height: 1.16;
+      letter-spacing: -.035em;
+      font-weight: 800;
+    }
+
+    .market-opportunity p {
+      max-width: 36em;
+      margin: calc(var(--m) * 1.15) auto 0;
+      color: var(--muted);
+      font-size: calc(var(--m) * 1.02);
+      line-height: 1.4;
+    }
+
+    .market-header,
+    .market .stats,
+    .market-source {
+      transition: opacity .42s var(--ease), filter .42s var(--ease);
+    }
+
+    .market:has(.market-opportunity.visible) .market-header,
+    .market:has(.market-opportunity.visible) .stats,
+    .market:has(.market-opportunity.visible) .market-source {
+      opacity: .3;
+      filter: saturate(.55);
+    }
+
     .scope { background: var(--surface); }
     .scope:nth-child(2), .scope:nth-child(3) { background: var(--surface-soft); }
     .scope:nth-child(4) {
@@ -2194,6 +2498,242 @@
     .competition-clear .comp-transition { opacity: 0; transform: translateY(calc(var(--w) * .8)); transition: opacity .4s var(--ease), transform .4s var(--ease); }
     .competition-clear:has(.scope-ours.visible) .comp-transition { opacity: 1; transform: none; transition-delay: .2s; }
 
+    /* Slides 6–7: existing solutions, then the missing decision layer. */
+    .competition-landscape,
+    .competition-gap {
+      --c: min(1vw, 1.777778vh);
+      background: var(--continuation-bg);
+    }
+
+    .competition-landscape {
+      grid-template-rows: auto 1fr auto;
+      gap: calc(var(--c) * 2.4);
+      padding: calc(var(--c) * 4.6) calc(var(--c) * 6.5) calc(var(--c) * 4.5);
+    }
+
+    .landscape-header .eyebrow,
+    .gap-header .eyebrow {
+      margin-bottom: calc(var(--c) * 1.1);
+      color: var(--brand-ink);
+      font-size: calc(var(--c) * 1.02);
+    }
+
+    .landscape-header h2 {
+      max-width: 14.8em;
+      font-size: calc(var(--c) * 4.25);
+      line-height: 1;
+    }
+
+    .landscape-header p {
+      margin-top: calc(var(--c) * 1.1);
+      color: var(--muted);
+      font-size: calc(var(--c) * 1.35);
+      line-height: 1.4;
+    }
+
+    .landscape-cards {
+      align-self: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: calc(var(--c) * 1.35);
+      filter: none;
+    }
+
+    .landscape-card {
+      min-height: calc(var(--c) * 18.5);
+      display: flex;
+      flex-direction: column;
+      padding: calc(var(--c) * 1.75);
+      border: 1px solid var(--brand-border);
+      border-radius: calc(var(--c) * 1.25);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      opacity: 0;
+      transform: translateY(calc(var(--c) * 1.1));
+      transition: opacity .42s var(--ease), transform .48s var(--ease), box-shadow .3s var(--ease);
+    }
+
+    .landscape-cards.visible .landscape-card {
+      opacity: 1;
+      transform: none;
+    }
+
+    .landscape-cards.visible .landscape-card:nth-child(2) { transition-delay: .1s; }
+    .landscape-cards.visible .landscape-card:nth-child(3) { transition-delay: .2s; }
+
+    .landscape-icon {
+      width: calc(var(--c) * 3.1);
+      height: calc(var(--c) * 3.1);
+      display: grid;
+      place-items: center;
+      margin-bottom: calc(var(--c) * 1.5);
+      border-radius: calc(var(--c) * .8);
+      color: var(--brand-ink);
+      background: var(--brand-soft);
+    }
+
+    .landscape-icon svg {
+      width: 58%;
+      height: 58%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .landscape-label {
+      color: var(--brand-ink);
+      font-size: calc(var(--c) * .88);
+      font-weight: 850;
+      letter-spacing: .12em;
+    }
+
+    .landscape-card h3 {
+      margin: calc(var(--c) * .75) 0 auto;
+      color: var(--ink);
+      font-size: calc(var(--c) * 2.15);
+      letter-spacing: -.04em;
+    }
+
+    .landscape-card p {
+      max-width: 26em;
+      padding-top: calc(var(--c) * 2.2);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: calc(var(--c) * 1.14);
+      line-height: 1.42;
+      font-weight: 580;
+    }
+
+    .landscape-summary {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: calc(var(--c) * 2);
+      padding-top: calc(var(--c) * 1.2);
+      border-top: 1px solid var(--brand-border);
+    }
+
+    .landscape-summary strong {
+      color: var(--ink);
+      font-size: calc(var(--c) * 1.6);
+      letter-spacing: -.02em;
+    }
+
+    .landscape-summary span {
+      color: var(--brand-ink);
+      font-size: calc(var(--c) * 1.2);
+      font-weight: 760;
+    }
+
+    .competition-gap {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--c) * 1.7);
+      padding: calc(var(--c) * 4.5) calc(var(--c) * 8) calc(var(--c) * 4.2);
+    }
+
+    .gap-header h2 {
+      max-width: 12.5em;
+      font-size: calc(var(--c) * 4.7);
+      line-height: .98;
+    }
+
+    .gap-questions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: calc(var(--c) * .85);
+      margin-top: calc(var(--c) * .4);
+    }
+
+    .gap-question {
+      min-height: calc(var(--c) * 7.1);
+      display: flex;
+      align-items: center;
+      padding: calc(var(--c) * 1.35) calc(var(--c) * 1.55);
+      border: 1px solid var(--brand-border);
+      border-left: calc(var(--c) * .3) solid var(--brand);
+      border-radius: calc(var(--c) * .9);
+      color: var(--ink);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      font-size: calc(var(--c) * 1.55);
+      line-height: 1.18;
+      font-weight: 740;
+      filter: none;
+    }
+
+    .competition-gap:has(.gap-reveal.visible) .gap-question.visible {
+      opacity: .2;
+      transform: scale(.985);
+      box-shadow: none;
+    }
+
+    .gap-conclusion {
+      position: absolute;
+      left: calc(var(--c) * 8);
+      right: calc(var(--c) * 8);
+      bottom: calc(var(--c) * 5.4);
+      z-index: 3;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .gap-reveal {
+      color: var(--ink);
+      font-size: calc(var(--c) * 1.8);
+      font-weight: 780;
+      filter: none;
+    }
+
+    .gap-position {
+      margin-top: calc(var(--c) * .75);
+      color: var(--ink);
+      font-size: calc(var(--c) * 2.8);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      font-weight: 820;
+      filter: none;
+    }
+
+    .gap-position em {
+      color: var(--brand-active);
+      font-style: normal;
+    }
+
+    .gap-handoff {
+      margin-top: calc(var(--c) * 1.15);
+      color: var(--muted);
+      font-size: calc(var(--c) * 1.15);
+      font-weight: 650;
+      filter: none;
+    }
+
+    .gap-handoff div {
+      display: flex;
+      justify-content: center;
+      gap: calc(var(--c) * .65);
+      margin-top: calc(var(--c) * .7);
+    }
+
+    .gap-handoff span {
+      padding: .48em .8em;
+      border: 1px solid var(--brand-border);
+      border-radius: 999px;
+      color: var(--brand-ink);
+      background: var(--brand-soft);
+      font-size: .9em;
+      font-weight: 800;
+    }
+
+    .presenter-note { display: none !important; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .landscape-card,
+      .gap-question { transition: none !important; }
+    }
+
     .privacy-data-boundary { display: grid; gap: calc(var(--p) * .75); margin-top: calc(var(--p) * 1.1); text-align: left; }
     .privacy-data-boundary > div { padding: calc(var(--p) * .85) calc(var(--p) * 1.1); border-radius: calc(var(--p) * .65); }
     .privacy-collect { background: var(--brand-soft); border-left: 3px solid var(--brand); }
@@ -2246,14 +2786,166 @@
     .privacy-shield .privacy-process-row small { font-size: calc(var(--p) * 1.08); }
     .privacy-permission-note { display: flex; align-items: center; justify-content: center; gap: calc(var(--p) * 1.1); border-top: 1px solid var(--line); padding-top: calc(var(--p) * 1.3); color: var(--muted); font-size: calc(var(--p) * 1.1); }
     .privacy-permission-note strong { color: var(--brand-ink); font-weight: 750; }
-  </style>
+  
+
+    /* ===== Manual layout fixes: Data + Privacy and Product Roadmap only ===== */
+
+    /* Data + Privacy: center the composition and tighten the vertical rhythm. */
+    .data-privacy.privacy-shield {
+      padding: 4.1% 6.5% 4.2%;
+      gap: 2.2vw;
+      justify-content: center;
+    }
+
+    .data-privacy .privacy-heading {
+      width: 100%;
+      text-align: center;
+    }
+
+    .data-privacy .privacy-heading .eyebrow {
+      justify-content: center;
+      margin-bottom: .8vw;
+    }
+
+    .data-privacy .privacy-heading h2 {
+      font-size: clamp(48px, 5.1vw, 82px);
+      line-height: 1;
+    }
+
+    .data-privacy .privacy-heading > p {
+      margin-top: .8vw;
+      font-size: clamp(15px, 1.3vw, 21px);
+    }
+
+    .data-privacy .privacy-columns,
+    .data-privacy.privacy-shield .privacy-columns {
+      grid-template-columns: 1fr 1.05fr 1fr;
+      gap: 2.4vw;
+      align-items: center;
+      margin-top: .2vw;
+    }
+
+    .data-privacy .privacy-emblem,
+    .data-privacy.privacy-shield .privacy-emblem {
+      width: 8.5vw;
+      height: 8.5vw;
+    }
+
+    .data-privacy .privacy-emblem svg,
+    .data-privacy.privacy-shield .privacy-emblem svg {
+      width: 4.4vw;
+      height: 4.4vw;
+    }
+
+    .data-privacy .privacy-shield-center::before,
+    .data-privacy .privacy-shield-center::after {
+      top: 4.25vw;
+    }
+
+    .data-privacy .privacy-shield-center h3 {
+      margin: 1.05vw 0 1vw;
+      font-size: clamp(24px, 2.05vw, 34px);
+    }
+
+    .data-privacy .privacy-source-list {
+      gap: 1vw;
+    }
+
+    .data-privacy .privacy-source-row b {
+      font-size: clamp(17px, 1.4vw, 23px);
+    }
+
+    .data-privacy .privacy-source-row small,
+    .data-privacy .privacy-process-row small {
+      font-size: clamp(13px, .96vw, 16px);
+    }
+
+    .data-privacy .privacy-process-row b {
+      font-size: clamp(20px, 1.8vw, 30px);
+    }
+
+    .data-privacy .privacy-permission-note {
+      margin-top: .2vw;
+      padding-top: 1vw;
+      font-size: clamp(13px, 1vw, 17px);
+    }
+
+    /* Product Roadmap: center the slide, align the three stages, and remove the heavy banner feel. */
+    .slide[data-title="Product roadmap"] {
+      padding: 4.4% 6.5% 4.5%;
+      gap: 0;
+      justify-content: center;
+    }
+
+    .slide[data-title="Product roadmap"] > .eyebrow {
+      align-self: center;
+      justify-content: center;
+      margin-bottom: .7vw;
+    }
+
+    .slide[data-title="Product roadmap"] > h2 {
+      text-align: center;
+      font-size: clamp(46px, 4.7vw, 76px);
+      line-height: 1;
+      margin-bottom: 2.2vw;
+    }
+
+    .slide[data-title="Product roadmap"] .sq-road {
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5vw;
+      margin-top: 0;
+    }
+
+    .slide[data-title="Product roadmap"] .sq-road .sq-card {
+      min-height: 20vw;
+      padding: 1.7vw 1.8vw;
+      border-radius: 1.25vw;
+    }
+
+    .slide[data-title="Product roadmap"] .sq-road .sq-card h3 {
+      font-size: clamp(25px, 2.25vw, 37px);
+      margin: .8vw 0 1.1vw;
+    }
+
+    .slide[data-title="Product roadmap"] .sq-road .sq-card li {
+      font-size: clamp(14px, 1.25vw, 20px);
+      line-height: 1.4;
+    }
+
+    .slide[data-title="Product roadmap"] .sq-road .sq-card li + li {
+      margin-top: .65vw;
+    }
+
+    .slide[data-title="Product roadmap"] .sq-gate {
+      font-size: clamp(12px, 1.02vw, 17px);
+      padding-top: .9vw;
+    }
+
+    .slide[data-title="Product roadmap"] > .sq-band {
+      width: 100%;
+      margin-top: 1.6vw;
+      padding: 1.1vw 0 0;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      text-align: center;
+      color: var(--muted);
+      font-size: clamp(14px, 1.2vw, 20px);
+    }
+
+    .slide[data-title="Product roadmap"] > .sq-band b {
+      color: var(--brand-ink);
+    }
+
+</style>
 </head>
 <body>
   <main class="app" aria-label="AIPI590 pitch deck">
     <div class="deck" id="deck">
 
       <section class="slide hook active" data-title="Interactive hook">
-        <span class="slide-number">01 / 17</span>
+        <span class="slide-number">01 / 18</span>
         <div class="eyebrow">Quick question</div>
         <div class="hook-content">
           <div class="card-stage" aria-label="Two audience questions">
@@ -2275,7 +2967,7 @@
       </section>
 
       <section class="slide product-reveal" data-title="Product reveal">
-        <span class="slide-number">02 / 17</span>
+        <span class="slide-number">02 / 18</span>
         <div class="product-inner">
           <div class="product-mark fragment">R</div>
           <h1 class="fragment">ReturnPilot</h1>
@@ -2288,7 +2980,7 @@
       </section>
 
       <section class="slide pain-a" data-title="Target user and one return">
-        <span class="slide-number">03 / 17</span>
+        <span class="slide-number">03 / 18</span>
         <div class="pain-intro">
           <p class="pain-target">Our target users are <span>frequent shoppers</span> who buy across <span>multiple retailers</span>.</p>
           <div class="retailer-strip" aria-label="Retailers">
@@ -2332,7 +3024,7 @@
       </section>
 
       <section class="slide pain-b" data-title="Multiple retailers and money lost">
-        <span class="slide-number">04 / 17</span>
+        <span class="slide-number">04 / 18</span>
         <h2 class="continuation-title"><span>ONE</span> item was already annoying. Now imagine four retailers.</h2>
 
         <div class="retailer-board" aria-label="Four retailers with different return workflows">
@@ -2410,83 +3102,131 @@
       </section>
 
       <section class="slide market" data-title="Why now">
-        <span class="slide-number">05 / 17</span>
+        <span class="slide-number">05 / 18</span>
         <header class="market-header">
           <div>
             <div class="eyebrow">Why now</div>
-            <h2>A frequent behavior at massive scale</h2>
+            <h2>Returns are huge.<br><span>Unclaimed refunds are the gap.</span></h2>
           </div>
-          <p class="subhead">Returns are frequent. Willingness to pay for our workflow remains unvalidated.</p>
+          <p class="subhead">Returns are already a normal part of online shopping.</p>
         </header>
         <div class="stats">
-          <div class="stat fragment">
-            <span class="stat-value">$1.23T</span>
-            <span class="stat-label">estimated U.S. retail e-commerce sales, 2025</span>
+          <div class="stat">
+            <span class="stat-value">$1T+</span>
+            <span class="stat-label">U.S. retail e-commerce market<br><small>2025</small></span>
           </div>
-          <div class="stat fragment">
+          <div class="stat">
             <span class="stat-value">19.3%</span>
-            <span class="stat-label">estimated share of online sales returned, 2025</span>
+            <span class="stat-label">of online sales expected to be returned in 2025</span>
           </div>
-          <div class="stat fragment">
+          <div class="stat">
             <span class="stat-value">7.7</span>
-            <span class="stat-label">average past-year online returns among surveyed returners aged 18–30</span>
+            <span class="stat-label">average online returns in the past year among shoppers aged 18–30</span>
           </div>
         </div>
-        <div class="unknown fragment">
-          <span><b>The missing number:</b> refunds people intended to claim, but lost to delay and fragmented workflows.</span>
-          <span>Our first validation target</span>
+        <p class="market-source">Sources: U.S. Census Bureau, Quarterly Retail E-Commerce Sales, 4Q 2025 release, Mar. 10, 2026; NRF &amp; Happy Returns, 2025 Retail Returns Landscape, Oct. 15, 2025.</p>
+        <div class="market-opportunity fragment" role="group" aria-label="Our opportunity">
+          <span class="opportunity-label">Our opportunity</span>
+          <strong>Refunds users meant to recover,<br>but lost because the return process felt too fragmented.</strong>
+          <p>The market is proven.<br>This lost-refund workflow is the wedge we want to validate.</p>
         </div>
       </section>
 
-      <section class="slide competition competition-clear" data-title="Competitive landscape">
-        <span class="slide-number">06 / 17</span>
-        <header class="competition-header"><div><div class="eyebrow">Competitive landscape</div><h2>Different tools.<br><span class="comp-accent">Different parts of a return.</span></h2></div></header>
-        <div class="scope-map">
-          <article class="scope fragment"><span class="comp-type">Remind</span><h3>Return Before</h3><p>Identify deadlines.<br>Send reminders.</p></article>
-          <article class="scope fragment"><span class="comp-type">Detect</span><h3>HawkReturn</h3><p>Find orders in email.<br>Flag refund risk.</p></article>
-          <article class="scope fragment"><span class="comp-type">Pick up</span><h3>ReturnQueen</h3><p>Doorstep pickup.<br>Printer-free returns.</p></article>
-          <article class="scope scope-ours fragment"><span class="comp-type">Coordinate · Our hypothesis</span><h3>ReturnPilot</h3><p>Prioritize actions.<br>Combine valid trips.<br>Follow refunds.</p></article>
+      <section class="slide competition-landscape" data-title="Competitive landscape">
+        <span class="slide-number">06 / 18</span>
+        <header class="landscape-header">
+          <div class="eyebrow">Competitive landscape</div>
+          <h2>Different products solve different parts of the return journey.</h2>
+          <p>The market is not empty — but the experience is still fragmented.</p>
+        </header>
+
+        <div class="landscape-cards fragment" aria-label="Three products serving different parts of the return journey">
+          <article class="landscape-card">
+            <span class="landscape-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9Z"/><path d="M10 21h4M9 4V2m6 2V2"/></svg></span>
+            <span class="landscape-label">REMIND</span>
+            <h3>Return Before</h3>
+            <p>Tracks return deadlines and reminds users before they expire.</p>
+          </article>
+          <article class="landscape-card">
+            <span class="landscape-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/><path d="M8 3h8"/></svg></span>
+            <span class="landscape-label">DETECT</span>
+            <h3>HawkReturn</h3>
+            <p>Connects to email, detects purchases, and flags refunds at risk.</p>
+          </article>
+          <article class="landscape-card">
+            <span class="landscape-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 7 8-4 8 4-8 4-8-4Z"/><path d="M4 7v10l8 4 8-4V7M12 11v10"/><path d="M7 14H2m2-3-2 3 2 3"/></svg></span>
+            <span class="landscape-label">EXECUTE</span>
+            <h3>ReturnQueen</h3>
+            <p>Offers doorstep pickup and printer-free return execution.</p>
+          </article>
         </div>
-        <div class="comp-transition"><div><b>Our idea: connect the whole workflow.</b><span>From finding a purchase to following its refund.</span></div><strong>Here’s how it works →</strong></div>
+
+        <div class="landscape-summary">
+          <strong>Reminder. Detection. Pickup.</strong>
+          <span>Useful pieces — but still separate.</span>
+        </div>
+        <aside class="presenter-note">Briefly show that the market already validates parts of the problem. Return Before handles reminders, HawkReturn handles email detection and refund-risk alerts, and ReturnQueen helps with physical execution. The point is not that the market is empty — it is that the workflow remains fragmented.</aside>
+      </section>
+
+      <section class="slide competition-gap" data-title="The gap we see">
+        <span class="slide-number">07 / 18</span>
+        <header class="gap-header">
+          <div class="eyebrow">The gap</div>
+          <h2>But users still have to figure out the next move.</h2>
+        </header>
+
+        <div class="gap-questions" aria-label="Questions users still have to answer">
+          <div class="gap-question fragment">What should I handle first?</div>
+          <div class="gap-question fragment">Which returns can I combine?</div>
+          <div class="gap-question fragment">Where should I go?</div>
+          <div class="gap-question fragment">What is the latest time I can act without losing money?</div>
+        </div>
+
+        <div class="gap-conclusion">
+          <div class="gap-reveal fragment">That is the gap we see.</div>
+          <div class="gap-position fragment">We optimize the <em>decision and action layer</em><br><em>across multiple retailers.</em></div>
+          <div class="gap-handoff fragment">So what makes this meaningfully different — and why does AI actually matter?<div><span>Why us?</span><span>Why AI?</span></div></div>
+        </div>
+        <aside class="presenter-note">Shift from competitors to what the user still has to decide. Let the four questions appear one by one. Then reveal the gap: we are not solving one step; we are optimizing the decision and action layer across retailers. Use the final line to hand off into Why us / Why AI.</aside>
       </section>
 
       <section class="slide workflow" data-title="Workflow 1: Find purchases">
-        <span class="slide-number">07 / 17</span>
+        <span class="slide-number">08 / 18</span>
         <header class="wf-header"><div class="eyebrow">Our workflow · 01 / 05</div><h2>From purchases <span>to refunds.</span></h2><p>First, bring orders and receipts into one clear list.</p></header>
         <div class="wf-body wf-detect"><div class="wf-inputs"><span class="wf-label">What you share</span><div class="wf-source"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg><div><b>Order emails</b><span>Connect an inbox or forward selected emails</span></div></div><div class="wf-source"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg><div><b>Screenshots + receipts</b><span>Add purchases without connecting an inbox</span></div></div></div><span class="wf-arrow" aria-hidden="true">→</span><article class="wf-panel fragment"><div class="wf-panel-top"><h3>Your purchases</h3><span class="wf-chip">4 items found</span></div><div class="wf-record"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 4 3 4-3 4 5-3 2v9H7v-9L4 9z"/><path d="M12 7v13"/></svg></span><div><b>Banana Republic</b><span>Jacket</span></div><strong>$79</strong></div><div class="wf-record"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 4 2 4-2 5 5-4 3-2-2v10H9V10l-2 2-4-3z"/></svg></span><div><b>Temu</b><span>Top</span></div><strong>$28</strong></div><div class="wf-record"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4v4l2 2v11H8V9l2-2z"/><path d="M9 13h6"/></svg></span><div><b>Target</b><span>Skincare Set</span></div><strong>$42</strong></div><div class="wf-record"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h4v6H5a1 1 0 0 1-1-1zM20 14h-4v6h3a1 1 0 0 0 1-1z"/></svg></span><div><b>Amazon</b><span>Headphones</span></div><strong>$129</strong></div><div class="wf-panel-foot">Order details, amounts and return deadlines together.</div></article></div>
         <ol class="wf-rail" aria-label="Return workflow"><li class="current" aria-current="step"><span>1</span><b>Find purchases</b></li><li class=""><span>2</span><b>Choose items</b></li><li class=""><span>3</span><b>Set priorities</b></li><li class=""><span>4</span><b>Start &amp; group</b></li><li class=""><span>5</span><b>Track refunds</b></li></ol>
       </section>
 
       <section class="slide workflow" data-title="Workflow 2: Choose items">
-        <span class="slide-number">08 / 17</span>
+        <span class="slide-number">09 / 18</span>
         <header class="wf-header"><div class="eyebrow">Our workflow · 02 / 05</div><h2>You choose <span>what to return.</span></h2><p>Select the items you want to send back. Keep the rest.</p></header>
         <div class="wf-body wf-selection"><div class="wf-items"><article class="wf-item selected"><div class="wf-item-top"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 4 3 4-3 4 5-3 2v9H7v-9L4 9z"/><path d="M12 7v13"/></svg></span><span class="wf-choice">✓ Return</span></div><h3>Banana Republic</h3><p>Jacket</p><div class="wf-item-meta"><b>$79</b><span>Return by Sep 18</span></div></article><article class="wf-item selected"><div class="wf-item-top"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 4 2 4-2 5 5-4 3-2-2v10H9V10l-2 2-4-3z"/></svg></span><span class="wf-choice">✓ Return</span></div><h3>Temu</h3><p>Top</p><div class="wf-item-meta"><b>$28</b><span>Return by Sep 20</span></div></article><article class="wf-item selected"><div class="wf-item-top"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3h4v4l2 2v11H8V9l2-2z"/><path d="M9 13h6"/></svg></span><span class="wf-choice">✓ Return</span></div><h3>Target</h3><p>Skincare Set</p><div class="wf-item-meta"><b>$42</b><span>Return by Sep 28</span></div></article><article class="wf-item kept"><div class="wf-item-top"><span class="wf-art"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h4v6H5a1 1 0 0 1-1-1zM20 14h-4v6h3a1 1 0 0 0 1-1z"/></svg></span><span class="wf-choice">Keep</span></div><h3>Amazon</h3><p>Headphones</p><div class="wf-item-meta"><b>$129</b><span>No return action</span></div></article></div><div class="wf-selection-summary fragment"><div><b>3 items selected</b><span>$149 in potential refunds</span></div><strong>Next: see what to handle first →</strong></div></div>
         <ol class="wf-rail" aria-label="Return workflow"><li class="complete"><span>1</span><b>Find purchases</b></li><li class="current" aria-current="step"><span>2</span><b>Choose items</b></li><li class=""><span>3</span><b>Set priorities</b></li><li class=""><span>4</span><b>Start &amp; group</b></li><li class=""><span>5</span><b>Track refunds</b></li></ol>
       </section>
 
       <section class="slide workflow" data-title="Workflow 3: Set priorities">
-        <span class="slide-number">09 / 17</span>
+        <span class="slide-number">10 / 18</span>
         <header class="wf-header"><div class="eyebrow">Our workflow · 03 / 05</div><h2>A clear plan for <span>what to do next.</span></h2><p>The plan puts earlier deadlines first and shows what can wait.</p></header>
         <div class="wf-body wf-priorities"><article class="wf-panel"><div class="wf-panel-top"><h3>Your action list</h3><span class="wf-chip">3 selected items</span></div><div class="wf-priority-row"><span class="wf-priority-tag">Start now</span><div><b>Banana Republic · Jacket</b><span>Return by Sep 18 · Earlier deadline</span></div><strong>$79</strong></div><div class="wf-priority-row"><span class="wf-priority-tag">Start now</span><div><b>Temu · Top</b><span>Return by Sep 20 · Coming up next</span></div><strong>$28</strong></div><div class="wf-priority-row later"><span class="wf-priority-tag">Can wait</span><div><b>Target · Skincare Set</b><span>Return by Sep 28 · More time left</span></div><strong>$42</strong></div></article><aside class="wf-next-action fragment"><span class="wf-label">Your next action</span><h3>Start the jacket<br>and top returns.</h3><p>These are the two earlier deadlines.</p><div class="wf-next-detail"><b>Then confirm the drop-off methods.</b><p>We can group the trip once the retailer instructions are available.</p></div></aside></div>
         <ol class="wf-rail" aria-label="Return workflow"><li class="complete"><span>1</span><b>Find purchases</b></li><li class="complete"><span>2</span><b>Choose items</b></li><li class="current" aria-current="step"><span>3</span><b>Set priorities</b></li><li class=""><span>4</span><b>Start &amp; group</b></li><li class=""><span>5</span><b>Track refunds</b></li></ol>
       </section>
 
       <section class="slide workflow" data-title="Workflow 4: Start and group">
-        <span class="slide-number">10 / 17</span>
+        <span class="slide-number">11 / 18</span>
         <header class="wf-header"><div class="eyebrow">Our workflow · 04 / 05</div><h2>Start the returns. <span>Confirm one trip.</span></h2><p>Use each retailer’s return flow. Then combine items with compatible drop-off instructions.</p></header>
         <div class="wf-body wf-execution"><article class="wf-panel wf-start"><span class="wf-label">Start with each retailer</span><h3>You confirm the return.</h3><div class="wf-merchant"><b>Banana Republic</b><span>Start return →</span></div><div class="wf-merchant"><b>Temu</b><span>Start return →</span></div><p>Read the selected methods,<br>QR codes and labels.</p></article><span class="wf-arrow" aria-hidden="true">→</span><article class="wf-panel wf-trip"><span class="wf-label">Read the retailer instructions</span><h3>Check the drop-off methods.</h3><div class="wf-method-check fragment"><div class="wf-confirmed"><span>✓ Jacket · UPS</span><span>✓ Top · UPS</span></div><p>Both items qualify for the same location.</p></div><div class="wf-group-result fragment"><div class="wf-group-head"><b>One UPS stop.</b><strong>$107</strong></div><div class="wf-trip-ready"><b>✓ Return Wallet ready</b><span>Both codes and labels together.</span></div></div></article><div class="wf-inline-status"><b>Target · $42</b><span>Handle separately on your next Target visit.</span></div></div>
         <ol class="wf-rail" aria-label="Return workflow"><li class="complete"><span>1</span><b>Find purchases</b></li><li class="complete"><span>2</span><b>Choose items</b></li><li class="complete"><span>3</span><b>Set priorities</b></li><li class="current" aria-current="step"><span>4</span><b>Start &amp; group</b></li><li class=""><span>5</span><b>Track refunds</b></li></ol>
       </section>
 
       <section class="slide workflow" data-title="Workflow 5: Track refunds">
-        <span class="slide-number">11 / 17</span>
+        <span class="slide-number">12 / 18</span>
         <header class="wf-header"><div class="eyebrow">Our workflow · 05 / 05</div><h2>Drop off. <span>Follow every refund.</span></h2><p>Open the Return Wallet at the counter, then follow the status updates.</p></header>
         <div class="wf-body wf-refunds"><article class="wf-panel wf-wallet"><div class="wf-panel-top"><h3>Return Wallet</h3><span class="wf-chip">UPS · 2 returns</span></div><div class="wf-ticket"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h2v2h-2zM19 17h2v4h-4M11 3v3M11 10v3H7M3 11h2M11 16v5M15 11h6"/></svg><div><b>Banana Republic · Jacket</b><span>Return code / label ready</span></div><strong>$79</strong></div><div class="wf-ticket"><svg class="wf-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h2v2h-2zM19 17h2v4h-4M11 3v3M11 10v3H7M3 11h2M11 16v5M15 11h6"/></svg><div><b>Temu · Top</b><span>Return code / label ready</span></div><strong>$28</strong></div><div class="wf-panel-foot">Target’s $42 return is still pending.</div></article><div class="wf-status-list fragment"><span class="wf-label">Updates over time</span><div class="wf-status-row"><span>✓</span><div><b>Dropped off</b><small>Handoff confirmed</small></div></div><div class="wf-status-row"><span>✓</span><div><b>Retailers received</b><small>Return received and processed</small></div></div><div class="wf-refund-issued"><div><span class="wf-label">Refunds issued</span><b>$107</b></div><p>Both retailers confirmed.<br>Jacket + top complete.</p></div></div></div>
         <ol class="wf-rail" aria-label="Return workflow"><li class="complete"><span>1</span><b>Find purchases</b></li><li class="complete"><span>2</span><b>Choose items</b></li><li class="complete"><span>3</span><b>Set priorities</b></li><li class="complete"><span>4</span><b>Start &amp; group</b></li><li class="current" aria-current="step"><span>5</span><b>Track refunds</b></li></ol>
       </section>
 
       <section class="slide ai-overview ai-three-roles" data-title="Why AI: orders, policies and refund updates">
-        <span class="slide-number">12 / 17</span>
+        <span class="slide-number">13 / 18</span>
         <header class="ai-overview-heading"><div class="eyebrow">Behind the workflow · AI</div><h2>AI reads orders, policies<br><span>and refund updates.</span></h2></header>
         <div class="ai-roles-grid">
           <article class="ai-role-card fragment"><span class="ai-role-number">01</span><h3>Read orders</h3><p class="ai-role-source">Emails, screenshots<br>and receipts</p><div class="ai-role-output"><span>Find the purchase details</span><b>Items, amounts<br>and delivery dates</b></div><div class="ai-role-example"><strong>Jacket · $79</strong><span>Banana Republic</span></div></article>
@@ -2496,7 +3236,7 @@
       </section>
 
       <section class="slide continuation data-privacy privacy-clean privacy-shield" data-title="Data sources and privacy by choice">
-        <span class="slide-number">13 / 17</span>
+        <span class="slide-number">14 / 18</span>
         <header class="privacy-heading">
           <div class="eyebrow">Data + privacy</div>
           <h2>Your data. <span>Your choice.</span></h2>
@@ -2516,12 +3256,12 @@
         <div class="privacy-permission-note">Calendar &amp; precise location <strong>Always optional</strong></div>
       </section>
 
-      <section class="slide sq" data-title="Success metrics"><span class="slide-number">14 / 17</span><div class="eyebrow">Proposed pilot · What counts as success?</div><h2>A click starts a return.<br><span class="accent">It doesn’t finish one.</span></h2><div class="sq-flow fragment"><span>Start the return</span><span>→</span><span>Meet the deadline</span><span>→</span><span>Confirm the refund</span></div><div class="sq-compare fragment"><div class="sq-card"><div class="sq-kicker">Control</div><h3>Reminders only</h3><p>Verified deadlines.<br>Scheduled reminders.</p></div><span class="sq-vs">vs.</span><div class="sq-card sq-treatment"><div class="sq-kicker">ReturnPilot</div><h3>Reminders + action</h3><p>The same reminders.<br>A prepared action workflow.</p></div></div><div class="sq-band sq-result fragment"><strong>Do more returns<br>finish on time?</strong><p>Primary: on-time completion rate.<br>Also: refunds, effort, errors and cost.</p></div></section>
+      <section class="slide sq" data-title="Success metrics"><span class="slide-number">15 / 18</span><div class="eyebrow">Proposed pilot · What counts as success?</div><h2>A click starts a return.<br><span class="accent">It doesn’t finish one.</span></h2><div class="sq-flow fragment"><span>Start the return</span><span>→</span><span>Meet the deadline</span><span>→</span><span>Confirm the refund</span></div><div class="sq-compare fragment"><div class="sq-card"><div class="sq-kicker">Control</div><h3>Reminders only</h3><p>Verified deadlines.<br>Scheduled reminders.</p></div><span class="sq-vs">vs.</span><div class="sq-card sq-treatment"><div class="sq-kicker">ReturnPilot</div><h3>Reminders + action</h3><p>The same reminders.<br>A prepared action workflow.</p></div></div><div class="sq-band sq-result fragment"><strong>Do more returns<br>finish on time?</strong><p>Primary: on-time completion rate.<br>Also: refunds, effort, errors and cost.</p></div></section>
 
-      <section class="slide sq" data-title="Product roadmap"><span class="slide-number">15 / 17</span><div class="eyebrow">Proposed development stages</div><h2>Roadmap</h2><div class="sq-grid sq-road"><div class="sq-card fragment"><div class="sq-kicker">Crawl · Oct 15</div><h3>Prepare it.</h3><ul><li>2–3 retailers</li><li>Extract orders; verify policies</li><li>Prepare an action page;<br>user confirms submission</li></ul><div class="sq-gate">Gate: a usable end-to-end MVP</div></div><div class="sq-card fragment"><div class="sq-kicker">Walk · Nov 19</div><h3>Test it.</h3><ul><li>Track handoff and refunds</li><li>Compare completion rates</li><li>Test pricing and support costs</li></ul><div class="sq-gate">Gate: evidence of user value</div></div><div class="sq-card fragment"><div class="sq-kicker">Run · After validation</div><h3>Expand it.</h3><ul><li>Authorized integrations</li><li>Broader retailer coverage</li><li>Pickup partners, if handoff is the barrier</li></ul><div class="sq-gate">Gate: evidence guides expansion</div></div></div><div class="sq-band fragment"><b>Build what gets the package moving.</b> Let pilot results set the next priority.</div></section>
+      <section class="slide sq" data-title="Product roadmap"><span class="slide-number">16 / 18</span><div class="eyebrow">Proposed development stages</div><h2>Roadmap</h2><div class="sq-grid sq-road"><div class="sq-card fragment"><div class="sq-kicker">Crawl · Oct 15</div><h3>Prepare it.</h3><ul><li>2–3 retailers</li><li>Extract orders; verify policies</li><li>Prepare an action page;<br>user confirms submission</li></ul><div class="sq-gate">Gate: a usable end-to-end MVP</div></div><div class="sq-card fragment"><div class="sq-kicker">Walk · Nov 19</div><h3>Test it.</h3><ul><li>Track handoff and refunds</li><li>Compare completion rates</li><li>Test pricing and support costs</li></ul><div class="sq-gate">Gate: evidence of user value</div></div><div class="sq-card fragment"><div class="sq-kicker">Run · After validation</div><h3>Expand it.</h3><ul><li>Authorized integrations</li><li>Broader retailer coverage</li><li>Pickup partners, if handoff is the barrier</li></ul><div class="sq-gate">Gate: evidence guides expansion</div></div></div><div class="sq-band fragment"><b>Build what gets the package moving.</b> Let pilot results set the next priority.</div></section>
 
       <section class="slide continuation pair-review" data-title="Google PAIR: user confirmation">
-        <span class="slide-number">16 / 17</span>
+        <span class="slide-number">17 / 18</span>
         <header class="continuation-header"><div><div class="eyebrow">Google PAIR · User control</div><h2>When AI is unsure,<br><span class="accent">the user confirms.</span></h2></div></header>
         <div class="pair-review-layout">
           <div class="pair-principles fragment">
@@ -2541,7 +3281,7 @@
       </section>
 
       <section class="slide qa-close" data-title="Q&A and feedback">
-        <span class="slide-number">17 / 17</span>
+        <span class="slide-number">18 / 18</span>
         <div class="qa-content"><div class="eyebrow">Q&amp;A + feedback</div>
           <h2>Would you use<br><span class="accent">ReturnPilot?</span></h2>
           <p>What would make it more useful for you?</p>
