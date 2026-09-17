@@ -89,14 +89,6 @@
 
     .slide.exit-left { transform: translateX(-2.4%); }
 
-    .slide.dark {
-      color: #f8f8ff;
-      background:
-        radial-gradient(circle at 18% 15%, rgba(141, 125, 255, .28), transparent 31%),
-        radial-gradient(circle at 87% 86%, rgba(101, 230, 191, .12), transparent 30%),
-        #11131a;
-    }
-
     .slide-number {
       position: absolute;
       top: 4.1%;
@@ -106,8 +98,6 @@
       font-weight: 750;
       letter-spacing: .08em;
     }
-
-    .dark .slide-number { color: rgba(255,255,255,.43); }
 
     .eyebrow {
       display: inline-flex;
@@ -128,8 +118,6 @@
       border-radius: 999px;
       background: currentColor;
     }
-
-    .dark .eyebrow { color: var(--mint); }
 
     h1, h2, h3, p { margin: 0; }
 
@@ -155,10 +143,8 @@
       letter-spacing: -.016em;
     }
 
-    .dark .subhead { color: rgba(255,255,255,.62); }
-
     .accent { color: var(--violet); }
-    .mint { color: #37c99b; }
+    .mint { color: #208663; }
     .coral { color: var(--coral); }
 
     .fragment {
@@ -274,9 +260,9 @@
       place-items: center;
       text-align: center;
       background:
-        radial-gradient(circle at 50% 38%, rgba(101,230,191,.13), transparent 28%),
-        radial-gradient(circle at 50% 52%, rgba(103,87,245,.28), transparent 34%),
-        #11131a;
+        radial-gradient(circle at 50% 38%, rgba(101,230,191,.15), transparent 31%),
+        radial-gradient(circle at 50% 52%, rgba(103,87,245,.12), transparent 40%),
+        #f9f9ff;
     }
 
     .product-inner { width: min(76vw, 1120px); }
@@ -299,14 +285,14 @@
     .product-reveal h1 {
       max-width: none;
       margin: 0 auto;
-      color: #fff;
+      color: var(--ink);
       font-size: clamp(58px, 8.3vw, 136px);
       line-height: .9;
     }
 
     .tagline {
       margin-top: 1.1vw;
-      color: rgba(255,255,255,.68);
+      color: var(--muted);
       font-size: clamp(20px, 2.25vw, 36px);
       letter-spacing: -.025em;
       font-weight: 620;
@@ -314,7 +300,7 @@
 
     .team-line {
       margin-top: 4vw;
-      color: rgba(255,255,255,.58);
+      color: var(--muted);
       font-size: clamp(14px, 1.25vw, 20px);
       font-weight: 650;
     }
@@ -322,7 +308,7 @@
     .team-line strong {
       display: block;
       margin-bottom: .45em;
-      color: var(--mint);
+      color: var(--violet);
       font-size: .78em;
       letter-spacing: .14em;
       text-transform: uppercase;
@@ -886,10 +872,10 @@
       min-width: 33vw;
       padding: 1.5vw 2.1vw 1.7vw;
       border-radius: 1.5vw;
-      color: #fff;
+      color: var(--ink);
       text-align: center;
-      background: #11131a;
-      box-shadow: 0 30px 72px rgba(17,19,26,.24);
+      background: #fff4ee;
+      box-shadow: 0 30px 72px rgba(160,95,69,.15);
       transform: translate(-50%, -50%);
     }
 
@@ -904,7 +890,7 @@
     .lost-equation {
       display: block;
       margin-bottom: .5em;
-      color: rgba(255,255,255,.52);
+      color: #987360;
       font-size: clamp(11px, .9vw, 15px);
       font-weight: 760;
       letter-spacing: .08em;
@@ -922,7 +908,7 @@
     .lost-label {
       display: block;
       margin-top: .8em;
-      color: rgba(255,255,255,.72);
+      color: #875c48;
       font-size: clamp(13px, 1.1vw, 18px);
       font-weight: 710;
     }
@@ -1532,7 +1518,7 @@
     .plan-side {
       position: relative;
       border-radius: 1.4vw;
-      background: linear-gradient(150deg, #171923, #232638);
+      background: linear-gradient(150deg, #e5f6ee, #edf2fb);
       overflow: hidden;
     }
 
@@ -1544,7 +1530,7 @@
       right: -5vw;
       top: -6vw;
       border-radius: 50%;
-      background: rgba(103,87,245,.28);
+      background: rgba(103,87,245,.1);
       filter: blur(20px);
     }
 
@@ -1553,7 +1539,7 @@
       left: 2vw;
       right: 2vw;
       bottom: 2vw;
-      color: rgba(255,255,255,.48);
+      color: #6d8178;
       font-size: clamp(18px, 1.75vw, 29px);
       line-height: 1.12;
       letter-spacing: -.035em;
@@ -1565,12 +1551,12 @@
       left: auto;
       width: 39%;
       padding: 3.15vw 2.1vw 2vw;
-      color: #fff;
+      color: var(--ink);
       background: transparent;
     }
 
     .refund-number {
-      color: var(--mint);
+      color: #208663;
       font-size: clamp(58px, 6vw, 100px);
       line-height: .8;
       letter-spacing: -.07em;
@@ -1579,7 +1565,7 @@
 
     .refund-label {
       margin-top: .9em;
-      color: rgba(255,255,255,.62);
+      color: #4d7664;
       font-size: clamp(10px, .78vw, 13px);
       font-weight: 820;
       letter-spacing: .12em;
@@ -1588,7 +1574,7 @@
 
     .trip-reduction {
       margin-top: 1.4vw;
-      color: #fff;
+      color: var(--ink);
       font-size: clamp(21px, 2.2vw, 36px);
       letter-spacing: -.045em;
       font-weight: 790;
@@ -1605,25 +1591,25 @@
 
     .micro-metric {
       padding: .8vw .55vw;
-      border: 1px solid rgba(255,255,255,.11);
+      border: 1px solid rgba(33,102,74,.12);
       border-radius: .8vw;
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.65);
       text-align: center;
     }
 
     .micro-metric b { display: block; font-size: clamp(13px, 1vw, 17px); }
-    .micro-metric span { display: block; margin-top: .35em; color: rgba(255,255,255,.5); font-size: clamp(8px, .58vw, 10px); font-weight: 720; }
+    .micro-metric span { display: block; margin-top: .35em; color: #648373; font-size: clamp(8px, .58vw, 10px); font-weight: 720; }
 
     .automation-row {
       display: grid;
       gap: .55vw;
       margin-top: 1.2vw;
-      color: rgba(255,255,255,.72);
+      color: #42755e;
       font-size: clamp(10px, .72vw, 12px);
       font-weight: 700;
     }
 
-    .automation-row span::before { content: "✓"; margin-right: .55em; color: var(--mint); font-weight: 900; }
+    .automation-row span::before { content: "✓"; margin-right: .55em; color: #208663; font-weight: 900; }
 
     .reason-stage {
       z-index: 16;
@@ -1884,9 +1870,9 @@
       place-items: center;
       text-align: center;
       background:
-        radial-gradient(circle at 50% 50%, rgba(103,87,245,.28), transparent 31%),
-        radial-gradient(circle at 17% 24%, rgba(101,230,191,.11), transparent 23%),
-        #11131a;
+        radial-gradient(circle at 50% 50%, rgba(103,87,245,.10), transparent 39%),
+        radial-gradient(circle at 17% 24%, rgba(101,230,191,.14), transparent 29%),
+        #f9f9fd;
     }
 
     .handoff-inner { max-width: 78%; }
@@ -1895,7 +1881,7 @@
       margin: .12em auto .55em;
       max-width: 13em;
       font-size: clamp(42px, 5.6vw, 92px);
-      color: #fff;
+      color: var(--ink);
     }
 
     .handoff .subhead { max-width: 31em; margin: 0 auto; }
@@ -1909,14 +1895,405 @@
 
     .handoff-questions span {
       padding: .85em 1.25em;
-      border: 1px solid rgba(255,255,255,.16);
+      border: 1px solid rgba(103,87,245,.14);
       border-radius: 999px;
-      color: #fff;
-      background: rgba(255,255,255,.07);
+      color: var(--violet);
+      background: rgba(255,255,255,.86);
       font-size: clamp(14px, 1.35vw, 22px);
       font-weight: 730;
       backdrop-filter: blur(12px);
     }
+
+    /* Slides 9–14: product workflow, AI, and the proposed data approach. */
+    .continuation {
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 1.8vw;
+    }
+
+    .continuation-header { display: flex; justify-content: space-between; align-items: end; gap: 3vw; }
+    .continuation-header h2 { font-size: clamp(30px, 4vw, 66px); }
+    .continuation-header .subhead { max-width: 19em; font-size: clamp(12px, 1.25vw, 21px); }
+    .story-label { display: block; color: var(--muted); font-size: clamp(10px, .88vw, 15px); font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    .story-footer { display: flex; align-items: center; justify-content: space-between; gap: 2vw; min-height: 3.4vw; padding-top: 1.1vw; border-top: 1px solid var(--line); color: var(--muted); font-size: clamp(12px, 1.2vw, 20px); line-height: 1.4; }
+    .story-footer strong { color: var(--violet); }
+    .story-footer small { font-size: .78em; }
+
+    /* The same plan from slide 5 stays in view while the next action changes. */
+    .continue-plan { display: grid; grid-template-columns: 1fr .16fr 1.35fr; align-items: center; }
+    .plan-recap { padding: 1.7vw; border: 1px solid var(--line); border-radius: 1.5vw; background: rgba(255,255,255,.94); box-shadow: 0 22px 56px rgba(26,27,45,.09); }
+    .plan-recap h3 { margin: .7vw 0 1.35vw; font-size: clamp(22px, 2.25vw, 38px); letter-spacing: -.04em; }
+    .recap-stop { padding: 1.3vw; border-radius: 1vw; background: #eeebff; }
+    .recap-stop > b { display: block; color: var(--violet); font-size: clamp(17px, 1.75vw, 29px); }
+    .recap-stop p { margin-top: .6vw; font-size: clamp(12px, 1.12vw, 19px); line-height: 1.6; }
+    .recap-stop small { display: block; margin-top: .65vw; color: var(--violet); font-size: clamp(10px, .91vw, 15px); font-weight: 750; }
+    .recap-wait { margin-top: 1vw; padding: 1vw 1.3vw; border-radius: 1vw; background: #e5f6ef; }
+    .recap-wait b { color: #287d5e; font-size: clamp(13px, 1.25vw, 21px); }
+    .recap-wait p { margin-top: .3vw; color: #527968; font-size: clamp(11px, 1vw, 17px); }
+    .story-connector { text-align: center; color: var(--violet); font-size: clamp(30px, 3.5vw, 58px); }
+    .next-step-stage { position: relative; height: 27vw; }
+    .step-placeholder { position: absolute; inset: 0; display: grid; align-content: center; justify-items: center; gap: 1vw; border: 1px dashed rgba(103,87,245,.26); border-radius: 1.5vw; color: #8f88b2; transition: opacity .35s var(--ease), transform .45s var(--ease); }
+    .step-placeholder span { font-size: clamp(40px, 5vw, 84px); font-weight: 780; letter-spacing: -.065em; color: #c0b8ef; }
+    .step-placeholder p { font-size: clamp(15px, 1.6vw, 26px); font-weight: 650; }
+    .workflow-moment { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 2vw 2.3vw; border-radius: 1.5vw; background: #eeebff; }
+    .workflow-moment h3 { margin: .8vw 0 1.4vw; font-size: clamp(27px, 3vw, 50px); line-height: 1.04; letter-spacing: -.045em; }
+    .workflow-moment .story-label { color: #7261cf; }
+    .retailer-actions { display: grid; gap: .7vw; }
+    .retailer-action { display: flex; align-items: center; justify-content: space-between; gap: 1vw; padding: .95vw 1.15vw; border: 1px solid rgba(103,87,245,.1); border-radius: .9vw; background: #fff; font-size: clamp(13px, 1.24vw, 21px); }
+    .retailer-action span { padding: .5em .7em; border-radius: .6em; background: var(--violet); color: #fff; font-size: .78em; font-weight: 750; }
+    .workflow-moment > p { margin-top: 1vw; color: var(--muted); font-size: clamp(11px, 1.02vw, 17px); line-height: 1.4; }
+    .method-moment { background: #e1f5ec; }
+    .method-moment .story-label { color: #348165; }
+    .method-moment .retailer-action { border-color: rgba(40,125,94,.1); }
+    .method-moment .retailer-action span { background: #ddf6ea; color: #24815e; }
+    .trip-moment { color: #fff; background: linear-gradient(140deg, #6553ef, #8070f8); box-shadow: 0 26px 60px rgba(103,87,245,.23); }
+    .trip-moment .story-label { color: #dcd6ff; }
+    .trip-moment h3 { font-size: clamp(33px, 4vw, 66px); }
+    .trip-summary { display: flex; align-items: center; gap: 1.8vw; padding: 1.1vw 0; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
+    .trip-summary b { font-size: clamp(22px, 2.3vw, 38px); letter-spacing: -.045em; }
+    .trip-summary span { color: #e3deff; font-size: clamp(11px, 1.05vw, 18px); line-height: 1.4; }
+    .trip-moment > p { color: rgba(255,255,255,.76); }
+    .next-step-stage:has(.start-moment.visible) .step-placeholder,
+    .next-step-stage:has(.method-moment.visible) .start-moment,
+    .next-step-stage:has(.trip-moment.visible) .method-moment { opacity: 0; transform: translateY(-12px) scale(.97); pointer-events: none; }
+    .workflow-moment.visible .retailer-action { animation: taskIn .45s var(--ease) both; }
+    .workflow-moment.visible .retailer-action:nth-child(2) { animation-delay: .15s; }
+
+    /* A return wallet leads into a short, progressively revealed refund story. */
+    .completion-flow { display: grid; grid-template-columns: 1fr .16fr 1.35fr; align-items: center; }
+    .return-wallet { padding: 1.6vw; border: 1px solid var(--line); border-radius: 1.6vw; background: #fff; box-shadow: 0 22px 56px rgba(26,27,45,.09); }
+    .wallet-top { display: flex; justify-content: space-between; align-items: center; gap: 1vw; margin-bottom: 1.2vw; }
+    .wallet-top h3 { font-size: clamp(20px, 2.1vw, 35px); letter-spacing: -.04em; }
+    .wallet-top span { padding: .5em .8em; border-radius: 999px; color: var(--violet); background: #eeebff; font-size: clamp(10px, .87vw, 15px); font-weight: 750; }
+    .wallet-ticket { display: flex; align-items: center; gap: 1.2vw; padding: 1.15vw; margin-top: .85vw; border: 1px solid rgba(103,87,245,.11); border-radius: 1vw; background: #f5f3ff; }
+    .wallet-ticket:nth-of-type(3) { background: #eef9f4; }
+    .wallet-code { display: grid; place-items: center; flex: 0 0 4.7vw; height: 4.7vw; border-radius: .65vw; color: #252237; background: #fff; font-size: clamp(34px, 4.25vw, 70px); line-height: 1; }
+    .wallet-ticket b { font-size: clamp(14px, 1.38vw, 23px); }
+    .wallet-ticket p { margin-top: .32vw; color: var(--muted); font-size: clamp(11px, 1.05vw, 18px); }
+    .wallet-ticket small { display: block; margin-top: .42vw; color: var(--violet); font-size: clamp(10px, .85vw, 14px); font-weight: 750; }
+    .wallet-caption { margin-top: 1.3vw; text-align: center; color: var(--muted); font-size: clamp(11px, 1vw, 17px); }
+    .refund-journey { position: relative; display: grid; grid-template-rows: auto auto 1fr; gap: .8vw; height: 27vw; }
+    .refund-step { display: flex; align-items: center; gap: 1.15vw; padding: 1vw 1.4vw; border: 1px solid var(--line); border-radius: 1vw; background: rgba(255,255,255,.9); }
+    .refund-check { display: grid; place-items: center; width: 2.65vw; height: 2.65vw; flex: 0 0 2.65vw; border-radius: 50%; color: #267b5c; background: #ddf6e9; font-size: clamp(15px, 1.5vw, 25px); font-weight: 800; }
+    .refund-step b { font-size: clamp(16px, 1.7vw, 28px); letter-spacing: -.025em; }
+    .refund-step small { margin-left: auto; color: var(--muted); font-size: clamp(10px, .85vw, 14px); }
+    .refund-result { display: flex; align-items: center; justify-content: space-between; gap: 1vw; padding: 1.3vw 1.9vw; border-radius: 1.35vw; background: var(--mint); box-shadow: 0 22px 55px rgba(55,201,155,.17); }
+    .refund-result .story-label { color: #28624e; }
+    .refund-amount { display: block; margin-top: .2vw; font-size: clamp(54px, 6.8vw, 112px); line-height: 1; letter-spacing: -.075em; font-weight: 800; color: #143b2d; }
+    .refund-result p { margin-top: .45vw; color: #2a6850; font-size: clamp(11px, 1vw, 17px); }
+    .refund-seal { display: grid; place-items: center; width: 5.5vw; height: 5.5vw; border-radius: 50%; background: rgba(255,255,255,.45); color: #217450; font-size: clamp(32px, 3.8vw, 62px); }
+    .refund-result.visible .refund-seal { animation: refundIn .5s .1s var(--ease) both; }
+    @keyframes refundIn { from { opacity: 0; transform: scale(.65) rotate(-15deg); } to { opacity: 1; transform: scale(1) rotate(0); } }
+
+    /* AI first understands the purchases, then helps shape a personal plan. */
+    .ai-story { background: radial-gradient(circle at 48% 55%, rgba(103,87,245,.09), transparent 40%), #f9f9fd; }
+    .ai-story .story-label { color: var(--muted); }
+    .ai-story .story-footer { border-color: var(--line); color: var(--muted); }
+    .ai-story .story-footer strong { color: var(--violet); }
+    .ai-flow { display: grid; grid-template-columns: 1fr .74fr 1.08fr; align-items: center; gap: 2.5vw; }
+    .input-documents { display: grid; gap: .85vw; }
+    .input-document { padding: 1vw 1.25vw; border: 1px solid rgba(103,87,245,.12); border-radius: 1vw; background: rgba(255,255,255,.94); }
+    .input-document small { display: block; margin-bottom: .45vw; color: var(--violet); font-size: clamp(10px, .87vw, 15px); }
+    .input-document b { font-size: clamp(15px, 1.45vw, 24px); }
+    .input-document p { margin-top: .3vw; color: var(--muted); font-size: clamp(11px, 1.05vw, 18px); }
+    .input-documents.visible .input-document { animation: taskIn .45s var(--ease) both; }
+    .input-documents.visible .input-document:nth-child(3) { animation-delay: .12s; }
+    .input-documents.visible .input-document:nth-child(4) { animation-delay: .24s; }
+    .ai-reader { position: relative; padding: 2.5vw 1vw; text-align: center; border: 1px solid rgba(103,87,245,.18); border-radius: 1.6vw; background: linear-gradient(145deg, #eeeaff, #e8f7f0); box-shadow: 0 18px 50px rgba(103,87,245,.10); }
+    .ai-reader::before, .ai-reader::after { content: ""; position: absolute; top: 50%; width: 2.5vw; height: 2px; background: linear-gradient(90deg, #8d7dff, #65e6bf); }
+    .ai-reader::before { right: 100%; }
+    .ai-reader::after { left: 100%; }
+    .ai-reader > b { display: block; color: var(--violet); font-size: clamp(48px, 6vw, 98px); line-height: 1; letter-spacing: -.065em; }
+    .ai-reader h3 { margin-top: 1.1vw; font-size: clamp(19px, 2vw, 33px); line-height: 1.15; letter-spacing: -.035em; }
+    .ai-reader p { margin-top: .85vw; color: #70658d; font-size: clamp(11px, 1.03vw, 17px); line-height: 1.45; }
+    .unified-purchases { padding: 1.65vw; border: 1px solid rgba(50,151,114,.17); border-radius: 1.5vw; color: var(--ink); background: #fff; box-shadow: 0 20px 50px rgba(39,88,69,.09); }
+    .unified-purchases .story-label { color: #37866b; }
+    .unified-purchases h3 { margin: .7vw 0 1.1vw; font-size: clamp(21px, 2.2vw, 36px); letter-spacing: -.04em; }
+    .unified-row { display: flex; align-items: center; justify-content: space-between; gap: 1vw; padding: 1vw 0; border-top: 1px solid var(--line); }
+    .unified-row b { font-size: clamp(13px, 1.25vw, 21px); }
+    .unified-row small { display: block; margin-top: .3vw; color: var(--muted); font-size: clamp(10px, .9vw, 15px); }
+    .unified-row > strong { color: var(--violet); font-size: clamp(19px, 2vw, 33px); letter-spacing: -.04em; }
+    .planning-ready { margin-top: .75vw; padding: .8vw; border-radius: .7vw; text-align: center; color: #287b5d; background: #dff5eb; font-size: clamp(11px, 1vw, 17px); font-weight: 750; }
+
+    /* Preferences and learned habits feed the same return-planning example. */
+    .personal-planning {
+      background:
+        radial-gradient(circle at 79% 48%, rgba(103,87,245,.1), transparent 34%),
+        radial-gradient(circle at 15% 78%, rgba(101,230,191,.12), transparent 30%),
+        var(--paper);
+    }
+
+    .personal-flow {
+      display: grid;
+      grid-template-columns: 1fr .16fr 1.35fr;
+      align-items: center;
+    }
+
+    .preference-profile {
+      padding: 1.8vw;
+      border: 1px solid var(--line);
+      border-radius: 1.5vw;
+      background: rgba(255,255,255,.93);
+      box-shadow: 0 22px 56px rgba(26,27,45,.08);
+    }
+
+    .preference-profile h3 {
+      margin: .6vw 0 1.25vw;
+      font-size: clamp(22px, 2.3vw, 38px);
+      letter-spacing: -.04em;
+    }
+
+    .chosen-goal {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1vw;
+      padding: 1.1vw 1.2vw;
+      border-radius: .95vw;
+      background: #eeebff;
+    }
+
+    .chosen-goal span { color: #7566bd; font-size: clamp(11px, 1vw, 17px); }
+    .chosen-goal b { color: var(--violet); font-size: clamp(14px, 1.4vw, 23px); }
+    .learned-habits { margin-top: 1.5vw; }
+    .learned-habits .story-label { margin-bottom: .65vw; }
+
+    .habit-row {
+      display: flex;
+      align-items: center;
+      gap: 1vw;
+      padding: .85vw 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .habit-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 2.8vw;
+      height: 2.8vw;
+      border-radius: .8vw;
+      color: #278260;
+      background: #e1f5eb;
+      font-size: clamp(10px, .92vw, 15px);
+      font-weight: 800;
+    }
+
+    .habit-row b { display: block; font-size: clamp(14px, 1.32vw, 22px); }
+    .habit-row small { display: block; margin-top: .25vw; color: var(--muted); font-size: clamp(10px, .9vw, 15px); }
+    .learned-habits.visible .habit-row { animation: taskIn .45s var(--ease) both; }
+    .learned-habits.visible .habit-row:nth-of-type(2) { animation-delay: .15s; }
+    .habit-control { margin-top: 1vw; color: var(--muted); font-size: clamp(10px, .88vw, 15px); }
+
+    .personal-plan {
+      padding: 1.8vw 2vw;
+      border: 1px solid rgba(103,87,245,.15);
+      border-radius: 1.5vw;
+      background: #fff;
+      box-shadow: 0 24px 60px rgba(103,87,245,.12);
+    }
+
+    .personal-plan > .story-label { color: var(--violet); }
+    .personal-plan h3 { margin: .7vw 0 1.1vw; font-size: clamp(26px, 3vw, 50px); letter-spacing: -.045em; }
+
+    .personal-stop {
+      padding: 1.2vw 1.35vw;
+      border-radius: 1vw;
+      color: #fff;
+      background: linear-gradient(135deg, #6757f5, #8373f9);
+    }
+
+    .personal-stop > b { font-size: clamp(19px, 2vw, 33px); }
+    .personal-stop p { margin-top: .45vw; color: #e6e1ff; font-size: clamp(12px, 1.12vw, 19px); line-height: 1.45; }
+    .personal-reasons { display: flex; flex-wrap: wrap; gap: .55vw; margin-top: 1vw; }
+    .personal-reasons span { padding: .5em .75em; border-radius: 999px; background: #e2f6ec; color: #28795c; font-size: clamp(10px, .89vw, 15px); font-weight: 750; }
+
+    .deadline-check {
+      display: flex;
+      align-items: center;
+      gap: 1vw;
+      margin-top: 1.2vw;
+      padding: 1vw 1.2vw;
+      border-radius: 1vw;
+      background: #fff0e9;
+      color: #954b37;
+    }
+
+    .deadline-check > span { font-size: clamp(25px, 2.8vw, 46px); font-weight: 800; }
+    .deadline-check b { display: block; font-size: clamp(13px, 1.27vw, 21px); }
+    .deadline-check p { margin-top: .25vw; font-size: clamp(11px, 1vw, 17px); line-height: 1.4; }
+
+    /* Confidence is qualitative and tied to evidence, with a clear next action. */
+    .confidence-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25vw;
+      align-self: center;
+    }
+
+    .confidence-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 25vw;
+      padding: 1.75vw;
+      border: 1px solid rgba(40,125,94,.13);
+      border-radius: 1.5vw;
+      background: #e1f5ec;
+    }
+
+    .confidence-card.medium { border-color: rgba(150,111,28,.12); background: #fff4d9; }
+    .confidence-card.low { border-color: rgba(173,80,57,.12); background: #fff0e9; }
+    .confidence-card .story-label { color: #397e64; }
+    .confidence-card.medium .story-label { color: #927329; }
+    .confidence-card.low .story-label { color: #ab6752; }
+
+    .confidence-level {
+      margin: .5vw 0 1.2vw;
+      color: #247b59;
+      font-size: clamp(35px, 4.3vw, 71px);
+      line-height: 1;
+      letter-spacing: -.06em;
+      font-weight: 790;
+    }
+
+    .medium .confidence-level { color: #98701d; }
+    .low .confidence-level { color: #b35c43; }
+    .confidence-card h3 { font-size: clamp(19px, 2.05vw, 34px); line-height: 1.12; letter-spacing: -.035em; }
+    .confidence-card > p { margin-top: .7vw; color: #56766a; font-size: clamp(12px, 1.08vw, 18px); line-height: 1.4; }
+    .confidence-card.medium > p { color: #8d7949; }
+    .confidence-card.low > p { color: #976f61; }
+
+    .confidence-source {
+      display: flex;
+      flex-direction: column;
+      gap: .35vw;
+      margin: 1.35vw 0;
+      padding: .95vw 1vw;
+      border-radius: .8vw;
+      background: rgba(255,255,255,.7);
+    }
+
+    .confidence-source span { color: var(--muted); font-size: clamp(10px, .85vw, 14px); }
+    .confidence-source b { font-size: clamp(12px, 1.1vw, 18px); }
+    .confidence-action { margin-top: auto; padding-top: 1vw; border-top: 1px solid rgba(17,19,26,.1); font-size: clamp(12px, 1.15vw, 19px); font-weight: 750; }
+
+    /* A light, connected diagram closes the deck with the privacy approach. */
+    .data-privacy {
+      grid-template-rows: auto minmax(0, 1fr) auto;
+      gap: 2vw;
+      background:
+        radial-gradient(ellipse at 50% 53%, rgba(103,87,245,.07), transparent 43%),
+        radial-gradient(ellipse at 80% 86%, rgba(101,230,191,.12), transparent 35%),
+        #fafafe;
+    }
+
+    .privacy-heading { text-align: center; }
+    .privacy-heading .eyebrow { margin-bottom: 1.05vw; }
+    .privacy-heading h2 { font-size: clamp(38px, 5.15vw, 85px); letter-spacing: -.055em; }
+    .privacy-heading h2 span { color: var(--violet); }
+    .privacy-heading > p { margin-top: 1vw; color: var(--muted); font-size: clamp(14px, 1.4vw, 23px); line-height: 1.4; }
+
+    .privacy-diagram {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      gap: 3vw;
+      width: 100%;
+      align-self: center;
+    }
+
+    .privacy-stage-label {
+      display: block;
+      margin-bottom: 1.3vw;
+      color: var(--violet);
+      font-size: clamp(10px, .93vw, 15px);
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .privacy-source-list { display: grid; gap: 1.1vw; }
+    .privacy-source-row { display: flex; align-items: center; gap: 1vw; }
+    .privacy-source-icon {
+      display: grid;
+      place-items: center;
+      flex: 0 0 3.5vw;
+      height: 3.5vw;
+      border: 1px solid rgba(141,125,255,.25);
+      border-radius: 1vw;
+      color: var(--violet);
+      background: #eeebff;
+    }
+
+    .privacy-source-icon svg, .privacy-process-icon svg { width: 1.9vw; height: 1.9vw; min-width: 19px; min-height: 19px; }
+    .privacy-source-row b { display: block; font-size: clamp(15px, 1.52vw, 25px); font-weight: 680; letter-spacing: -.025em; }
+    .privacy-source-row small { display: block; margin-top: .28vw; color: var(--muted); font-size: clamp(11px, 1.04vw, 17px); line-height: 1.4; }
+    .privacy-inputs.visible .privacy-source-row { animation: taskIn .45s var(--ease) both; }
+    .privacy-inputs.visible .privacy-source-row:nth-child(2) { animation-delay: .1s; }
+    .privacy-inputs.visible .privacy-source-row:nth-child(3) { animation-delay: .2s; }
+
+    .privacy-gate { position: relative; text-align: center; }
+    .privacy-gate::before, .privacy-gate::after {
+      content: "";
+      position: absolute;
+      top: 6.4vw;
+      width: calc((100% - 12.8vw) / 2 + 2vw);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(141,125,255,.12), rgba(141,125,255,.75));
+    }
+    .privacy-gate::before { left: -2vw; }
+    .privacy-gate::after { right: -2vw; background: linear-gradient(90deg, rgba(101,230,191,.65), rgba(101,230,191,.12)); }
+
+    .privacy-emblem {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 12.8vw;
+      height: 12.8vw;
+      margin: 0 auto;
+      border: 1px solid rgba(141,125,255,.4);
+      border-radius: 50%;
+      color: #288c69;
+      background: radial-gradient(circle at 50% 35%, #fff, #e6f7ef 80%);
+      box-shadow: 0 18px 50px rgba(103,87,245,.09), inset 0 0 30px rgba(255,255,255,.6);
+    }
+
+    .privacy-emblem::before {
+      content: "";
+      position: absolute;
+      inset: 1vw;
+      border: 1px solid rgba(40,140,105,.18);
+      border-radius: 50%;
+    }
+
+    .privacy-emblem svg { width: 5.8vw; height: 5.8vw; overflow: visible; }
+    .privacy-gate h3 { margin: 1.2vw 0 .5vw; color: var(--ink); font-size: clamp(21px, 2.3vw, 38px); letter-spacing: -.035em; }
+    .privacy-gate p { color: var(--muted); font-size: clamp(12px, 1.1vw, 18px); line-height: 1.5; }
+    .privacy-gate p + p { margin-top: .2vw; }
+    .privacy-gate.visible .privacy-emblem { animation: privacyEmblemIn .65s var(--ease) both; }
+    .privacy-check { stroke-dasharray: 36; stroke-dashoffset: 36; transition: stroke-dashoffset .5s .2s var(--ease); }
+    .privacy-gate.visible .privacy-check { stroke-dashoffset: 0; }
+    @keyframes privacyEmblemIn { from { transform: scale(.87); } to { transform: scale(1); } }
+
+    .privacy-process { padding-left: 1vw; }
+    .privacy-process .privacy-stage-label { color: #288565; }
+    .privacy-process-row { display: flex; align-items: center; gap: 1vw; padding: .7vw 0; }
+    .privacy-process-icon { display: grid; place-items: center; width: 3.5vw; height: 3.5vw; flex: 0 0 3.5vw; color: #288c69; }
+    .privacy-process-row b { display: block; color: var(--ink); font-size: clamp(20px, 2.2vw, 36px); font-weight: 680; letter-spacing: -.035em; }
+    .privacy-process-row small { display: block; margin-top: .25vw; color: var(--muted); font-size: clamp(12px, 1.08vw, 18px); line-height: 1.4; }
+    .privacy-process-row + .privacy-process-row { margin-top: .5vw; border-top: 1px solid var(--line); }
+
+    .privacy-choices {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2vw;
+      padding: 1.3vw 0 .4vw;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: clamp(12px, 1.15vw, 19px);
+    }
+    .privacy-choices span { display: inline-flex; align-items: center; gap: .65em; }
+    .privacy-choices i { width: .34em; height: .34em; border-radius: 50%; background: #288c69; font-style: normal; }
+    .privacy-choices strong { color: var(--ink); font-weight: 650; }
 
     /* Controls */
     .chrome {
@@ -2022,7 +2399,7 @@
     <div class="deck" id="deck">
 
       <section class="slide hook active" data-title="Interactive hook" data-notes="Ask for a show of hands after each question. Let the two cards come out one at a time, then pause on the problem statement.">
-        <span class="slide-number">01 / 08</span>
+        <span class="slide-number">01 / 14</span>
         <div class="eyebrow">Quick question</div>
         <div class="hook-content">
           <div class="card-stage" aria-label="Two audience questions">
@@ -2043,8 +2420,8 @@
         </div>
       </section>
 
-      <section class="slide dark product-reveal" data-title="Product reveal" data-notes="This is the formal start of the pitch. Introduce the product name and the team, then move into the concrete return example.">
-        <span class="slide-number">02 / 08</span>
+      <section class="slide product-reveal" data-title="Product reveal" data-notes="This is the formal start of the pitch. Introduce the product name and the team, then move into the concrete return example.">
+        <span class="slide-number">02 / 14</span>
         <div class="product-inner">
           <div class="product-mark fragment">R</div>
           <h1 class="fragment">ReturnPilot</h1>
@@ -2057,7 +2434,7 @@
       </section>
 
       <section class="slide pain-a" data-title="Target user and one return" data-notes="Introduce the target user, then zoom into one Amazon return. Let the small decisions accumulate visually. Pause after ‘And that’s just ONE item.’">
-        <span class="slide-number">03 / 08</span>
+        <span class="slide-number">03 / 14</span>
         <div class="pain-intro">
           <p class="pain-target">Our target users are <span>frequent shoppers</span> who buy across <span>multiple retailers</span>.</p>
           <div class="retailer-strip" aria-label="Retailers">
@@ -2101,7 +2478,7 @@
       </section>
 
       <section class="slide pain-b" data-title="Multiple retailers and money lost" data-notes="Expand from one retailer to several. Show how fragmented workflows lead to postponement. Let the small refund values accumulate into $95 lost, then finish on the calm core pain statement.">
-        <span class="slide-number">04 / 08</span>
+        <span class="slide-number">04 / 14</span>
         <h2 class="continuation-title"><span>ONE</span> item was already annoying. Now imagine four retailers.</h2>
 
         <div class="retailer-board" aria-label="Four retailers with different return workflows">
@@ -2179,7 +2556,7 @@
       </section>
 
       <section class="slide solution" data-title="Solution" data-notes="Show that the user’s job is extremely small: purchases are detected, they select unwanted items, and click once. Let the planning statuses pass quickly, then pause on the actionable plan. Emphasize that we give a decision and action plan, not more return information. Open ‘See why this plan’ only after explaining the simple default experience.">
-        <span class="slide-number">05 / 08</span>
+        <span class="slide-number">05 / 14</span>
 
         <div class="solution-intro">
           <span class="brand-mark"></span>
@@ -2328,7 +2705,7 @@
       </section>
 
       <section class="slide market" data-title="Why now" data-notes="These numbers show the frequency and scale of online shopping and returns. They do not size the abandoned-refund segment. That segment remains our validation question.">
-        <span class="slide-number">06 / 08</span>
+        <span class="slide-number">06 / 14</span>
         <header class="market-header">
           <div>
             <div class="eyebrow">Why now</div>
@@ -2357,7 +2734,7 @@
       </section>
 
       <section class="slide competition" data-title="Competitive landscape" data-notes="The market is not empty. Each competitor proves a piece of demand. Our opportunity is the decision and action layer across retailers.">
-        <span class="slide-number">07 / 08</span>
+        <span class="slide-number">07 / 14</span>
         <header class="competition-header">
           <div>
             <div class="eyebrow">Competitive landscape</div>
@@ -2393,8 +2770,8 @@
         </div>
       </section>
 
-      <section class="slide dark handoff" data-title="Handoff" data-notes="Hand off to the next speaker: what makes this product meaningfully different and why AI is fundamental to the advantage.">
-        <span class="slide-number">08 / 08</span>
+      <section class="slide handoff" data-title="Handoff" data-notes="Hand off to the next speaker: what makes this product meaningfully different and why AI is fundamental to the advantage.">
+        <span class="slide-number">08 / 14</span>
         <div class="handoff-inner">
           <div class="eyebrow">The next question</div>
           <h2>The market proves the need. <span class="mint">What creates our edge?</span></h2>
@@ -2403,6 +2780,264 @@
             <span>Why us?</span>
             <span>Why AI?</span>
           </div>
+        </div>
+      </section>
+
+      <section class="slide continuation" data-title="Why us: put the plan into action" data-notes="Continue the exact Banana Republic, Temu and Target example from slide 5. The user has selected items and received a proposed plan. First click: the user initiates the Banana Republic and Temu returns in the retailer flows. Second click: read the actual return instructions and confirm both are compatible with the same UPS location. Third click: the shared UPS stop is ready. These methods are illustrative, not universal retailer policies. Target can wait for a later store visit. Keep the narration focused on the next action; policy and integration details are unnecessary for the idea pitch.">
+        <span class="slide-number">09 / 14</span>
+        <header class="continuation-header">
+          <div>
+            <div class="eyebrow">Why us · Put the plan into action</div>
+            <h2>Your plan is ready.<br><span class="accent">Now make it happen.</span></h2>
+          </div>
+          <p class="subhead">Same items. Same plan.<br>One clear next step at a time.</p>
+        </header>
+
+        <div class="continue-plan">
+          <article class="plan-recap">
+            <span class="story-label">Where we left off</span>
+            <h3>Your return plan</h3>
+            <div class="recap-stop">
+              <b>UPS Store</b>
+              <p>Banana Republic · Jacket<br>Temu · Top</p>
+              <small>2 returns · $107</small>
+            </div>
+            <div class="recap-wait"><b>Target · Skincare Set</b><p>Can wait until your next Target visit.</p></div>
+          </article>
+          <span class="story-connector" aria-hidden="true">›</span>
+          <div class="next-step-stage" aria-label="Steps after receiving the return plan">
+            <div class="step-placeholder"><span>Next</span><p>Let’s finish these returns.</p></div>
+            <div class="workflow-moment start-moment fragment">
+              <span class="story-label">01 · Start the returns</span>
+              <h3>Start each return<br>with the retailer</h3>
+              <div class="retailer-actions">
+                <div class="retailer-action"><b>Banana Republic</b><span>Start return</span></div>
+                <div class="retailer-action"><b>Temu</b><span>Start return</span></div>
+              </div>
+              <p>We take you to each retailer’s return flow.</p>
+            </div>
+            <div class="workflow-moment method-moment fragment">
+              <span class="story-label">02 · Instructions confirmed</span>
+              <h3>Both returns<br>can go to UPS</h3>
+              <div class="retailer-actions">
+                <div class="retailer-action"><b>Banana Republic</b><span>✓ UPS</span></div>
+                <div class="retailer-action"><b>Temu</b><span>✓ UPS</span></div>
+              </div>
+              <p>The actual return instructions confirm the shared stop.</p>
+            </div>
+            <div class="workflow-moment trip-moment fragment">
+              <span class="story-label">03 · Ready to go</span>
+              <h3>One UPS stop.<br>Both returns.</h3>
+              <div class="trip-summary"><b>$107</b><span>Banana Republic Jacket<br>Temu Top</span></div>
+              <p>Your codes and labels are ready in the Return Wallet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-footer"><span>From a suggested plan to <strong>a trip you can actually make.</strong></span><small>Illustrative product workflow</small></div>
+      </section>
+
+      <section class="slide continuation" data-title="Why us: through to the refund" data-notes="Continue the same two confirmed UPS returns from slide 9. The wallet is visible at the start, with each item's return material together. The grid icons are schematic QR/label illustrations. Reveal drop-off, retailer receipt and finally a $107 refund-issued confirmation, one click at a time. This represents the later lifecycle, not instant processing or guaranteed refund timing. $107 equals the Banana Republic jacket ($79) plus the Temu top ($28); the $42 Target return is still pending for a later visit. The MVP closes at refund issued by the retailer, without claiming the bank has received it. End on the value: the assistant stays with the return through completion.">
+        <span class="slide-number">10 / 14</span>
+        <header class="continuation-header">
+          <div>
+            <div class="eyebrow">Why us · Through to the refund</div>
+            <h2>Everything ready at drop-off.<br><span class="accent">Every refund followed through.</span></h2>
+          </div>
+        </header>
+
+        <div class="completion-flow">
+          <article class="return-wallet">
+            <div class="wallet-top"><h3>Return Wallet</h3><span>UPS · 2 returns</span></div>
+            <div class="wallet-ticket">
+              <span class="wallet-code" aria-hidden="true">▦</span>
+              <div><b>Banana Republic</b><p>Jacket · $79</p><small>Return code / label ready</small></div>
+            </div>
+            <div class="wallet-ticket">
+              <span class="wallet-code" aria-hidden="true">▦</span>
+              <div><b>Temu</b><p>Top · $28</p><small>Return code / label ready</small></div>
+            </div>
+            <p class="wallet-caption">Open once. Everything is here.</p>
+          </article>
+          <span class="story-connector" aria-hidden="true">›</span>
+          <div class="refund-journey" aria-label="Return status over time">
+            <div class="refund-step fragment"><span class="refund-check" aria-hidden="true">✓</span><b>Dropped off</b><small>At UPS</small></div>
+            <div class="refund-step fragment"><span class="refund-check" aria-hidden="true">✓</span><b>Retailers received</b><small>Later</small></div>
+            <div class="refund-result fragment">
+              <div><span class="story-label">Refunds issued</span><strong class="refund-amount">$107</strong><p>Both retailers confirmed.</p></div>
+              <span class="refund-seal" aria-hidden="true">✓</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-footer fragment"><span><strong>One plan, all the way to “Refund issued.”</strong></span><small>Target stays on the plan for your next visit.</small></div>
+      </section>
+
+      <section class="slide continuation ai-story" data-title="Why AI: understand the information" data-notes="Spec sections 6, 11 and 32. This is the first of three AI slides: understand, help personalize planning, and show confidence. Use the same purchases so the audience does not need another example. Reveal the different input formats, AI, and the shared item list. AI extracts purchase details, interprets policies and exceptions, and recognizes return or refund updates. That context supports planning. Standard rules and optimization enforce deadlines and valid grouping. A shared reader reduces the need for a separate parser per retailer. The displayed records and dates are illustrative and match slide 5. Transition to how preferences and learned habits shape the plan.">
+        <span class="slide-number">11 / 14</span>
+        <header class="continuation-header">
+          <div>
+            <div class="eyebrow">Why AI · Understand the information</div>
+            <h2>Different retailers. Different formats.<br><span class="mint">AI makes them work together.</span></h2>
+          </div>
+        </header>
+
+        <div class="ai-flow">
+          <div class="input-documents fragment">
+            <span class="story-label">What comes in</span>
+            <article class="input-document"><small>Order email</small><b>Banana Republic</b><p>Jacket · $79</p></article>
+            <article class="input-document"><small>Order screenshot</small><b>Temu</b><p>Top · $28</p></article>
+            <article class="input-document"><small>Receipt photo</small><b>Target</b><p>Skincare Set · $42</p></article>
+          </div>
+          <div class="ai-reader fragment">
+            <b>AI</b>
+            <h3>Reads and<br>understands</h3>
+            <p>Orders, policies<br>and return updates</p>
+          </div>
+          <article class="unified-purchases fragment">
+            <span class="story-label">One consistent view</span>
+            <h3>Ready to plan</h3>
+            <div class="unified-row"><div><b>Banana Republic</b><small>Return by Sep 18</small></div><strong>$79</strong></div>
+            <div class="unified-row"><div><b>Temu</b><small>Return by Sep 20</small></div><strong>$28</strong></div>
+            <div class="unified-row"><div><b>Target</b><small>Return by Sep 28</small></div><strong>$42</strong></div>
+            <div class="planning-ready">Rules prioritize and group the returns.</div>
+          </article>
+        </div>
+
+        <div class="story-footer fragment"><span><strong>AI connects the orders, policies and return updates.</strong><br>That understanding becomes the starting point for your plan.</span><small>Next: planning around you.</small></div>
+      </section>
+
+      <section class="slide continuation personal-planning" data-title="Why AI: planning and learning your habits" data-notes="Spec sections 7, 15 and 22, plus the requested AI-assisted planning story. Continue the Banana Republic and Temu example. The user's explicit goal is fewer trips. First click: show lightweight habits the system could learn over time, a UPS location near home and weekend returns. These are editable suggestions, never mandatory. Second click: AI helps connect this context with the return information to personalize the proposed plan; optimization confirms a compatible UPS stop and checks constraints. Third click: the earlier Thursday deadline overrides the weekend habit. This is the same illustrative Thursday deadline used in slide 5, not a current-date calculation. Fourth click: reinforce user control and the division of work. This is a proposed product capability, with habit learning developed over time. The user still chooses Keep, Return or Not sure.">
+        <span class="slide-number">12 / 14</span>
+        <header class="continuation-header">
+          <div>
+            <div class="eyebrow">Why AI · Planning + learning</div>
+            <h2>AI helps shape a plan<br><span class="accent">that fits your routine.</span></h2>
+          </div>
+          <p class="subhead">Your preferences guide it.<br>Your habits help refine it.</p>
+        </header>
+
+        <div class="personal-flow">
+          <article class="preference-profile">
+            <span class="story-label">You set the direction</span>
+            <h3>What works for you?</h3>
+            <div class="chosen-goal"><span>Your goal</span><b>Fewer trips</b></div>
+            <div class="learned-habits fragment">
+              <span class="story-label">Over time, it learns</span>
+              <div class="habit-row"><span class="habit-icon" aria-hidden="true">UPS</span><div><b>Your usual drop-off</b><small>UPS near home</small></div></div>
+              <div class="habit-row"><span class="habit-icon" aria-hidden="true">SAT</span><div><b>Your usual timing</b><small>You often return on weekends</small></div></div>
+              <p class="habit-control">Suggested habits. You can change them anytime.</p>
+            </div>
+          </article>
+          <span class="story-connector" aria-hidden="true">›</span>
+          <article class="personal-plan fragment">
+            <span class="story-label">AI-assisted planning</span>
+            <h3>Your next UPS trip</h3>
+            <div class="personal-stop"><b>UPS near home</b><p>Banana Republic + Temu<br>Before Thursday’s deadline</p></div>
+            <div class="personal-reasons"><span>One combined trip</span><span>Your familiar stop</span></div>
+            <div class="deadline-check fragment">
+              <span aria-hidden="true">!</span>
+              <div><b>This one cannot wait for the weekend.</b><p>The earlier deadline takes priority.</p></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="story-footer fragment"><span><strong>AI helps personalize the plan. Rules protect the deadlines.</strong></span><small>Your choices stay in control.</small></div>
+      </section>
+
+      <section class="slide continuation confidence-story" data-title="Why AI: confidence and visible sources" data-notes="Spec sections 8, 11 and 28. Deadlines and eligibility carry a confidence level tied to the available evidence. Reveal High, Medium and Low one at a time, then the takeaway. High: an explicit return-by date in an order email. Medium: a deadline estimated from the current official policy and order information. Low: missing item details leave eligibility unclear, so ask the user to confirm or check the retailer. These are illustrative evidence scenarios, not claims about the retailers in the earlier workflow. Confidence labels are qualitative, not measured accuracy percentages or guarantees. Order-specific evidence takes priority over generic policies, and deterministic validation supports the interpretation. End on a clear product benefit: the user can see the source and knows when a confirmation is needed.">
+        <span class="slide-number">13 / 14</span>
+        <header class="continuation-header">
+          <div>
+            <div class="eyebrow">Why AI · Confidence + transparency</div>
+            <h2>How sure are we?<br><span class="accent">The source stays visible.</span></h2>
+          </div>
+          <p class="subhead">Return deadlines and eligibility<br>come with a confidence level.</p>
+        </header>
+
+        <div class="confidence-cards">
+          <article class="confidence-card high fragment">
+            <span class="story-label">Confidence level</span>
+            <strong class="confidence-level">High</strong>
+            <h3>Return by Sep 25</h3>
+            <p>An explicit date for this order.</p>
+            <div class="confidence-source"><span>Source</span><b>Retailer order email</b></div>
+            <div class="confidence-action">Plan using this date.</div>
+          </article>
+          <article class="confidence-card medium fragment">
+            <span class="story-label">Confidence level</span>
+            <strong class="confidence-level">Medium</strong>
+            <h3>Estimated: Sep 25</h3>
+            <p>A date inferred from the policy.</p>
+            <div class="confidence-source"><span>Source</span><b>Policy + order details</b></div>
+            <div class="confidence-action">Clearly mark the estimate.</div>
+          </article>
+          <article class="confidence-card low fragment">
+            <span class="story-label">Confidence level</span>
+            <strong class="confidence-level">Low</strong>
+            <h3>Eligibility unclear</h3>
+            <p>Item details are missing.</p>
+            <div class="confidence-source"><span>Source</span><b>Incomplete receipt</b></div>
+            <div class="confidence-action">Ask for confirmation.</div>
+          </article>
+        </div>
+
+        <div class="story-footer fragment"><span><strong>See the evidence. Confirm what’s uncertain.</strong></span><small>Illustrative confidence labels</small></div>
+      </section>
+
+      <section class="slide continuation data-privacy" data-title="Data sources and privacy by choice" data-notes="Spec sections 9, 10, 11, 16 and 24. This slide shows the proposed approach, not implemented security guarantees. First click: users can connect Gmail, forward selected shopping emails, or provide screenshots and receipt photos. Inbox connection is optional. Official retailer policies and official drop-off data, supplemented by maps, complete the information. Order-specific evidence takes priority; maps alone cannot establish return eligibility. Second click: emphasize data minimization, only order, policy, return-method and refund information, with ZIP code or a preferred area by default. The shield is a visual for the privacy principle, not a claim of verified security. Third click: planned processing happens on-device where practical and uses cloud AI for complex parsing and reasoning; the exact architecture remains to be determined. Fourth click: calendar and precise location remain optional, and the MVP requires neither bank access nor continuous background GPS. Precise location is used only when requested for nearby search. Do not claim a connected Gmail account technically grants access only to shopping emails.">
+        <span class="slide-number">14 / 14</span>
+        <header class="privacy-heading">
+          <div class="eyebrow">Data + privacy</div>
+          <h2>Your data. <span>Your choice.</span></h2>
+          <p>You choose what to share. We use only what your return needs.</p>
+        </header>
+
+        <div class="privacy-diagram">
+          <div class="privacy-inputs fragment">
+            <span class="privacy-stage-label">Data sources</span>
+            <div class="privacy-source-list">
+              <div class="privacy-source-row">
+                <span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
+                <div><b>Order emails</b><small>Connect Gmail or forward selected emails.</small></div>
+              </div>
+              <div class="privacy-source-row">
+                <span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="3"/><circle cx="9" cy="8" r="1.5"/><path d="m5 17 4-4 3 3 3-5 4 6"/></svg></span>
+                <div><b>Screenshots &amp; receipts</b><small>Upload only the purchases you choose.</small></div>
+              </div>
+              <div class="privacy-source-row">
+                <span class="privacy-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5H3l9-5ZM5 11v7m7-7v7m7-7v7M3 21h18"/></svg></span>
+                <div><b>Official retailer data</b><small>Return policies, drop-off points &amp; maps.</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="privacy-gate fragment">
+            <div class="privacy-emblem" aria-hidden="true">
+              <svg viewBox="0 0 64 72" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 5 55 14v20c0 15-10 25-23 32C19 59 9 49 9 34V14L32 5Z"/><path class="privacy-check" d="m21 34 8 8 16-17"/></svg>
+            </div>
+            <h3>Only return essentials</h3>
+            <p>Orders, deadlines &amp; refund details.</p>
+            <p>ZIP code for nearby drop-offs.</p>
+          </div>
+
+          <div class="privacy-process fragment">
+            <span class="privacy-stage-label">Planned processing</span>
+            <div class="privacy-process-row">
+              <span class="privacy-process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></svg></span>
+              <div><b>On-device</b><small>Process locally where practical.</small></div>
+            </div>
+            <div class="privacy-process-row">
+              <span class="privacy-process-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 0 1-.5-10 6 6 0 0 1 11.6 1.5A4.3 4.3 0 0 1 18 18H7Z"/></svg></span>
+              <div><b>Cloud AI</b><small>For complex parsing and reasoning.</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="privacy-choices fragment">
+          <span><i aria-hidden="true"></i>Calendar &amp; precise location: <strong>optional</strong></span>
+          <span><i aria-hidden="true"></i>No bank connection</span>
+          <span><i aria-hidden="true"></i>No background location tracking</span>
         </div>
       </section>
 
